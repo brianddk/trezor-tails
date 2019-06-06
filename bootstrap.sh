@@ -31,8 +31,8 @@ start_sudo_thread() {
 user_first_stage() {
   rm -rf $locksdir 2> /dev/null
   pushd /tmp
+  [[ ! -d /tmp/$repo ]] || rm -rf /tmp/$repo
 
-  # Get our repo
   trap err_report ERR
   git clone https://github.com/brianddk/$repo.git
   chmod +x /tmp/$repo/bootstrap.sh
@@ -67,6 +67,7 @@ sudo_thread() {
   
   trap err_report ERR
   # Install packages needed for python / pip
+  apt-get update
   apt-get install -y python3-dev python3-pip cython3 libusb-1.0-0-dev libudev-dev build-essential python3-wheel
   
   msg="Done installing TEMPORARY packages, choose 'Install only Once' option"
