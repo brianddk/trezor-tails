@@ -37,7 +37,6 @@ user_first_stage() {
   # Load gnome-proxy
   dconf load / < user.ini
   mv ~amnesia/.config/dconf/user $persist/dotfiles/.config/dconf
-  unset -e
 }
 
 sudo_thread() {
