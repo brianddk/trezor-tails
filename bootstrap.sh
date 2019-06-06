@@ -10,7 +10,7 @@ err_report() {
 wait_for_signal() {
   while [ ! -f $1 ]
     do sleep 1000
-    [[ -f $locksdir/.error ]] && exit 1
+    [[ -f $locksdir/.error ]] && exit 2
   done
 }
 
@@ -21,7 +21,7 @@ user_first_stage() {
   pushd /tmp
 
   # Get our repo
-  git clone https://github.com/brianddk/$repo.git || exit 1
+  git clone https://github.com/brianddk/$repo.git || exit 3
   cd $assets
   mkdir $locksdir
 
@@ -59,7 +59,7 @@ sudo_thread() {
   touch $locksdir/.second_stage_done
   
   # sudo_waitfor_user
-  wait_for_signal $locksdir/.third_stage_done || exit 2
+  wait_for_signal $locksdir/.third_stage_done || exit 4
 
   # sudo_fourth_stage
   mv ~amnesia/.local $persist/local
@@ -71,7 +71,7 @@ sudo_thread() {
 user_thread() {
   trap err_report ERR
   # user_waitfor_sudo
-  wait_for_signal $locksdir/.second_stage_done || exit 2
+  wait_for_signal $locksdir/.second_stage_done || exit 5
 
   # user_third_stage
   pip3 install --user --upgrade setuptools
@@ -83,7 +83,7 @@ user_thread() {
 
 user_final_state() {
   trap err_report ERR
-  [[ -f $locksdir/.error ]] && exit 1
+  [[ -f $locksdir/.error ]] && exit 6
   # user_waitfor_sudo
   # End times post root
   mkdir -p $persist/local/share/applications
@@ -100,9 +100,9 @@ assets=$repo/assets
 export http_proxy=socks5://127.0.0.1:9050
 export https_proxy=socks5://127.0.0.1:9050
 
-user_first_stage || exit 3
+user_first_stage || exit 7
 msg="I need root, please return to terminal and enter password"
-zenity --question --text=$msg || exit 4
+zenity --question --text=$msg || exit 8
 sudo sudo_thread &
 user_thread &
-user_final_state || exit 5
+user_final_state || exit 9
