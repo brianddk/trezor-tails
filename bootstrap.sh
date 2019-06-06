@@ -78,7 +78,7 @@ sudo_thread() {
   wait_for_signal $locksdir/.third_stage_done || err_report 3
 
   # sudo_fourth_stage
-  cp -a ~amnesia/.local $persist/local
+  rsync -a ~amnesia/.local $persist/local
   cat $assets/delta-persistance.conf >> $persist/persistance.conf
 
   # sudo_signal_done
