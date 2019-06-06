@@ -84,8 +84,9 @@ sudo_thread() {
 }
 
 user_thread() {
-  trap err_report ERR
+  trap ERR
   # user_waitfor_sudo
+  echo "wait_for_signal $locksdir/.second_stage_done "
   wait_for_signal $locksdir/.second_stage_done 
   echo "rc: $?"
 
