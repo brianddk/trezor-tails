@@ -34,7 +34,7 @@ user_first_stage() {
 
   # Get our repo
   git clone https://github.com/brianddk/$repo.git
-  chmod +x $assets/bootstrap.sh
+  chmod +x /tmp/$repo/bootstrap.sh
   cd $assets
   mkdir $locksdir
 
@@ -109,7 +109,7 @@ main() {
   msg="I need root, please return to terminal and enter password"
   zenity --question --text="$msg" || exit 8
   echo "rc: $?"
-  sudo $assets/bootstrap.sh start_sudo_thread
+  sudo /tmp/$repo/bootstrap.sh start_sudo_thread
   echo "rc: $?"
   trap err_report ERR
   user_thread &
