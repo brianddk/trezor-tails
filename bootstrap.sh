@@ -118,7 +118,7 @@ main() {
   sudo /tmp/$repo/bootstrap.sh start_sudo_thread
   echo "rc: $?"
   trap err_report ERR
-  user_thread &
+  /tmp/$repo/bootstrap.sh user_thread &
   user_final_state || exit 9
 }
 
