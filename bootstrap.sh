@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # we will source this file
 
 err_report() {
@@ -31,7 +33,8 @@ user_first_stage() {
   pushd /tmp
 
   # Get our repo
-  git clone https://github.com/brianddk/$repo.git || exit 3
+  git clone https://github.com/brianddk/$repo.git
+  chmod +x $assets/bootstrap.sh
   cd $assets
   mkdir $locksdir
 
@@ -99,6 +102,20 @@ user_final_state() {
   cp $assets/electrumApp.desktop $persist/local/share/applications
 }
 
+main() {
+  user_first_stage || exit 7
+
+  trap ERR
+  msg="I need root, please return to terminal and enter password"
+  zenity --question --text="$msg" || exit 8
+  echo "rc: $?"
+  sudo $assets/bootstrap.sh start_sudo_thread
+  echo "rc: $?"
+  trap err_report ERR
+  user_thread &
+  user_final_state || exit 9
+}
+
 trap err_report ERR
 persist="/live/persistence/TailsData_unlocked"
 repo="trezor-tails"
@@ -109,14 +126,9 @@ assets=/tmp/$repo/assets
 export http_proxy=socks5://127.0.0.1:9050
 export https_proxy=socks5://127.0.0.1:9050
 
-user_first_stage || exit 7
-
-trap ERR
-msg="I need root, please return to terminal and enter password"
-zenity --question --text="$msg" || exit 8
-echo "rc: $?"
-sudo start_sudo_thread
-echo "rc: $?"
-trap err_report ERR
-user_thread &
-user_final_state || exit 9
+if [ $# -eq 0 ]
+then
+  main
+else
+  $1
+fi
