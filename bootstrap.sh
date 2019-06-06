@@ -3,37 +3,37 @@
 # we will source this file
 
 err_report() {
+  rc=1
+  if [ -z "$1" ]
+  then
+    rc=$1
+  fi
   touch $locksdir/.error
   msg="errexit on line $(caller)"
   echo "$msg" >&2
   zenity --error --text="$msg"
-  exit 1
+  exit $rc
 }
 
 wait_for_signal() {
   while [ ! -f $1 ]
     do sleep 5
     echo "waiting on $1"
-    [[ -f $locksdir/.error ]] && exit 2
+    [[ -f $locksdir/.error ]] && err_report 2
   done
 }
 
 start_sudo_thread() { 
-  echo "rc: $?"
   sleep 1
-  echo "rc: $?"
-  echo "in sudo_thread_start"
-  echo "rc: $?"
   sudo_thread &
 }
 
 user_first_stage() {
-  trap ERR
   rm -rf $locksdir 2> /dev/null
-  trap err_report ERR
   pushd /tmp
 
   # Get our repo
+  trap err_report ERR
   git clone https://github.com/brianddk/$repo.git
   chmod +x /tmp/$repo/bootstrap.sh
   cd $assets
@@ -51,19 +51,20 @@ user_first_stage() {
   # Load gnome-proxy
   dconf load / < user.ini
   mv ~amnesia/.config/dconf/user $persist/dotfiles/.config/dconf
+  
+  trap ERR
 }
 
 sudo_thread() {
-  trap ERR
   rm -rf $locksdir 2> /dev/null
   mkdir $locksdir
   chown -R amnesia:amnesia $locksdir
-  trap err_report ERR
 
   # sudo_second_stage
   msg="Installing TEMPORARY packages, you can choose NOT to persist these packages"
   zenity --question --text="$msg" &
   
+  trap err_report ERR
   # Install packages needed for python / pip
   apt-get install -y python3-dev python3-pip cython3 libusb-1.0-0-dev libudev-dev build-essential python3-wheel
   
@@ -74,54 +75,54 @@ sudo_thread() {
   touch $locksdir/.second_stage_done
   
   # sudo_waitfor_user
-  wait_for_signal $locksdir/.third_stage_done || exit 4
+  wait_for_signal $locksdir/.third_stage_done || err_report 3
 
   # sudo_fourth_stage
-  mv ~amnesia/.local $persist/local
+  cp -a ~amnesia/.local $persist/local
   cat $assets/delta-persistance.conf >> $persist/persistance.conf
 
   # sudo_signal_done
   touch $locksdir/.fourth_stage_done
+  trap ERR
 }
 
 user_thread() {
-  trap ERR
   # user_waitfor_sudo
   echo "wait_for_signal $locksdir/.second_stage_done "
-  wait_for_signal $locksdir/.second_stage_done 
-  echo "rc: $?"
+  wait_for_signal $locksdir/.second_stage_done || err_report 4
 
   # user_third_stage
+  trap err_report ERR
   pip3 install --user --upgrade setuptools
   pip3 install --user --upgrade trezor[ethereum,hidapi]
+  trap ERR
   
   # user_signal_done
   touch $locksdir/.third_stage_done
 }
 
 user_final_state() {
-  trap err_report ERR
-  [[ -f $locksdir/.error ]] && exit 6
+  [[ -f $locksdir/.error ]] && err_report 5
   # user_waitfor_sudo
   # user_waitfor_sudo
-  wait_for_signal $locksdir/.fourth_stage_done || exit 5
+  wait_for_signal $locksdir/.fourth_stage_done || err_report 6
   # End times post root
+
+  trap err_report ERR
   mkdir -p $persist/local/share/applications
   cp $assets/electrumApp.desktop $persist/local/share/applications
+  trap ERR
 }
 
 main() {
-  user_first_stage || exit 7
+  user_first_stage || err_report 7
 
-  trap ERR
   msg="I need root, please return to terminal and enter password"
-  zenity --question --text="$msg" || exit 8
-  echo "rc: $?"
+  zenity --question --text="$msg" || err_report 8
   sudo /tmp/$repo/bootstrap.sh start_sudo_thread
-  echo "rc: $?"
   trap err_report ERR
   /tmp/$repo/bootstrap.sh user_thread &
-  user_final_state || exit 9
+  user_final_state || err_report 9
 }
 
 trap err_report ERR
