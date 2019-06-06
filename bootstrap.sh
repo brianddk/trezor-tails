@@ -15,9 +15,12 @@ wait_for_signal() {
   done
 }
 
-start_sudo_thread() {
+start_sudo_thread() { 
+  echo "rc: $?"
   sleep 1
+  echo "rc: $?"
   echo "in sudo_thread_start"
+  echo "rc: $?"
   sudo_thread &
 }
 
@@ -107,8 +110,13 @@ export http_proxy=socks5://127.0.0.1:9050
 export https_proxy=socks5://127.0.0.1:9050
 
 user_first_stage || exit 7
+
+trap ERR
 msg="I need root, please return to terminal and enter password"
 zenity --question --text="$msg" || exit 8
+echo "rc: $?"
 sudo start_sudo_thread
+echo "rc: $?"
+trap err_report ERR
 user_thread &
 user_final_state || exit 9
