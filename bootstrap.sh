@@ -89,7 +89,8 @@ sudo_thread() {
 user_thread() {
   # user_waitfor_sudo
   echo "wait_for_signal $locksdir/.second_stage_done "
-  wait_for_signal $locksdir/.second_stage_done # I don't know Why # || err_report 4
+  trap ERR # because
+  wait_for_signal $locksdir/.second_stage_done || err_report 4
 
   # user_third_stage
   trap err_report ERR
