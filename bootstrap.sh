@@ -11,7 +11,7 @@ err_report() {
   touch $locksdir/.error
   msg="errexit on line $(caller)"
   echo "$msg" >&2
-  zenity --error --text="$msg"
+  zenity --error --text="$msg" 1> /dev/null 2>&1
   exit $rc
 }
 
@@ -62,14 +62,14 @@ sudo_thread() {
 
   # sudo_second_stage
   msg="Installing TEMPORARY packages, you can choose NOT to persist these packages"
-  zenity --question --text="$msg" &
+  zenity --info --text="$msg" 1> /dev/null 2>&1 &
   
   trap err_report ERR
   # Install packages needed for python / pip
   apt-get install -y python3-dev python3-pip cython3 libusb-1.0-0-dev libudev-dev build-essential python3-wheel
   
   msg="Done installing TEMPORARY packages, choose NOT to persist these packages"
-  zenity --question --text="$msg" &
+  zenity --info --text="$msg" 1> /dev/null 2>&1 &
 
   # sudo_signal_done
   touch $locksdir/.second_stage_done
@@ -118,14 +118,12 @@ main() {
   user_first_stage || err_report 7
 
   msg="I need root, please return to terminal and enter password"
-  zenity --question --text="$msg" || err_report 8
+  zenity --question --text="$msg" 1> /dev/null 2>&1 || err_report 8
   sudo /tmp/$repo/bootstrap.sh start_sudo_thread
-  trap err_report ERR
   /tmp/$repo/bootstrap.sh user_thread &
   user_final_state || err_report 9
 }
 
-trap err_report ERR
 persist="/live/persistence/TailsData_unlocked"
 repo="trezor-tails"
 locksdir="/tmp/$repo/locks"
