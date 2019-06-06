@@ -55,6 +55,7 @@ user_first_stage() {
 sudo_thread() {
   trap ERR
   rm -rf $locksdir 2> /dev/null
+  mkdir $locksdir
   trap err_report ERR
 
   # sudo_second_stage
