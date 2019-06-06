@@ -1,0 +1,22 @@
+{  
+   "profile":{  
+      "info_cache":{  
+         "Default":{  
+            "active_time":1559761638.160203,
+            "avatar_icon":"chrome://theme/IDR_PROFILE_AVATAR_26",
+            "background_apps":false,
+            "gaia_id":"",
+            "is_ephemeral":false,
+            "is_omitted_from_profile_list":false,
+            "is_using_default_avatar":true,
+            "is_using_default_name":true,
+            "managed_user_id":"",
+            "name":"Person 1",
+            "user_name":""
+         }
+      },
+      "last_active_profiles":[  
+
+      ]
+   }
+}
