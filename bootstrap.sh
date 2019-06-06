@@ -12,7 +12,8 @@ err_report() {
 
 wait_for_signal() {
   while [ ! -f $1 ]
-    do sleep 1000
+    do sleep 5000
+    echo "waiting on $1"
     [[ -f $locksdir/.error ]] && exit 2
   done
 }
@@ -79,6 +80,7 @@ sudo_thread() {
   cat $assets/delta-persistance.conf >> $persist/persistance.conf
 
   # sudo_signal_done
+  touch $locksdir/.second_stage_done
 }
 
 user_thread() {
@@ -98,6 +100,8 @@ user_final_state() {
   trap err_report ERR
   [[ -f $locksdir/.error ]] && exit 6
   # user_waitfor_sudo
+  # user_waitfor_sudo
+  wait_for_signal $locksdir/.second_stage_done || exit 5
   # End times post root
   mkdir -p $persist/local/share/applications
   cp $assets/electrumApp.desktop $persist/local/share/applications
