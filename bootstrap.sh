@@ -19,7 +19,7 @@ wait_for_signal() {
   while [ ! -f $1 ]
     do sleep 5
     echo "waiting on $1"
-    [[ -f $locksdir/.error ]] && err_report 2
+    [[ ! -f $locksdir/.error ]] || err_report 2
   done
 }
 
@@ -89,7 +89,6 @@ sudo_thread() {
 user_thread() {
   # user_waitfor_sudo
   echo "wait_for_signal $locksdir/.second_stage_done "
-  trap "" ERR # because
   wait_for_signal $locksdir/.second_stage_done || err_report 4
 
   # user_third_stage
