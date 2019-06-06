@@ -133,9 +133,11 @@ assets=/tmp/$repo/assets
 export http_proxy=socks5://127.0.0.1:9050
 export https_proxy=socks5://127.0.0.1:9050
 
+# play nice
+renice 19 $$
 if [ $# -eq 0 ]
 then
-  nice -19 main
+  main
 else
-  nice -19 $1
+  $1
 fi
