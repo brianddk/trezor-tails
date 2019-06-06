@@ -86,7 +86,8 @@ sudo_thread() {
 user_thread() {
   trap err_report ERR
   # user_waitfor_sudo
-  wait_for_signal $locksdir/.second_stage_done || exit 5
+  wait_for_signal $locksdir/.second_stage_done 
+  echo "rc: $?"
 
   # user_third_stage
   pip3 install --user --upgrade setuptools
