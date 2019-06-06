@@ -18,7 +18,7 @@ err_report() {
 wait_for_signal() {
   while [ ! -f $1 ]
     do sleep 5
-    echo "waiting on $1"
+    # shh echo "waiting on $1"
     [[ ! -f $locksdir/.error ]] || err_report 2
   done
 }
