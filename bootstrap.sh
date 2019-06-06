@@ -92,8 +92,8 @@ user_final_state() {
 trap err_report ERR
 persist="/live/persistence/TailsData_unlocked"
 repo="trezor-tails"
-locksdir="$repo/locks"
-assets=$repo/assets
+locksdir="/tmp/$repo/locks"
+assets=/tmp/$repo/assets
 
 # Torify our shell
 export http_proxy=socks5://127.0.0.1:9050
