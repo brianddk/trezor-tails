@@ -80,7 +80,7 @@ sudo_thread() {
   cat $assets/delta-persistance.conf >> $persist/persistance.conf
 
   # sudo_signal_done
-  touch $locksdir/.second_stage_done
+  touch $locksdir/.fourth_stage_done
 }
 
 user_thread() {
@@ -101,7 +101,7 @@ user_final_state() {
   [[ -f $locksdir/.error ]] && exit 6
   # user_waitfor_sudo
   # user_waitfor_sudo
-  wait_for_signal $locksdir/.second_stage_done || exit 5
+  wait_for_signal $locksdir/.fourth_stage_done || exit 5
   # End times post root
   mkdir -p $persist/local/share/applications
   cp $assets/electrumApp.desktop $persist/local/share/applications
