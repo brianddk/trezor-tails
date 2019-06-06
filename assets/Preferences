@@ -1,0 +1,41 @@
+{  
+   "default_search_provider_data":{  
+      "template_url_data":{  
+         "alternate_urls":[  
+
+         ],
+         "contextual_search_url":"",
+         "created_by_policy":false,
+         "date_created":"0",
+         "doodle_url":"",
+         "favicon_url":"https://duckduckgo.com/favicon.ico",
+         "id":"5",
+         "image_url":"",
+         "image_url_post_params":"",
+         "input_encodings":[  
+            "UTF-8"
+         ],
+         "keyword":"duckduckgo.com",
+         "last_modified":"0",
+         "last_visited":"0",
+         "logo_url":"",
+         "new_tab_url":"",
+         "originating_url":"",
+         "prepopulate_id":92,
+         "safe_for_autoreplace":true,
+         "search_url_post_params":"",
+         "short_name":"DuckDuckGo",
+         "suggestions_url":"https://duckduckgo.com/ac/?q={searchTerms}&type=list",
+         "suggestions_url_post_params":"",
+         "synced_guid":"87655daf-8d6b-499c-9563-d459b4813164",
+         "url":"https://duckduckgo.com/?q={searchTerms}",
+         "usage_count":0
+      }
+   },
+   "session":{  
+      "restore_on_startup":4,
+      "startup_urls":[  
+         "https://trezor.io/"
+      ]
+   }
+}
