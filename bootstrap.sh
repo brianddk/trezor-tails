@@ -14,6 +14,11 @@ wait_for_signal() {
   done
 }
 
+start_sudo_thread() {
+  sleep 1
+  sudo_thread &
+}
+
 user_first_stage() {
   trap ERR
   rm -rf $locksdir 2> /dev/null
@@ -102,6 +107,6 @@ export https_proxy=socks5://127.0.0.1:9050
 user_first_stage || exit 7
 msg="I need root, please return to terminal and enter password"
 zenity --question --text="$msg" || exit 8
-sudo sudo_thread &
+sudo start_sudo_thread
 user_thread &
 user_final_state || exit 9
