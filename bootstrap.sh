@@ -3,6 +3,7 @@
 err_report() {
   touch $locksdir/.error
   msg="errexit on line $(caller)"
+  echo "$msg" >&2
   zenity --error --text="$msg"
   exit 1
 }
@@ -16,6 +17,7 @@ wait_for_signal() {
 
 start_sudo_thread() {
   sleep 1
+  echo "in sudo_thread_start"
   sudo_thread &
 }
 
