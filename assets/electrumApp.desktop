@@ -1,0 +1,18 @@
+[Desktop Entry]
+Comment=Lightweight Bitcoin Client
+Exec=/usr/local/bin/electrum-3.3.6-x86_64.AppImage %u
+GenericName[en_US]=Bitcoin Wallet
+GenericName=Bitcoin Wallet
+Icon=electrum
+Name[en_US]=Electrum 3.3.6 Bitcoin Wallet
+Name=Electrum 3.3.6 Bitcoin Wallet
+Categories=Finance;Network;
+StartupNotify=false
+Terminal=false
+Type=Application
+MimeType=x-scheme-handler/bitcoin;
+Actions=Testnet;
+
+[Desktop Action Testnet]
+Exec=/usr/local/bin/electrum-3.3.6-x86_64.AppImage --testnet %u
+Name=Testnet mode
