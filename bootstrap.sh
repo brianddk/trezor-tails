@@ -38,20 +38,21 @@ user_first_stage() {
   chmod +x /tmp/$repo/bootstrap.sh
   cd $assets
   mkdir $locksdir
+  mkdir ./dotfile-stage
 
   # Populate dotfiles
-  mkdir -p $persist/dotfiles/.config/{dconf,chromium/Default}
-  touch "$persist/dotfiles/.config/chromium/First Run"
-  cp "Local State" $persist/dotfiles/.config/chromium/
-  cp Preferences $persist/dotfiles/.config/chromium/Default
-  cp bash_profile $persist/dotfiles/.config/.bash_profile
-  cat delta-bashrc >> ~amnesia/.bashrc
-  mv ~amnesia/.bashrc $persist/dotfiles/.config/.bashrc
+  mkdir -p ./dotfile-stage/.config/{dconf,chromium/Default}
+  touch "./dotfile-stage/.config/chromium/First Run"
+  cp "Local State" ./dotfile-stage/.config/chromium/
+  cp Preferences ./dotfile-stage/.config/chromium/Default
+  cp bash_profile ./dotfile-stage/.config/.bash_profile
+  cat ~amnesia/.bashrc delta-bashrc > ./dotfile-stage/.config/.bashrc
 
   # Load gnome-proxy
   dconf load / < user.ini
-  mv ~amnesia/.config/dconf/user $persist/dotfiles/.config/dconf
+  mv ~amnesia/.config/dconf/user ./dotfile-stage/.config/dconf
   
+  rsync -a -v ./dotfile-stage $persist/dotfiles
   trap ERR
 }
 
@@ -83,6 +84,7 @@ sudo_thread() {
 
   # sudo_signal_done
   touch $locksdir/.fourth_stage_done
+  chown -R amnesia:amnesia $locksdir
   trap ERR
 }
 
