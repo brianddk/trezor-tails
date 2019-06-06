@@ -135,7 +135,7 @@ export https_proxy=socks5://127.0.0.1:9050
 
 if [ $# -eq 0 ]
 then
-  main
+  nice -19 main
 else
-  $1
+  nice -19 $1
 fi
