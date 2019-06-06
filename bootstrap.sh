@@ -61,14 +61,14 @@ sudo_thread() {
   chown -R amnesia:amnesia $locksdir
 
   # sudo_second_stage
-  msg="Installing TEMPORARY packages, you can choose NOT to persist these packages"
+  msg="Installing TEMPORARY packages, you can choose 'Install only Once' option"
   zenity --info --text="$msg" 1> /dev/null 2>&1 &
   
   trap err_report ERR
   # Install packages needed for python / pip
   apt-get install -y python3-dev python3-pip cython3 libusb-1.0-0-dev libudev-dev build-essential python3-wheel
   
-  msg="Done installing TEMPORARY packages, choose NOT to persist these packages"
+  msg="Done installing TEMPORARY packages, choose 'Install only Once' option"
   zenity --info --text="$msg" 1> /dev/null 2>&1 &
 
   # sudo_signal_done
