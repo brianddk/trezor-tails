@@ -76,14 +76,21 @@ sudo_second_stage() {
   apt-get update
   apt-get install -y python3-dev python3-pip cython3 libusb-1.0-0-dev libudev-dev build-essential python3-wheel dpkg-dev
   
-  export msg="DBG: FINALIZING BRIDGE"; zenity --info --text="$msg" 1> /dev/null 2>&1
-  install -p -m 0744 -D $assets/locals.list -t $persist/apt-sources.list.d/
-  install -p -m 0744 -D $assets/trezor-bridge*.deb -t $persist/packages/
-  runuser -c 'gpg --verify $persist/packages/trezor-bridge*.deb' amnesia  
-
   export msg="DBG: FINALIZING UDEV / CONF"; zenity --info --text="$msg" 1> /dev/null 2>&1
   # set up udev
-  install -p -D $assets/udev/* $persist/udev/
+  install -p -D $assets/udev/* -t $persist/udev/
+
+  export msg="DBG: FINALIZING BRIDGE"; zenity --info --text="$msg" 1> /dev/null 2>&1
+  install -p -m 0644 -D $assets/locals.list -t $persist/apt-sources.list.d/
+  install -p -m 0644 -D $assets/trezor-bridge*.deb -t $persist/packages/
+  runuser -c 'gpg --verify $persist/packages/trezor-bridge*.deb' amnesia
+  $persist/packages/
+  dpkg-scanpackages . /dev/null | gzip -9c > Packages.gz
+  chmod 0644 Packages.gz
+  popd
+  ln -sf $persist/apt-sources.list.d/locals.list /etc/apt/sources.list.d/locals.list
+  apt-get update
+  apt-get install -y trezor-bridge
 
   # set up persistence
   cat $assets/delta-persistence.conf >> $persist/persistence.conf
@@ -105,9 +112,6 @@ user_third_stage() {
   install -p -m 0700 -D $assets/electrumApp.desktop -t $persist/local/share/applications/
   install -p -m 0700 -D $assets/electrum-3.3.6-x86_64.AppImage -t $persist/local/bin/  
   gpg --verify $assets/electrum*.AppImage.asc $persist/local/bin/electrum*.AppImage
-  
-  mkdir -p $persist/local/share/applications
-  chown -R amnesia:amnesia $persist/local
 }
 
 main() {
