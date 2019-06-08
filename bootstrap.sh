@@ -33,27 +33,27 @@ user_first_stage() {
   pushd /tmp
   [[ ! -d /tmp/$repo ]] || rm -rf /tmp/$repo
 
-  trap err_report ERR
   git clone https://github.com/brianddk/$repo.git
   chmod +x /tmp/$repo/bootstrap.sh
   cd $assets
   mkdir $locksdir
   mkdir ./dotfile-stage
+  mkdir $assets/udev
+  wget -P $assets/udev https://raw.githubusercontent.com/trezor/trezor-common/master/udev/51-trezor.rules
 
   # Populate dotfiles
   mkdir -p ./dotfile-stage/.config/{dconf,chromium/Default}
   touch "./dotfile-stage/.config/chromium/First Run"
   cp "Local State" ./dotfile-stage/.config/chromium/
   cp Preferences ./dotfile-stage/.config/chromium/Default
-  cp bash_profile ./dotfile-stage/.config/.bash_profile
-  cat ~amnesia/.bashrc delta-bashrc > ./dotfile-stage/.config/.bashrc
+  cp bash_profile ./dotfile-stage/.bash_profile
+  cat ~amnesia/.bashrc delta-bashrc > ./dotfile-stage/.bashrc
 
   # Load gnome-proxy
   dconf load / < user.ini
   mv ~amnesia/.config/dconf/user ./dotfile-stage/.config/dconf
   
-  rsync -a -v ./dotfile-stage $persist/dotfiles
-  trap ERR
+  rsync -a -v ./dotfile-stage/ $persist/dotfiles/
 }
 
 sudo_thread() {
@@ -65,7 +65,6 @@ sudo_thread() {
   msg="Installing TEMPORARY packages, you can choose 'Install only Once' option"
   zenity --info --text="$msg" 1> /dev/null 2>&1 &
   
-  trap err_report ERR
   # Install packages needed for python / pip
   apt-get update
   apt-get install -y python3-dev python3-pip cython3 libusb-1.0-0-dev libudev-dev build-essential python3-wheel
@@ -80,13 +79,13 @@ sudo_thread() {
   wait_for_signal $locksdir/.third_stage_done || err_report 3
 
   # sudo_fourth_stage
-  rsync -a ~amnesia/.local $persist/local
-  cat $assets/delta-persistance.conf >> $persist/persistance.conf
+  rsync -a ~amnesia/.local/ $persist/local
+  rsync -rltD $assets/udev/ $persist
+  cat $assets/delta-persistence.conf >> $persist/persistence.conf
 
   # sudo_signal_done
   touch $locksdir/.fourth_stage_done
   chown -R amnesia:amnesia $locksdir
-  trap ERR
 }
 
 user_thread() {
@@ -95,11 +94,11 @@ user_thread() {
   wait_for_signal $locksdir/.second_stage_done || err_report 4
 
   # user_third_stage
-  trap err_report ERR
   pip3 install --user --upgrade setuptools
   pip3 install --user --upgrade trezor[ethereum,hidapi]
-  trap ERR
   
+  mkdir -p $persist/local/share/applications
+  chown -R amnesia:amnesia $persist/local
   # user_signal_done
   touch $locksdir/.third_stage_done
 }
@@ -111,10 +110,7 @@ user_final_state() {
   wait_for_signal $locksdir/.fourth_stage_done || err_report 6
   # End times post root
 
-  trap err_report ERR
-  mkdir -p $persist/local/share/applications
   cp $assets/electrumApp.desktop $persist/local/share/applications
-  trap ERR
 }
 
 main() {
@@ -127,6 +123,7 @@ main() {
   user_final_state || err_report 9
 }
 
+trap err_report ERR
 persist="/live/persistence/TailsData_unlocked"
 repo="trezor-tails"
 locksdir="/tmp/$repo/locks"
