@@ -1,0 +1,1 @@
+deb [ allow-insecure=yes trusted=yes ] file:/live/persistence/TailsData_unlocked/packages ./
