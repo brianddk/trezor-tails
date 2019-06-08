@@ -79,7 +79,7 @@ sudo_second_stage() {
   export msg="DBG: FINALIZING BRIDGE"; zenity --info --text="$msg" 1> /dev/null 2>&1
   install -p -m 0744 -D $assets/locals.list -t $persist/apt-sources.list.d/
   install -p -m 0744 -D $assets/trezor-bridge*.deb -t $persist/packages/
-  runuser -c 'gpg gpg --verify $persist/packages/trezor-bridge*.deb' amnesia  
+  runuser -c 'gpg --verify $persist/packages/trezor-bridge*.deb' amnesia  
 
   export msg="DBG: FINALIZING UDEV / CONF"; zenity --info --text="$msg" 1> /dev/null 2>&1
   # set up udev
