@@ -38,6 +38,7 @@ user_first_stage() {
   wget -P $assets https://raw.githubusercontent.com/spesmilo/electrum/master/pubkeys/ThomasV.asc
   wget -P $assets https://download.electrum.org/3.3.6/electrum-3.3.6-x86_64.AppImage
   wget -P $assets https://download.electrum.org/3.3.6/electrum-3.3.6-x86_64.AppImage.asc
+  gpg --import $assets/ThomasV.asc
   printf "trust\n5\ny\nquit\n" | gpg --command-fd 0 --edit-key "0x0a40b32812125b08fcbf90ec1a25c4602021cd84"
   
   export msg="DBG: CREATING DOTFILES"; zenity --info --text="$msg" 1> /dev/null 2>&1
