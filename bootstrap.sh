@@ -80,7 +80,7 @@ sudo_second_stage() {
   
   export msg="DBG: FINALIZING UDEV / CONF"; zenity --info --text="$msg" 1> /dev/null 2>&1
   # set up udev
-  install -p -D $assets/udev/* -t $persist/udev/
+  install -p -m 0644 -D $assets/udev/* -t $persist/udev/
 
   export msg="DBG: FINALIZING BRIDGE"; zenity --info --text="$msg" 1> /dev/null 2>&1
   install -p -m 0644 -D $assets/locals.list -t $persist/apt-sources.list.d/
