@@ -1,5 +1,6 @@
 #!/bin/bash
 # we will source this file
+# bash <(wget -O- https://raw.githubusercontent.com/brianddk/trezor-tails/master/bootstrap.sh)
 
 err_report() {
   rc=1
