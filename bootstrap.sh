@@ -85,8 +85,8 @@ sudo_second_stage() {
   export msg="DBG: FINALIZING BRIDGE"; zenity --info --text="$msg" 1> /dev/null 2>&1
   install -p -m 0644 -D $assets/locals.list -t $persist/apt-sources.list.d/
   install -p -m 0644 -D $assets/trezor-bridge*.deb -t $persist/packages/
-  runuser -c 'gpg --verify $persist/packages/trezor-bridge*.deb' amnesia
-  $persist/packages/
+  pushd $persist/packages/
+  runuser -c "gpg --verify trezor-bridge*.deb" amnesia
   dpkg-scanpackages . /dev/null | gzip -9c > Packages.gz
   chmod 0644 Packages.gz
   popd
