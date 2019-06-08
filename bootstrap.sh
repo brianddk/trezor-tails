@@ -56,7 +56,7 @@ user_first_stage() {
 
   # Load gnome-proxy
   dconf load / < user.ini
-  mv ~amnesia/.config/dconf/user ./dotfile-stage/.config/dconf
+  install -p -D ~amnesia/.config/dconf/user -t ./dotfile-stage/.config/dconf/
   
   rsync -a -v ./dotfile-stage/ $persist/dotfiles/
 }
