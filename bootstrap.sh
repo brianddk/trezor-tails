@@ -52,8 +52,9 @@ user_first_stage() {
   install -p -m 0600 -D bash_profile ./dotfile-stage/.bash_profile
   cat ~amnesia/.bashrc delta-bashrc > ./dotfile-stage/.bashrc
 
-  # Populate TorBrowser dotfiles
-  install -p -m 0600 -D ./user.js -t ./dotfile-stage/.tor-browser/profile.default/
+  # DEBUG doesn't work
+  # # Populate TorBrowser dotfiles
+  # install -p -m 0600 -D ./user.js -t ./dotfile-stage/.tor-browser/profile.default/
 
   # Load gnome-proxy
   dconf load / < user.ini
@@ -65,6 +66,8 @@ user_first_stage() {
 sudo_second_stage() {
   export msg="DBG: SET UP SWAP"; zenity --info --text="$msg" 1> /dev/null 2>&1
   # set up swap
+  install -p -m 0744 -D $assets/localhost.sh -t $persist/scripts/
+  install -p -m 0744 -D $assets/localhost.cron $persist/cron/localhost
   install -p -m 0744 -D $assets/swapon.sh -t $persist/scripts/
   install -p -m 0744 -D $assets/swapon.cron $persist/cron/swapon
   $persist/scripts/swapon.sh
