@@ -1,1 +1,15 @@
-TBD
+# Trezor on Tails
+
+To apply the Trezor libraries to a Tails (v3.14) instance, do the following:
+
+1. Create a Tails (v3.14) instance with persistence and Admin (root) enabled.
+2. Boot into the Tails instance, unlocking the persistent volume and enabling Admin.
+3. Start a "normal" terminal session (not a root terminal) and issue the following command.
+4. `bash <(wget -O- https://raw.githubusercontent.com/brianddk/trezor-tails/master/bootstrap.sh)`
+5. Monitor the progress and provide the Admin password when asked.
+6. Once the script completes without error, shutdown and restart the Tails instance.
+7. On the final boot, simply unlock the persistant volume.  Admin is not required.
+8. Wait for the message about "IPTables" and "Software install complete"
+9. After recieving both messages launch the Tor Browser
+10. Plug in your Trezor and browse to `https://trezor.io`
+11. Proceed as you normally would

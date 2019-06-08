@@ -1,7 +1,7 @@
-{  
-   "profile":{  
-      "info_cache":{  
-         "Default":{  
+{
+   "profile":{
+      "info_cache":{
+         "Default":{
             "active_time":1559761638.160203,
             "avatar_icon":"chrome://theme/IDR_PROFILE_AVATAR_26",
             "background_apps":false,
@@ -15,7 +15,7 @@
             "user_name":""
          }
       },
-      "last_active_profiles":[  
+      "last_active_profiles":[
 
       ]
    }

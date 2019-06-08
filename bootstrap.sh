@@ -11,7 +11,7 @@ err_report() {
   msg="errexit on line $(caller)"
   echo "$msg" >&2
   zenity --error --text="$msg" 1> /dev/null 2>&1
-  
+
   set -e
   false
 }
@@ -20,7 +20,7 @@ user_first_stage() {
   export msg="DBG: CLONING"; zenity --info --text="$msg" 1> /dev/null 2>&1
   pushd /tmp
   [[ ! -d /tmp/$repo ]] || rm -rf /tmp/$repo
-  
+
   git clone https://github.com/brianddk/$repo.git
   chmod +x /tmp/$repo/bootstrap.sh
   cd $assets
@@ -34,20 +34,20 @@ user_first_stage() {
   wget -P $assets https://github.com/trezor/webwallet-data/raw/master/bridge/2.0.27/trezor-bridge_2.0.27_amd64.deb
   gpg --import $assets/rusnak.asc
   printf "trust\n5\ny\nquit\n" | gpg --command-fd 0 --edit-key "0x86e6792fc27bfd478860c11091f3b339b9a02a3d"
-  
+
   export msg="DBG: STAGING ELECTRUM"; zenity --info --text="$msg" 1> /dev/null 2>&1
   wget -P $assets https://raw.githubusercontent.com/spesmilo/electrum/master/pubkeys/ThomasV.asc
   wget -P $assets https://download.electrum.org/3.3.6/electrum-3.3.6-x86_64.AppImage
   wget -P $assets https://download.electrum.org/3.3.6/electrum-3.3.6-x86_64.AppImage.asc
   gpg --import $assets/ThomasV.asc
   printf "trust\n5\ny\nquit\n" | gpg --command-fd 0 --edit-key "0x0a40b32812125b08fcbf90ec1a25c4602021cd84"
-  
+
   export msg="DBG: CREATING DOTFILES"; zenity --info --text="$msg" 1> /dev/null 2>&1
   # Populate chromium dotfiles
   install -p -m 0600 -D "./Local State" -t "./dotfile-stage/.config/chromium/"
   install -p -m 0600 -D ./Preferences -t ./dotfile-stage/.config/chromium/Default/
   touch "./dotfile-stage/.config/chromium/First Run"
-  
+
   # Populate bash dotfiles
   install -p -m 0600 -D bash_profile ./dotfile-stage/.bash_profile
   cat ~amnesia/.bashrc delta-bashrc > ./dotfile-stage/.bashrc
@@ -59,7 +59,7 @@ user_first_stage() {
   # Load gnome-proxy
   dconf load / < user.ini
   install -p -D ~amnesia/.config/dconf/user -t ./dotfile-stage/.config/dconf/
-  
+
   rsync -a -v ./dotfile-stage/ $persist/dotfiles/
 }
 
@@ -71,16 +71,16 @@ sudo_second_stage() {
   install -p -m 0744 -D $assets/swapon.sh -t $persist/scripts/
   install -p -m 0744 -D $assets/swapon.cron $persist/cron/swapon
   $persist/scripts/swapon.sh
-  
+
   export msg="DBG: INITIALIZING PYTHON"; zenity --info --text="$msg" 1> /dev/null 2>&1
   mkdir -p $persist/local/{lib,bin}
   chown -R amnesia:amnesia $persist/local
-  
+
   export msg="DBG: APT-GET INSTALL"; zenity --info --text="$msg" 1> /dev/null 2>&1
   # Install packages needed for python / pip / dpkg
   apt-get update
   apt-get install -y python3-dev python3-pip cython3 libusb-1.0-0-dev libudev-dev build-essential python3-wheel dpkg-dev
-  
+
   export msg="DBG: FINALIZING UDEV / CONF"; zenity --info --text="$msg" 1> /dev/null 2>&1
   # set up udev
   install -p -m 0644 -D $assets/udev/* -t $persist/udev/
@@ -106,16 +106,16 @@ user_third_stage() {
   # user_third_stage
   pip3 install --user --upgrade setuptools
   pip3 install --user --upgrade trezor[ethereum,hidapi]
-  
+
   export msg="DBG: FINALIZING PYTHON"; zenity --info --text="$msg" 1> /dev/null 2>&1
   # move python /pip stuff over
   rsync -a ~amnesia/.local/bin/ $persist/local/bin/
   rsync -a ~amnesia/.local/lib/ $persist/local/lib/
-  
+
   export msg="DBG: FINALIZING ELECTRUM"; zenity --info --text="$msg" 1> /dev/null 2>&1
   # move Electrum Over
   install -p -m 0700 -D $assets/electrumApp.desktop -t $persist/local/share/applications/
-  install -p -m 0700 -D $assets/electrum-3.3.6-x86_64.AppImage -t $persist/local/bin/  
+  install -p -m 0700 -D $assets/electrum-3.3.6-x86_64.AppImage -t $persist/local/bin/
   gpg --verify $assets/electrum*.AppImage.asc $persist/local/bin/electrum*.AppImage
 }
 

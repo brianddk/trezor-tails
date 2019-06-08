@@ -1,7 +1,7 @@
-{  
-   "default_search_provider_data":{  
-      "template_url_data":{  
-         "alternate_urls":[  
+{
+   "default_search_provider_data":{
+      "template_url_data":{
+         "alternate_urls":[
 
          ],
          "contextual_search_url":"",
@@ -12,7 +12,7 @@
          "id":"5",
          "image_url":"",
          "image_url_post_params":"",
-         "input_encodings":[  
+         "input_encodings":[
             "UTF-8"
          ],
          "keyword":"duckduckgo.com",
@@ -32,9 +32,9 @@
          "usage_count":0
       }
    },
-   "session":{  
+   "session":{
       "restore_on_startup":4,
-      "startup_urls":[  
+      "startup_urls":[
          "https://trezor.io/"
       ]
    }
