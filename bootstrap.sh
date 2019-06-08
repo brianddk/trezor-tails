@@ -10,7 +10,9 @@ err_report() {
   msg="errexit on line $(caller)"
   echo "$msg" >&2
   zenity --error --text="$msg" 1> /dev/null 2>&1
-  exit $rc
+  
+  set -e
+  false
 }
 
 user_first_stage() {
