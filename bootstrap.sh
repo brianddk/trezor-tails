@@ -67,6 +67,7 @@ sudo_second_stage() {
   # set up swap
   install -p -m 0744 -D $assets/swapon.sh -t $persist/scripts/
   install -p -m 0744 -D $assets/swapon.cron $persist/cron/swapon
+  $persist/scripts/swapon.sh
   
   export msg="DBG: INITIALIZING PYTHON"; zenity --info --text="$msg" 1> /dev/null 2>&1
   mkdir -p $persist/local/{lib,bin}
