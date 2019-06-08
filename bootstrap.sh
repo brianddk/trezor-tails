@@ -17,6 +17,8 @@ err_report() {
 
 user_first_stage() {
   export msg="DBG: CLONING"; zenity --info --text="$msg" 1> /dev/null 2>&1
+  pushd /tmp
+  [[ ! -d /tmp/$repo ]] || rm -rf /tmp/$repo
   
   git clone https://github.com/brianddk/$repo.git
   chmod +x /tmp/$repo/bootstrap.sh
