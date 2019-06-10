@@ -13,8 +13,8 @@
 # /tmp/bootstrap.sh
 
 # OPTIONS: Everything before /END can be modified to your preference.
-export install_python_trezor="true" # "true" to install; "false" to skip;
-export install_electrum="true"      # "true" to install; "false" to skip;
+install_python_trezor="true" # "true" to install; "false" to skip;
+install_electrum="true"      # "true" to install; "false" to skip;
 # /END
 
 persist="/live/persistence/TailsData_unlocked"
@@ -98,11 +98,13 @@ sudo_second_stage() {
   chown -R amnesia:amnesia $persist/local
 
   # export msg="DBG: APT-GET INSTALL"; zenity --info --text="$msg" 1> /dev/null 2>&1
+  apt-get update
+  apt-get install -y dpkg-dev
   if $install_python_trezor
   then
-    # Install packages needed for python / pip / dpkg
+    # Install packages needed for python / pip
     apt-get update
-    apt-get install -y python3-dev python3-pip cython3 libusb-1.0-0-dev libudev-dev build-essential python3-wheel dpkg-dev
+    apt-get install -y python3-dev python3-pip cython3 libusb-1.0-0-dev libudev-dev build-essential python3-wheel
   fi
 
   # export msg="DBG: FINALIZING UDEV / CONF"; zenity --info --text="$msg" 1> /dev/null 2>&1
