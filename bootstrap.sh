@@ -1,6 +1,30 @@
 #!/bin/bash
-# we will source this file
+# [rights]  Copyright brianddk 2019 https://github.com/brianddk
+# [license] Apache 2.0 License https://www.apache.org/licenses/LICENSE-2.0
+# [repo]    https://github.com/brianddk/trezor-tails/
+# [tipjar]  LTC: LQjSwZLigtgqHA3rE14yeRNbNNY2r3tXcA or https://git.io/fh6b0
+
+### A one-liner to run the script ###
 # bash <(wget -O- https://raw.githubusercontent.com/brianddk/trezor-tails/master/bootstrap.sh)
+
+### To modify first ###
+# install -m 0700 <(wget -O- https://raw.githubusercontent.com/brianddk/trezor-tails/master/bootstrap.sh) /tmp/bootstrap.sh
+# gedit /tmp/bootstrap.sh
+# /tmp/bootstrap.sh
+
+# OPTIONS: Everything before /END can be modified to your preference.
+install_python_trezor="true" # "true" to install; "false" to skip;
+install_electrum="true"      # "true" to install; "false" to skip;
+# /END
+
+persist="/live/persistence/TailsData_unlocked"
+repo="trezor-tails"
+assets="/tmp/$repo/assets"
+
+# Torify our shell
+export http_proxy="socks5://127.0.0.1:9050"
+export https_proxy="socks5://127.0.0.1:9050"
+export no_proxy="localhost,127.0.0.1"
 
 err_report() {
   rc=1
@@ -28,6 +52,7 @@ user_first_stage() {
   # export msg="DBG: STAGING UDEV"; zenity --info --text="$msg" 1> /dev/null 2>&1
   mkdir $assets/udev
   wget -P $assets/udev https://raw.githubusercontent.com/trezor/trezor-common/master/udev/51-trezor.rules
+  wget -P $assets/udev https://raw.githubusercontent.com/LedgerHQ/udev-rules/master/20-hw1.rules
 
   # export msg="DBG: STAGING BRIDGE"; zenity --info --text="$msg" 1> /dev/null 2>&1
   wget -O $assets/rusnak.asc https://rusnak.io/public/pgp.txt
@@ -36,11 +61,14 @@ user_first_stage() {
   printf "trust\n5\ny\nquit\n" | gpg --command-fd 0 --edit-key "0x86e6792fc27bfd478860c11091f3b339b9a02a3d"
 
   # export msg="DBG: STAGING ELECTRUM"; zenity --info --text="$msg" 1> /dev/null 2>&1
-  wget -P $assets https://raw.githubusercontent.com/spesmilo/electrum/master/pubkeys/ThomasV.asc
-  wget -P $assets https://download.electrum.org/3.3.6/electrum-3.3.6-x86_64.AppImage
-  wget -P $assets https://download.electrum.org/3.3.6/electrum-3.3.6-x86_64.AppImage.asc
-  gpg --import $assets/ThomasV.asc
-  printf "trust\n5\ny\nquit\n" | gpg --command-fd 0 --edit-key "0x0a40b32812125b08fcbf90ec1a25c4602021cd84"
+  if [ $install_electrum ]
+  then
+    wget -P $assets https://raw.githubusercontent.com/spesmilo/electrum/master/pubkeys/ThomasV.asc
+    wget -P $assets https://download.electrum.org/3.3.6/electrum-3.3.6-x86_64.AppImage
+    wget -P $assets https://download.electrum.org/3.3.6/electrum-3.3.6-x86_64.AppImage.asc
+    gpg --import $assets/ThomasV.asc
+    printf "trust\n5\ny\nquit\n" | gpg --command-fd 0 --edit-key "0x0a40b32812125b08fcbf90ec1a25c4602021cd84"
+  fi
 
   # export msg="DBG: CREATING DOTFILES"; zenity --info --text="$msg" 1> /dev/null 2>&1
   # Populate chromium dotfiles
@@ -79,9 +107,12 @@ sudo_second_stage() {
   chown -R amnesia:amnesia $persist/local
 
   # export msg="DBG: APT-GET INSTALL"; zenity --info --text="$msg" 1> /dev/null 2>&1
-  # Install packages needed for python / pip / dpkg
-  apt-get update
-  apt-get install -y python3-dev python3-pip cython3 libusb-1.0-0-dev libudev-dev build-essential python3-wheel dpkg-dev
+  if [ $install_python_trezor ]
+  then
+    # Install packages needed for python / pip / dpkg
+    apt-get update
+    apt-get install -y python3-dev python3-pip cython3 libusb-1.0-0-dev libudev-dev build-essential python3-wheel dpkg-dev
+  fi
 
   # export msg="DBG: FINALIZING UDEV / CONF"; zenity --info --text="$msg" 1> /dev/null 2>&1
   # set up udev
@@ -107,9 +138,12 @@ user_third_stage() {
   trap err_report ERR
 
   # export msg="DBG: INSTALLING PYTHON / PIP"; zenity --info --text="$msg" 1> /dev/null 2>&1
-  # user_third_stage
-  pip3 install --user --upgrade setuptools
-  pip3 install --user --upgrade trezor[ethereum,hidapi]
+  if [ $install_python_trezor ]
+  then
+    # user_third_stage
+    pip3 install --user --upgrade setuptools
+    pip3 install --user --upgrade trezor[ethereum,hidapi]
+  fi
 
   # export msg="DBG: FINALIZING PYTHON"; zenity --info --text="$msg" 1> /dev/null 2>&1
   # move python /pip stuff over
@@ -117,10 +151,13 @@ user_third_stage() {
   rsync -a ~amnesia/.local/lib/ $persist/local/lib/
 
   # export msg="DBG: FINALIZING ELECTRUM"; zenity --info --text="$msg" 1> /dev/null 2>&1
-  # move Electrum Over
-  install -p -m 0700 -D $assets/electrumApp.desktop -t $persist/local/share/applications/
-  install -p -m 0700 -D $assets/electrum-3.3.6-x86_64.AppImage -t $persist/local/bin/
-  gpg --verify $assets/electrum*.AppImage.asc $persist/local/bin/electrum*.AppImage
+  if [ $install_electrum ]
+  then
+    # move Electrum Over
+    install -p -m 0700 -D $assets/electrumApp.desktop -t $persist/local/share/applications/
+    install -p -m 0700 -D $assets/electrum-3.3.6-x86_64.AppImage -t $persist/local/bin/
+    gpg --verify $assets/electrum*.AppImage.asc $persist/local/bin/electrum*.AppImage
+  fi
 }
 
 main() {
@@ -136,14 +173,6 @@ main() {
 }
 
 trap err_report ERR
-persist="/live/persistence/TailsData_unlocked"
-repo="trezor-tails"
-assets=/tmp/$repo/assets
-
-# Torify our shell
-export http_proxy=socks5://127.0.0.1:9050
-export https_proxy=socks5://127.0.0.1:9050
-
 # play nice
 renice 19 $$
 if [ $# -eq 0 ]

@@ -1,4 +1,5 @@
 
 # Torify our shell
-export http_proxy=socks5://127.0.0.1:9050
-export https_proxy=socks5://127.0.0.1:9050
+export http_proxy="socks5://127.0.0.1:9050"
+export https_proxy="socks5://127.0.0.1:9050"
+export no_proxy="localhost,127.0.0.1"
