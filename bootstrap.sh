@@ -46,7 +46,7 @@ user_first_stage() {
   if [ -d /tmp/$repo ]; then rm -rf /tmp/$repo; fi
 
   git clone https://github.com/brianddk/$repo.git
-  chmod +x /tmp/$repo/bootstrap.sh
+  install -m 0700 $0 /tmp/$repo/bootstrap.sh
   cd $assets
 
   # export msg="DBG: STAGING UDEV"; zenity --info --text="$msg" 1> /dev/null 2>&1
