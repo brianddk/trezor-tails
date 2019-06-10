@@ -13,8 +13,8 @@
 # /tmp/bootstrap.sh
 
 # OPTIONS: Everything before /END can be modified to your preference.
-install_python_trezor="true" # "true" to install; "false" to skip;
-install_electrum="true"      # "true" to install; "false" to skip;
+export install_python_trezor="true" # "true" to install; "false" to skip;
+export install_electrum="true"      # "true" to install; "false" to skip;
 # /END
 
 persist="/live/persistence/TailsData_unlocked"
