@@ -13,3 +13,9 @@ To apply the Trezor libraries to a Tails (v3.14) instance, do the following:
 9. After recieving both messages launch the Tor Browser
 10. Plug in your Trezor and browse to `https://trezor.io`
 11. Proceed as you normally would
+
+Still very much WIP, but seems functional enough for now.
+
+Please [log issues here](https://github.com/brianddk/trezor-tails/issues/new) if you find any.
+
+Please [issue feature requests here](https://github.com/brianddk/trezor-tails/issues/new) if you have any.
