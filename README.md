@@ -11,7 +11,7 @@ To apply the Trezor libraries to a Tails (v3.14) instance, do the following:
 5. Monitor the progress and provide the Admin password when asked.
 6. Once the script completes without error, shutdown and restart the Tails instance.
 7. On the final boot, simply unlock the persistant volume.  Admin is not required.
-8. Wait for the message about "IPTables" and "Software install complete"
+8. Wait for the message about "IPTables.." and "... software install successfully"
 9. After recieving both messages launch the Tor Browser
 10. Plug in your Trezor and browse to `https://trezor.io`
 11. Proceed as you normally would
