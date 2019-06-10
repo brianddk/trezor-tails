@@ -27,20 +27,13 @@ export https_proxy="socks5://127.0.0.1:9050"
 export no_proxy="localhost,127.0.0.1"
 
 err_report() {
-  rc=1
-  if [ -z "$1" ]
-  then
-    rc=$1
-  fi
   msg="errexit on line $(caller)"
   echo "$msg" >&2
   zenity --error --text="$msg" 1> /dev/null 2>&1
-  exit $rc
+  false
 }
 
 user_first_stage() {
-  trap err_report ERR
-
   # export msg="DBG: CLONING"; zenity --info --text="$msg" 1> /dev/null 2>&1
   pushd /tmp
   if [ -d /tmp/$repo ]; then rm -rf /tmp/$repo; fi
@@ -69,7 +62,6 @@ user_first_stage() {
     gpg --import $assets/ThomasV.asc
     printf "trust\n5\ny\nquit\n" | gpg --command-fd 0 --edit-key "0x0a40b32812125b08fcbf90ec1a25c4602021cd84"
   fi
-  trap err_report ERR
 
   # export msg="DBG: CREATING DOTFILES"; zenity --info --text="$msg" 1> /dev/null 2>&1
   # Populate chromium dotfiles
@@ -93,8 +85,6 @@ user_first_stage() {
 }
 
 sudo_second_stage() {
-  trap err_report ERR
-
   # export msg="DBG: SET UP SWAP"; zenity --info --text="$msg" 1> /dev/null 2>&1
   # set up swap
   install -p -m 0744 -D $assets/localhost.sh -t $persist/scripts/
@@ -114,7 +104,6 @@ sudo_second_stage() {
     apt-get update
     apt-get install -y python3-dev python3-pip cython3 libusb-1.0-0-dev libudev-dev build-essential python3-wheel dpkg-dev
   fi
-  trap err_report ERR
 
   # export msg="DBG: FINALIZING UDEV / CONF"; zenity --info --text="$msg" 1> /dev/null 2>&1
   # set up udev
@@ -137,8 +126,6 @@ sudo_second_stage() {
 }
 
 user_third_stage() {
-  trap err_report ERR
-
   # export msg="DBG: INSTALLING PYTHON / PIP"; zenity --info --text="$msg" 1> /dev/null 2>&1
   if $install_python_trezor
   then
@@ -146,7 +133,6 @@ user_third_stage() {
     pip3 install --user --upgrade setuptools
     pip3 install --user --upgrade trezor[ethereum,hidapi]
   fi
-  trap err_report ERR
 
   # export msg="DBG: FINALIZING PYTHON"; zenity --info --text="$msg" 1> /dev/null 2>&1
   # move python /pip stuff over
@@ -164,8 +150,6 @@ user_third_stage() {
 }
 
 main() {
-  trap err_report ERR
-
   user_first_stage
 
   export msg="I need root, please return to terminal and enter password"
@@ -175,6 +159,7 @@ main() {
   user_third_stage
 }
 
+set -eE -o pipefail
 trap err_report ERR
 # play nice
 renice 19 $$
