@@ -2,6 +2,7 @@
 export PATH="/usr/local/bin:/usr/local/sbin:/usr/sbin:/usr/bin:/sbin:/bin:/root/bin"
 
 log="/tmp/iptables.log"
+grep "Bootstrap" "/var/log/tor/log" >> "$log"
 if grep "Bootstrapped 100%: Done" "/var/log/tor/log"
 then
   iptables -I OUTPUT -p tcp --dport 21325 -j ACCEPT -s localhost -d localhost
@@ -14,8 +15,5 @@ then
 
   rm -f /etc/cron.d/localhost
 else
-  {
-    grep "Bootstrap" "/var/log/tor/log"
-    echo "------[$(date)]: Waiting on tor... Retrying------"
-  } >> "$log"
+  echo "------[$(date)]: Waiting on tor... Retrying------" >> "$log"
 fi
