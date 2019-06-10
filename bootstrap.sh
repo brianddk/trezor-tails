@@ -61,7 +61,7 @@ user_first_stage() {
   printf "trust\n5\ny\nquit\n" | gpg --command-fd 0 --edit-key "0x86e6792fc27bfd478860c11091f3b339b9a02a3d"
 
   # export msg="DBG: STAGING ELECTRUM"; zenity --info --text="$msg" 1> /dev/null 2>&1
-  if [ $install_electrum ]
+  if $install_electrum
   then
     wget -P $assets https://raw.githubusercontent.com/spesmilo/electrum/master/pubkeys/ThomasV.asc
     wget -P $assets https://download.electrum.org/3.3.6/electrum-3.3.6-x86_64.AppImage
@@ -107,7 +107,7 @@ sudo_second_stage() {
   chown -R amnesia:amnesia $persist/local
 
   # export msg="DBG: APT-GET INSTALL"; zenity --info --text="$msg" 1> /dev/null 2>&1
-  if [ $install_python_trezor ]
+  if $install_python_trezor
   then
     # Install packages needed for python / pip / dpkg
     apt-get update
@@ -138,7 +138,7 @@ user_third_stage() {
   trap err_report ERR
 
   # export msg="DBG: INSTALLING PYTHON / PIP"; zenity --info --text="$msg" 1> /dev/null 2>&1
-  if [ $install_python_trezor ]
+  if $install_python_trezor
   then
     # user_third_stage
     pip3 install --user --upgrade setuptools
@@ -151,7 +151,7 @@ user_third_stage() {
   rsync -a ~amnesia/.local/lib/ $persist/local/lib/
 
   # export msg="DBG: FINALIZING ELECTRUM"; zenity --info --text="$msg" 1> /dev/null 2>&1
-  if [ $install_electrum ]
+  if $install_electrum
   then
     # move Electrum Over
     install -p -m 0700 -D $assets/electrumApp.desktop -t $persist/local/share/applications/
