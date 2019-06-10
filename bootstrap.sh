@@ -69,6 +69,7 @@ user_first_stage() {
     gpg --import $assets/ThomasV.asc
     printf "trust\n5\ny\nquit\n" | gpg --command-fd 0 --edit-key "0x0a40b32812125b08fcbf90ec1a25c4602021cd84"
   fi
+  trap err_report ERR
 
   # export msg="DBG: CREATING DOTFILES"; zenity --info --text="$msg" 1> /dev/null 2>&1
   # Populate chromium dotfiles
@@ -113,6 +114,7 @@ sudo_second_stage() {
     apt-get update
     apt-get install -y python3-dev python3-pip cython3 libusb-1.0-0-dev libudev-dev build-essential python3-wheel dpkg-dev
   fi
+  trap err_report ERR
 
   # export msg="DBG: FINALIZING UDEV / CONF"; zenity --info --text="$msg" 1> /dev/null 2>&1
   # set up udev
@@ -144,6 +146,7 @@ user_third_stage() {
     pip3 install --user --upgrade setuptools
     pip3 install --user --upgrade trezor[ethereum,hidapi]
   fi
+  trap err_report ERR
 
   # export msg="DBG: FINALIZING PYTHON"; zenity --info --text="$msg" 1> /dev/null 2>&1
   # move python /pip stuff over
