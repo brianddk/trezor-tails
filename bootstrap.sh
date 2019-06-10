@@ -134,12 +134,12 @@ user_third_stage() {
     # user_third_stage
     pip3 install --user --upgrade setuptools
     pip3 install --user --upgrade trezor[ethereum,hidapi]
-  fi
 
-  # export msg="DBG: FINALIZING PYTHON"; zenity --info --text="$msg" 1> /dev/null 2>&1
-  # move python /pip stuff over
-  rsync -a ~amnesia/.local/bin/ $persist/local/bin/
-  rsync -a ~amnesia/.local/lib/ $persist/local/lib/
+    # export msg="DBG: FINALIZING PYTHON"; zenity --info --text="$msg" 1> /dev/null 2>&1
+    # move python /pip stuff over
+    rsync -a ~amnesia/.local/bin/ $persist/local/bin/
+    rsync -a ~amnesia/.local/lib/ $persist/local/lib/
+  fi
 
   # export msg="DBG: FINALIZING ELECTRUM"; zenity --info --text="$msg" 1> /dev/null 2>&1
   if $install_electrum
