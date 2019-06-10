@@ -103,7 +103,6 @@ sudo_second_stage() {
   if $install_python_trezor
   then
     # Install packages needed for python / pip
-    apt-get update
     apt-get install -y python3-dev python3-pip cython3 libusb-1.0-0-dev libudev-dev build-essential python3-wheel
   fi
 
