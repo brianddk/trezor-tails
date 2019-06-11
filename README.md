@@ -20,6 +20,17 @@ Still very much WIP, but seems functional enough for now.
 
 Read the first 20 lines of [bootstrap.sh](https://github.com/brianddk/trezor-tails/blob/master/bootstrap.sh) to turn off optional components.
 
+### To Do List
+
+- [ ] - Modularize bash, chromium, bridge, etc
+- [ ] - Add dwblog entry on creating VM
+- [ ] - Add all 20 (ish) Electrum Trezor coin modules
+- [ ] - Add MyCrypto AppImage module
+- [ ] - Test MEW through TorBrowser
+- [ ] - Add Python 3.6 venv by extracting Electrum AppImage (sketchy)
+- [ ] - Abstract version info for all modules
+- [ ] - Allow `master` as a version that pulls from `git`
+
 Please [log issues here](https://github.com/brianddk/trezor-tails/issues/new) if you find any.
 
 Please [issue feature requests here](https://github.com/brianddk/trezor-tails/issues/new) if you have any.
