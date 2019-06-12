@@ -1,3 +1,5 @@
+electrum_btc_version="3.3.6"
+
 electrum_btc_s1(){
   true
 }
@@ -9,14 +11,14 @@ electrum_btc_s2(){
 electrum_btc_s3(){
   # export msg="DBG: STAGING ELECTRUM"; zenity --info --text="$msg" 1> /dev/null 2>&1
   wget -P $assets https://raw.githubusercontent.com/spesmilo/electrum/master/pubkeys/ThomasV.asc
-  wget -P $persist/local/bin/ https://download.electrum.org/3.3.6/electrum-3.3.6-x86_64.AppImage
-  wget -P $assets https://download.electrum.org/3.3.6/electrum-3.3.6-x86_64.AppImage.asc
+  wget -P $persist/local/bin/ "https://download.electrum.org/${electrum_btc_version}/electrum-${electrum_btc_version}-x86_64.AppImage"
+  wget -P $assets "https://download.electrum.org/${electrum_btc_version}/electrum-${electrum_btc_version}-x86_64.AppImage.asc"
   gpg --import $assets/ThomasV.asc
   printf "trust\n5\ny\nquit\n" | gpg --command-fd 0 --edit-key "0x0a40b32812125b08fcbf90ec1a25c4602021cd84"
 
   # export msg="DBG: FINALIZING ELECTRUM"; zenity --info --text="$msg" 1> /dev/null 2>&1
   # move Electrum Over
   install -p -m 0700 -D $assets/electrumApp.desktop -t $persist/local/share/applications/
-  chmod 0700 $persist/local/bin/$assets/electrum-3.3.6-x86_64.AppImage
+  chmod 0700 "$persist/local/bin/$assets/electrum-${electrum_btc_version}-x86_64.AppImage"
   gpg --verify $assets/electrum*.AppImage.asc $persist/local/bin/electrum*.AppImage
 }
