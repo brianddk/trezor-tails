@@ -11,7 +11,7 @@ bridge_s2(){
   install -p -m 0744 -D $assets/localhost.cron $persist/cron/localhost
   
   # export msg="DBG: APT-GET INSTALL"; zenity --info --text="$msg" 1> /dev/null 2>&1
-  "$apt_update" ; apt_update="true"
+  $apt_update ; apt_update="true"
   apt-get install -y dpkg-dev
   
   # export msg="DBG: FINALIZING BRIDGE"; zenity --info --text="$msg" 1> /dev/null 2>&1
