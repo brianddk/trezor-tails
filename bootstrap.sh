@@ -45,12 +45,6 @@ err_report() {
 
 user_first_stage() {
   # export msg="DBG: CLONING"; zenity --info --text="$msg" 1> /dev/null 2>&1
-  pushd /tmp
-  if [ -d /tmp/$repo ]; then rm -rf /tmp/$repo; fi
-
-  git clone -b dev https://github.com/brianddk/$repo.git
-  install -m 0700 $0 /tmp/$repo/bootstrap.sh
-  cd $assets
 
   for i in $enabled
   do
@@ -90,6 +84,13 @@ user_third_stage() {
 }
 
 main() {
+  pushd /tmp
+  if [ -d /tmp/$repo ]; then rm -rf /tmp/$repo; fi
+
+  git clone -b dev https://github.com/brianddk/$repo.git
+  install -m 0700 $0 /tmp/$repo/bootstrap.sh
+  cd $assets
+  
   for i in $enabled
   do
     mod="$assets/modules/$i"
