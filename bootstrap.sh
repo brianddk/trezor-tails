@@ -30,6 +30,7 @@ enabled="$(grep -v "^#\|^$" <<< "$available" | sort)"
 persist="/live/persistence/TailsData_unlocked"
 repo="trezor-tails"
 assets="/tmp/$repo/assets"
+modules="/tmp/$repo/modules"
 
 # Torify our shell
 export http_proxy="socks5://127.0.0.1:9050"
@@ -93,7 +94,7 @@ main() {
   
   for i in $enabled
   do
-    mod="$assets/modules/$i"
+    mod="$modules/$i"
     echo "#### sourcing $mod ####"
     source $mod
   done
