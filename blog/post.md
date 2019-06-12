@@ -106,6 +106,8 @@ https://unix.stackexchange.com/questions/231803/notify-send-doesnt-work-from-scr
 
 https://superuser.com/a/1389548/970984
 
+https://askubuntu.com/a/482936
+
 /live/persistence/TailsData_unlocked/dotfiles/.config/dconf/user
 /live/persistence/TailsData_unlocked/dotfiles/.config/chromium/Default/Preferences
 /live/persistence/TailsData_unlocked/dotfiles/.config/chromium/First Run

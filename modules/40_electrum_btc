@@ -1,5 +1,28 @@
 electrum_btc_version="3.3.6"
 
+electrum_heredoc(){
+  cat $persist/local/share/applications/electrumApp.desktop <<END
+[Desktop Entry]
+Comment=Lightweight Bitcoin Client
+Exec=/usr/local/bin/electrum-${electrum_btc_version}-x86_64.AppImage %u
+GenericName[en_US]=Bitcoin Wallet
+GenericName=Bitcoin Wallet
+Icon=electrum
+Name[en_US]=Electrum ${electrum_btc_version} Bitcoin Wallet
+Name=Electrum ${electrum_btc_version} Bitcoin Wallet
+Categories=Finance;Network;
+StartupNotify=false
+Terminal=false
+Type=Application
+MimeType=x-scheme-handler/bitcoin;
+Actions=Testnet;
+
+[Desktop Action Testnet]
+Exec=/usr/local/bin/electrum-${electrum_btc_version}-x86_64.AppImage --testnet %u
+Name=Testnet mode
+END
+}
+
 electrum_btc_s1(){
   true
 }
@@ -18,7 +41,8 @@ electrum_btc_s3(){
 
   # export msg="DBG: FINALIZING ELECTRUM"; zenity --info --text="$msg" 1> /dev/null 2>&1
   # move Electrum Over
-  install -p -m 0700 -D $assets/electrumApp.desktop -t $persist/local/share/applications/
+  electrum_heredoc
+  chmod 0700 $persist/local/share/applications/electrumApp.desktop
   chmod 0700 "$persist/local/bin/$assets/electrum-${electrum_btc_version}-x86_64.AppImage"
   gpg --verify $assets/electrum*.AppImage.asc $persist/local/bin/electrum*.AppImage
 }

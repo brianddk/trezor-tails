@@ -1,6 +1,7 @@
 python_trezor_version="0.11.3"
 
 python_trezor_s1(){ 
+  # Horrible hack to get past the buggy postinit script in udev, required by libudev-dev
   mkdir $assets/hidapi
   pushd $assets/hidapi
   wget http://http.us.debian.org/debian/pool/main/s/systemd/libudev1_241-5~bpo9+1_amd64.deb
@@ -13,6 +14,7 @@ python_trezor_s2(){
   # Install packages needed for python / pip
   $apt_update ; apt_update="true"
   
+  # Horrible hack to get past the buggy postinit script in udev, required by libudev-dev
   pushd $assets/hidapi
   dpkg --unpack *.deb
   rm -f /var/lib/dpkg/info/udev.postinst 
@@ -23,14 +25,6 @@ python_trezor_s2(){
   popd
 
   apt-get install -y --no-upgrade python3-dev python3-pip cython3 libusb-1.0-0-dev build-essential python3-wheel
-
-  # if apt-get install -y --no-upgrade libudev-dev
-  # then
-    # true
-  # else
-    # echo "#### known benign failure in apt-get on libudev-dev ####"
-    # echo "#### known benign failure in apt-get on libudev-dev ####"
-  # fi
 }
 
 python_trezor_s3(){
