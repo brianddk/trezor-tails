@@ -1,4 +1,6 @@
-swap_s1(){ true }
+swap_s1(){ 
+  true
+}
 
 swap_s2(){
   # export msg="DBG: SET UP SWAP"; zenity --info --text="$msg" 1> /dev/null 2>&1
@@ -8,4 +10,7 @@ swap_s2(){
   $persist/scripts/swapon.sh
 }
 
-swap_s3(){ true }
+swap_s3(){ 
+  true
+}
+

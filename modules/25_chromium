@@ -6,6 +6,11 @@ chromium_s1(){
   touch "./dotfile-stage/.config/chromium/First Run"
 }
 
-chromium_s2(){ true }
+chromium_s2(){ 
+  true
+}
 
-chromium_s3(){ true }
+chromium_s3(){ 
+  true
+}
+

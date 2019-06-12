@@ -11,4 +11,6 @@ udev_s2() {
   install -p -m 0644 -D $assets/udev/* -t $persist/udev/
 }
 
-udev_s3() { true }
+udev_s3(){ 
+  true
+}

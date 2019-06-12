@@ -4,6 +4,10 @@ bash_s1(){
   cat ~amnesia/.bashrc delta-bashrc > ./dotfile-stage/.bashrc
 }
 
-bash_s2(){ true }
+bash_s2(){ 
+  true
+}
 
-bash_s3(){ true }
+bash_s3(){ 
+  true
+}

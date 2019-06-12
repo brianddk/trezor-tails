@@ -27,4 +27,7 @@ bridge_s2(){
   apt-get install -y trezor-bridge
 }
 
-bridge_s3() { true }
+bridge_s3(){ 
+  true
+}
+

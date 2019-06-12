@@ -1,4 +1,6 @@
-python_trezor_s1(){ true }
+python_trezor_s1(){ 
+  true
+}
 
 python_trezor_s2(){
   # Install packages needed for python / pip

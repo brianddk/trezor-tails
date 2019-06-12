@@ -4,6 +4,10 @@ gnome_s1(){
   install -p -D ~amnesia/.config/dconf/user -t ./dotfile-stage/.config/dconf/
 }
 
-gnome_s2(){ true }
+gnome_s2(){ 
+  true
+}
 
-gnome_s3(){ true }
+gnome_s3(){ 
+  true
+}
