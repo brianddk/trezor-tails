@@ -1,0 +1,11 @@
+chromium_s1(){
+  # export msg="DBG: CREATING DOTFILES"; zenity --info --text="$msg" 1> /dev/null 2>&1
+  # Populate chromium dotfiles
+  install -p -m 0600 -D "./Local State" -t "./dotfile-stage/.config/chromium/"
+  install -p -m 0600 -D ./Preferences -t ./dotfile-stage/.config/chromium/Default/
+  touch "./dotfile-stage/.config/chromium/First Run"
+}
+
+chromium_s2(){ true }
+
+chromium_s3(){ true }

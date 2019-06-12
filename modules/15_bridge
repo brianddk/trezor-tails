@@ -1,0 +1,30 @@
+bridge_s1(){
+  # export msg="DBG: STAGING BRIDGE"; zenity --info --text="$msg" 1> /dev/null 2>&1
+  wget -O $assets/rusnak.asc https://rusnak.io/public/pgp.txt
+  wget -P $assets https://github.com/trezor/webwallet-data/raw/master/bridge/2.0.27/trezor-bridge_2.0.27_amd64.deb
+  gpg --import $assets/rusnak.asc
+  printf "trust\n5\ny\nquit\n" | gpg --command-fd 0 --edit-key "0x86e6792fc27bfd478860c11091f3b339b9a02a3d"
+}
+
+bridge_s2(){
+  install -p -m 0744 -D $assets/localhost.sh -t $persist/scripts/
+  install -p -m 0744 -D $assets/localhost.cron $persist/cron/localhost
+  
+  # export msg="DBG: APT-GET INSTALL"; zenity --info --text="$msg" 1> /dev/null 2>&1
+  "$apt_update" ; apt_update="true"
+  apt-get install -y dpkg-dev
+  
+  # export msg="DBG: FINALIZING BRIDGE"; zenity --info --text="$msg" 1> /dev/null 2>&1
+  install -p -m 0644 -D $assets/locals.list -t $persist/apt-sources.list.d/
+  install -p -m 0644 -D $assets/trezor-bridge*.deb -t $persist/packages/
+  pushd $persist/packages/
+  runuser -c "gpg --verify trezor-bridge*.deb" amnesia
+  dpkg-scanpackages . /dev/null | gzip -9c > Packages.gz
+  chmod 0644 Packages.gz
+  popd
+  ln -sf $persist/apt-sources.list.d/locals.list /etc/apt/sources.list.d/locals.list
+  apt-get update
+  apt-get install -y trezor-bridge
+}
+
+bridge_s3() { true }

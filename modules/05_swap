@@ -1,0 +1,11 @@
+swap_s1(){ true }
+
+swap_s2(){
+  # export msg="DBG: SET UP SWAP"; zenity --info --text="$msg" 1> /dev/null 2>&1
+  # set up swap
+  install -p -m 0744 -D $assets/swapon.sh -t $persist/scripts/
+  install -p -m 0744 -D $assets/swapon.cron $persist/cron/swapon
+  $persist/scripts/swapon.sh
+}
+
+swap_s3(){ true }

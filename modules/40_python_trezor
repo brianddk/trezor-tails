@@ -1,0 +1,19 @@
+python_trezor_s1(){ true }
+
+python_trezor_s2(){
+  # Install packages needed for python / pip
+  "$apt_update" ; apt_update="true"
+  apt-get install -y python3-dev python3-pip cython3 libusb-1.0-0-dev libudev-dev build-essential python3-wheel
+}
+
+python_trezor_s3(){
+  # export msg="DBG: INSTALLING PYTHON / PIP"; zenity --info --text="$msg" 1> /dev/null 2>&1
+  # user_third_stage
+  pip3 install --user --upgrade setuptools
+  pip3 install --user --upgrade trezor[ethereum,hidapi]
+
+  # export msg="DBG: FINALIZING PYTHON"; zenity --info --text="$msg" 1> /dev/null 2>&1
+  # move python /pip stuff over
+  rsync -a ~amnesia/.local/bin/ $persist/local/bin/
+  rsync -a ~amnesia/.local/lib/ $persist/local/lib/
+}
