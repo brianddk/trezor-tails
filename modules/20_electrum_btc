@@ -11,7 +11,6 @@ electrum_btc_s2(){
   true
 }
 
-
 electrum_btc_s3(){
   # export msg="DBG: FINALIZING ELECTRUM"; zenity --info --text="$msg" 1> /dev/null 2>&1
   # move Electrum Over
