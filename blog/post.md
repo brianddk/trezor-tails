@@ -40,6 +40,13 @@ apt-cache policy initramfs-tools
 old: apt-get install --no-upgrade python3-dev python3-pip cython3 libusb-1.0-0-dev libudev-dev build-essential python3-wheel
 new: apt-get install --no-upgrade python3-dev python3-pip cython3 libusb-1.0-0-dev build-essential python3-wheel
 
+dpkg --unpack *.deb
+rm -f /var/lib/dpkg/info/udev.postinst 
+dpkg --configure libudev1
+dpkg --configure udev
+dpkg --configure libudev-dev
+apt-get install -yf
+
 choco 0.10.14
 virtualbox 6.0.8
 gpg4win 3.1.7
