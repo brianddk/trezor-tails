@@ -25,6 +25,13 @@ Raw Notes
 * Run Script
 ----
 
+---
+
+user_pref("privacy.firstparty.isolate", false);
+user_pref("privacy.firstparty.isolate.restrict_opener_access", false);
+user_pref("security.fileuri.strict_origin_policy", false);
+user_pref("network.proxy.no_proxies_on", "127.0.0.1");
+
 choco 0.10.14
 virtualbox 6.0.8
 gpg4win 3.1.7
