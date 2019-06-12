@@ -17,12 +17,12 @@
 available="
 05_swap
 10_udev
-15_bridge
-20_electrum_btc
-25_chromium
-30_bash
-35_gnome
-40_python_trezor
+15_bash
+20_gnome
+25_python_trezor
+30_bridge
+35_chromium
+40_electrum_btc
 "
 # /END
 
