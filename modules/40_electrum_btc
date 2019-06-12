@@ -3,7 +3,7 @@ electrum_filename="electrum-${electrum_btc_version}-x86_64.AppImage"
 electrum_desktop="$persist/local/share/applications/electrumApp.desktop"
 
 electrum_heredoc(){
-  cat "${electrum_desktop}" <<END
+  cat > "${electrum_desktop}" <<END
 [Desktop Entry]
 Comment=Lightweight Bitcoin Client
 Exec=/usr/local/bin/${electrum_filename} %u

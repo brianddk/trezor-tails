@@ -23,6 +23,7 @@ available="
 30_bridge
 35_chromium
 40_electrum_btc
+45_electron_bch
 "
 # /END
 
