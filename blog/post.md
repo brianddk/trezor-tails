@@ -32,6 +32,14 @@ user_pref("privacy.firstparty.isolate.restrict_opener_access", false);
 user_pref("security.fileuri.strict_origin_policy", false);
 user_pref("network.proxy.no_proxies_on", "127.0.0.1");
 
+
+sudo apt-get install udev=240-4~bpo9+0tails1 libudev1=240-4~bpo9+0tails1 initramfs-tools=0.130.0tails1
+apt-cache policy initramfs-tools
+--no-upgrade
+
+old: apt-get install --no-upgrade python3-dev python3-pip cython3 libusb-1.0-0-dev libudev-dev build-essential python3-wheel
+new: apt-get install --no-upgrade python3-dev python3-pip cython3 libusb-1.0-0-dev build-essential python3-wheel
+
 choco 0.10.14
 virtualbox 6.0.8
 gpg4win 3.1.7

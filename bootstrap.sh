@@ -5,7 +5,7 @@
 # [tipjar]  LTC: LQjSwZLigtgqHA3rE14yeRNbNNY2r3tXcA or https://git.io/fh6b0
 
 ### A one-liner to run the script ###
-# bash <(wget -O- https://raw.githubusercontent.com/brianddk/trezor-tails/master/bootstrap.sh)
+# bash <(wget -O- https://raw.githubusercontent.com/brianddk/trezor-tails/dev/bootstrap.sh)
 
 ### To modify first ###
 # install -m 0700 <(wget -O- https://raw.githubusercontent.com/brianddk/trezor-tails/master/bootstrap.sh) /tmp/bootstrap.sh
