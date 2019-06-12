@@ -44,6 +44,14 @@ err_report() {
   false
 }
 
+source_mods() {
+  for i in $enabled
+  do
+    mod="$modules/$i"
+    echo "#### sourcing $mod ####"
+    source $mod
+  done
+}
 user_first_stage() {
   # export msg="DBG: CLONING"; zenity --info --text="$msg" 1> /dev/null 2>&1
 
@@ -58,6 +66,8 @@ user_first_stage() {
 }
 
 sudo_second_stage() {
+  source_mods
+
   # export msg="DBG: INITIALIZING PYTHON"; zenity --info --text="$msg" 1> /dev/null 2>&1
   mkdir -p $persist/local/{lib,bin}
   chown -R amnesia:amnesia $persist/local
@@ -92,13 +102,8 @@ main() {
   install -m 0700 $0 /tmp/$repo/bootstrap.sh
   cd $assets
   
-  for i in $enabled
-  do
-    mod="$modules/$i"
-    echo "#### sourcing $mod ####"
-    source $mod
-  done
-
+  source_mods
+  
   user_first_stage
 
   export msg="I need root, please return to terminal and enter password"
