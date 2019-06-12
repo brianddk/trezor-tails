@@ -90,6 +90,13 @@ user_third_stage() {
 }
 
 main() {
+  for i in $enabled
+  do
+    mod="$assets/modules/$i"
+    echo "#### sourcing $mod ####"
+    source $mod
+  done
+
   user_first_stage
 
   export msg="I need root, please return to terminal and enter password"
