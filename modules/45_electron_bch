@@ -1,0 +1,46 @@
+electron_bch_version="4.0.6"
+electron_filename="Electron-Cash-${electron_bch_version}-x86_64.AppImage"
+electron_desktop="$persist/local/share/applications/electron.desktop"
+
+electron_heredoc(){
+  cat "${electron_desktop}" <<END
+[Desktop Entry]
+Comment=Lightweight Bitcoin Cash Client
+Exec=/usr/local/bin/${electron_filename} %u
+GenericName[en_US]=Bitcoin Cash Wallet
+GenericName=Bitcoin Cash Wallet
+Icon=electrum
+Name[en_US]=Electron Cash ${electron_bch_version} Bitcoin Wallet
+Name=Electron Cash ${electron_bch_version} Bitcoin Wallet
+Categories=Finance;Network;
+StartupNotify=false
+Terminal=false
+Type=Application
+Actions=Testnet;
+
+[Desktop Action Testnet]
+Exec=/usr/local/bin/${electron_filename} --testnet %u
+Name=Testnet mode
+END
+}
+
+electron_bch_s1(){
+  true
+}
+
+electron_bch_s2(){ 
+  true
+}
+
+electron_bch_s3(){
+  wget -P $assets "https://raw.githubusercontent.com/Electron-Cash/keys-n-hashes/master/pubkeys/jonaldkey2.txt"
+  wget -P $persist/local/bin/ "https://electroncash.org/downloads/${electron_bch_version}/win-linux/${electron_filename}"
+  wget -P $assets "https://raw.githubusercontent.com/Electron-Cash/keys-n-hashes/master/sigs-and-sums/${electron_bch_version}/win-linux/${electron_filename}.asc"
+  gpg --import "$assets/jonaldkey2.txt"
+  printf "trust\n5\ny\nquit\n" | gpg --command-fd 0 --edit-key "0xd56c110f4555f371aeefcb254fd06489eff1dde1"
+
+  electron_heredoc
+  chmod 0700 "${electron_desktop}"
+  chmod 0700 "$persist/local/bin/Electron-Cash-${electron_bch_version}-x86_64.AppImage"
+  gpg --verify "$assets/${electron_filename}.asc" "$persist/local/bin/${electron_filename}"
+}
