@@ -14,7 +14,6 @@
 
 # OPTIONS: Everything before /END can be modified to your preference.
 # Add a `#` in column one to disable a feature
-echo "#### available: $available ####"
 [ -z "$available" ] && export available="
 05_swap
 10_udev
@@ -26,7 +25,6 @@ echo "#### available: $available ####"
 40_electrum_btc
 45_electron_bch
 "
-echo "#### available: $available ####"
 # /END
 
 enabled="$(grep -v "^#\|^$" <<< "$available" | sort)"
@@ -111,7 +109,7 @@ main() {
 
   export msg="I need root, please return to terminal and enter password"
   zenity --question --text="$msg" 1> /dev/null 2>&1
-  sudo bash /tmp/$repo/bootstrap.sh sudo_second_stage
+  sudo -E bash /tmp/$repo/bootstrap.sh sudo_second_stage
 
   user_third_stage
 }
