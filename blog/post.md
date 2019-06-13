@@ -25,6 +25,30 @@ Raw Notes
 * Run Script
 ----
 
+----
+
+Brave
+
+https://askubuntu.com/questions/28355/what-is-the-structure-of-an-ubuntu-repository
+https://brave-browser.readthedocs.io/en/latest/installing-brave.html#linux
+
+wget https://brave-browser-apt-release.s3.brave.com/brave-core.asc
+wget https://brave-browser-apt-release.s3.brave.com/dists/bionic/Release
+wget https://brave-browser-apt-release.s3.brave.com/dists/bionic/Release.gpg
+wget https://brave-browser-apt-release.s3.brave.com/dists/bionic/main/binary-amd64/Packages
+wget https://github.com/brave/brave-browser/releases/download/v0.65.118/brave-browser_0.65.118_amd64.deb
+
+/usr/bin/brave-browser --no-sandbox
+----
+
+Features
+
+- wallet.trezor.io - udev, bash, { gnome, chromium+ }, { bridge }
+- mycrypto.com     - udev, bash, bridge, gnome, chromium+
+- electrum-btc     - udev, bash
+- electron-bch     - udev, bash
+- electrum-ltc     - udev, bash
+- python-trezor    - udev, bash
 ---
 
 user_pref("privacy.firstparty.isolate", false);

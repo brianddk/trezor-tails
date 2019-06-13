@@ -4,10 +4,14 @@ chromium_s1(){
   install -p -m 0600 -D "./Local State" -t "./dotfile-stage/.config/chromium/"
   install -p -m 0600 -D ./Preferences -t ./dotfile-stage/.config/chromium/Default/
   touch "./dotfile-stage/.config/chromium/First Run"
+  # TODO: make the ./config/chromium directory cloned not linked to fix extensions
+  # TODO: add uBlock and MetaMast https://developer.chrome.com/extensions/external_extensions
+  # TODO: transition this module to brave when ad-blocking is depricated (october)
 }
 
 chromium_s2(){ 
-  true
+  $apt_update ; apt_update="true"
+  apt-get install -y --no-upgrade chromium
 }
 
 chromium_s3(){ 
