@@ -22,8 +22,9 @@ Read the first 20 lines of [bootstrap.sh](https://github.com/brianddk/trezor-tai
 
 ### To Do List
 
-- [ ] - Modularize bash, chromium, bridge, etc
+- [x] - Modularize bash, chromium, bridge, etc
 - [ ] - Add dwblog entry on creating VM
+- [x] - Add Electron Cash
 - [ ] - Add all 20 (ish) Electrum Trezor coin modules
 - [ ] - Add MyCrypto AppImage module
 - [ ] - Test MEW through TorBrowser
