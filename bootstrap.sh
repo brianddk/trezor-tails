@@ -14,7 +14,7 @@
 
 # OPTIONS: Everything before /END can be modified to your preference.
 # Add a `#` in column one to disable a feature
-available="
+[ -z "$available" ] && export available="
 05_swap
 10_udev
 15_bash
@@ -100,7 +100,7 @@ main() {
   if [ -d /tmp/$repo ]; then rm -rf /tmp/$repo; fi
 
   git clone -b master https://github.com/brianddk/$repo.git
-  install -m 0700 $0 /tmp/$repo/bootstrap.sh
+  [ -f "$0" ] && install -m 0700 $0 /tmp/$repo/bootstrap.sh
   cd $assets
   
   source_mods
