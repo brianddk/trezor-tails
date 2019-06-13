@@ -18,7 +18,7 @@ To apply the Trezor libraries to a Tails (v3.14) instance, do the following:
 
 Still very much WIP, but seems functional enough for now.
 
-Read the first 20 lines of [bootstrap.sh](https://github.com/brianddk/trezor-tails/blob/master/bootstrap.sh) to turn off optional components.
+Read the first 30 lines of [bootstrap.sh](https://github.com/brianddk/trezor-tails/blob/master/bootstrap.sh) to turn off optional components.  The python modues will take a ***long*** time to install
 
 ### To Do List
 
