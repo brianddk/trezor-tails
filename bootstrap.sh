@@ -14,6 +14,7 @@
 
 # OPTIONS: Everything before /END can be modified to your preference.
 # Add a `#` in column one to disable a feature
+echo "#### available: $available ####"
 [ -z "$available" ] && export available="
 05_swap
 10_udev
@@ -25,6 +26,7 @@
 40_electrum_btc
 45_electron_bch
 "
+echo "#### available: $available ####"
 # /END
 
 enabled="$(grep -v "^#\|^$" <<< "$available" | sort)"
