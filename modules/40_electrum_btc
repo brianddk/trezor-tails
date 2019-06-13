@@ -1,6 +1,6 @@
 electrum_btc_version="3.3.6"
 electrum_filename="electrum-${electrum_btc_version}-x86_64.AppImage"
-electrum_desktop="$persist/local/share/applications/electrumApp.desktop"
+electrum_desktop="${HOME}/.local/share/applications/electrumApp.desktop"
 
 electrum_heredoc(){
   cat > "${electrum_desktop}" <<END

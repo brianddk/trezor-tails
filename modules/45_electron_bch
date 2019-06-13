@@ -1,6 +1,6 @@
 electron_bch_version="4.0.6"
 electron_filename="Electron-Cash-${electron_bch_version}-x86_64.AppImage"
-electron_desktop="$persist/local/share/applications/electron.desktop"
+electron_desktop="${HOME}/.local/share/applications/electron.desktop"
 
 electron_heredoc(){
   cat > "${electron_desktop}" <<END
