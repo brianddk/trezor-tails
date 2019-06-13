@@ -109,7 +109,7 @@ main() {
 
   export msg="I need root, please return to terminal and enter password"
   zenity --question --text="$msg" 1> /dev/null 2>&1
-  sudo /tmp/$repo/bootstrap.sh sudo_second_stage
+  sudo bash /tmp/$repo/bootstrap.sh sudo_second_stage
 
   user_third_stage
 }
