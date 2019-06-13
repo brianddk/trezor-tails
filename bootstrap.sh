@@ -69,6 +69,7 @@ user_first_stage() {
 sudo_second_stage() {
   source_mods
 
+  install -o amnesia -g amnesia $persist/persistence.conf -t $assets
   # export msg="DBG: INITIALIZING PYTHON"; zenity --info --text="$msg" 1> /dev/null 2>&1
   mkdir -p $persist/local/{lib,bin}
   chown -R amnesia:amnesia $persist/local
@@ -83,7 +84,7 @@ sudo_second_stage() {
   done
 
   # set up persistence
-  cat $assets/delta-persistence.conf >> $persist/persistence.conf
+  cat $assets/persistence.conf $assets/delta-persistence.conf | sort | uniq > $persist/persistence.conf
 }
 
 user_third_stage() {

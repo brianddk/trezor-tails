@@ -25,11 +25,15 @@ END
 }
 
 electron_bch_s1(){
-  true
+  echo "${HOME}/.electron-cash	source=electron-cash" >> "${assets}/delta-persistence.conf"
 }
 
 electron_bch_s2(){ 
-  true
+  if [ ! -d "$persist/electron-cash" ]
+  then
+    mkdir "$persist/electron-cash"
+    chown amnesia:amnesia "$persist/electron-cash"
+  fi
 }
 
 electron_bch_s3(){

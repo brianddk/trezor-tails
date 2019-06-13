@@ -26,11 +26,15 @@ END
 }
 
 electrum_btc_s1(){
-  true
+  echo "${HOME}/.electrum	source=electrum" >> "${assets}/delta-persistence.conf"
 }
 
 electrum_btc_s2(){ 
-  true
+  if [ ! -d "$persist/electrum" ]
+  then
+    mkdir "$persist/electrum"
+    chown amnesia:amnesia "$persist/electrum"
+  fi
 }
 
 electrum_btc_s3(){
