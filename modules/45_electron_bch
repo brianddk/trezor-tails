@@ -40,7 +40,7 @@ electron_bch_s3(){
   printf "trust\n5\ny\nquit\n" | gpg --command-fd 0 --edit-key "0xd56c110f4555f371aeefcb254fd06489eff1dde1"
 
   electron_heredoc
-  chmod 0700 "${electron_desktop}"
+  install -m 0700 -D "${electron_desktop}" -t "$persist/local/share/applications/"
   chmod 0700 "$persist/local/bin/Electron-Cash-${electron_bch_version}-x86_64.AppImage"
   gpg --verify "$assets/${electron_filename}.asc" "$persist/local/bin/${electron_filename}"
 }
