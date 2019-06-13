@@ -25,6 +25,13 @@ Raw Notes
 * Run Script
 ----
 
+Unsafe Browser preferences:
+
+/usr/share/tails/chroot-browsers/unsafe-browser/prefs.js
+user_pref("privacy.firstparty.isolate", false);
+user_pref("privacy.firstparty.isolate.restrict_opener_access", false);
+user_pref("security.fileuri.strict_origin_policy", false);
+
 ----
 
 Brave
@@ -33,9 +40,9 @@ https://askubuntu.com/questions/28355/what-is-the-structure-of-an-ubuntu-reposit
 https://brave-browser.readthedocs.io/en/latest/installing-brave.html#linux
 
 wget https://brave-browser-apt-release.s3.brave.com/brave-core.asc
-wget https://brave-browser-apt-release.s3.brave.com/dists/bionic/Release
-wget https://brave-browser-apt-release.s3.brave.com/dists/bionic/Release.gpg
-wget https://brave-browser-apt-release.s3.brave.com/dists/bionic/main/binary-amd64/Packages
+wget https://brave-browser-apt-release.s3.brave.com/dists/stretch/Release
+wget https://brave-browser-apt-release.s3.brave.com/dists/stretch/Release.gpg
+wget https://brave-browser-apt-release.s3.brave.com/dists/stretch/main/binary-amd64/Packages
 wget https://github.com/brave/brave-browser/releases/download/v0.65.118/brave-browser_0.65.118_amd64.deb
 
 /usr/bin/brave-browser --no-sandbox
