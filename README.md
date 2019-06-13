@@ -23,13 +23,15 @@ Read the first 30 lines of [bootstrap.sh](https://github.com/brianddk/trezor-tai
 ### To Do List
 
 - [x] - Modularize bash, chromium, bridge, etc
+- [ ] - Add brave support to transition off chromium.
 - [ ] - Add dwblog entry on creating VM
 - [x] - Add Electron Cash
 - [ ] - Add all 20 (ish) Electrum Trezor coin modules
-- [ ] - Add MyCrypto AppImage module
-- [ ] - Test MEW through TorBrowser
+- [x] - Add MyCrypto AppImage module - Fails... unusable
+- [x] - Add browser support for `mycrypto.com` - Works great!
+- [x] - Test MEW through TorBrowser - Fails due to cloudflare CDN.
 - [ ] - Add Python 3.6 venv by extracting Electrum AppImage (sketchy)
-- [ ] - Abstract version info for all modules
+- [x] - Abstract version info for all modules - Need some creative sed, but it works
 - [ ] - Allow `master` as a version that pulls from `git`
 
 Please [log issues here](https://github.com/brianddk/trezor-tails/issues/new) if you find any.
