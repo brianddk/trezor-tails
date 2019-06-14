@@ -56,6 +56,8 @@ source_mods() {
 }
 user_first_stage() {
   # export msg="DBG: CLONING"; zenity --info --text="$msg" 1> /dev/null 2>&1
+  
+  mkdir "./dotfile-stage/"
 
   for i in $enabled
   do
