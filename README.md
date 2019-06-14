@@ -23,7 +23,7 @@ Read the first 30 lines of [bootstrap.sh](https://github.com/brianddk/trezor-tai
 ### To Do List
 
 - [x] - Modularize bash, chromium, bridge, etc
-- [ ] - Add brave support to transition off chromium.
+- [x] - Add brave support to transition off chromium - ***still WIP***
 - [ ] - Add dwblog entry on creating VM
 - [x] - Add Electron Cash
 - [ ] - Add all 20 (ish) Electrum Trezor coin modules
