@@ -37,7 +37,7 @@ brave_browser_s2(){
   popd
   ln -sf $persist/apt-sources.list.d/locals.list /etc/apt/sources.list.d/locals.list
   apt-get update
-  apt-get install -y brave_browser
+  apt-get install -y brave-browser
   set +x
 }
 
