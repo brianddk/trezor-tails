@@ -1,4 +1,5 @@
 #!/bin/bash
+set +x
 export PATH="/usr/local/bin:/usr/local/sbin:/usr/sbin:/usr/bin:/sbin:/bin:/root/bin"
 
 log="/tmp/brave_browser.log"
