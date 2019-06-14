@@ -1,6 +1,7 @@
 #!/bin/bash
 export PATH="/usr/local/bin:/usr/local/sbin:/usr/sbin:/usr/bin:/sbin:/bin:/root/bin"
 
+rm -f /etc/cron.d/brave_browser
 log="/tmp/brave_browser.log"
 echo 1 > /proc/sys/kernel/unprivileged_userns_clone
 echo "Done" >> "$log"
