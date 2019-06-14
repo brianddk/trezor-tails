@@ -25,6 +25,23 @@ Raw Notes
 * Run Script
 
 ----
+Todo
+
+Add profile support for brave
+Add profile support for chromium
+Add unsafe_browser_config module
+Add python36 module
+Test chromium module
+Gauge the impact of the proc hack for brave
+Refactor asset files to module_name
+Include version and filename for all modules
+Add master version for electrum and electron-cash
+Develop privoxy solution for mycrypto/master
+Guage proxy support in mycrypto
+Add Tier 1 Coin support ( LTC, NMC, FTC ...)
+Add Tier 2 Coin support ( ... KOTO )
+
+----
 sudo apt-get python3-pyqt5 pyqt5-dev-tools
 download appimage
 use `--appimage-mount` and `--appimage-help` commands
