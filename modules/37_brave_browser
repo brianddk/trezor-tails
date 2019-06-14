@@ -26,7 +26,7 @@ brave_browser_s2(){
   
   # export msg="DBG: FINALIZING BRIDGE"; zenity --info --text="$msg" 1> /dev/null 2>&1
   install -p -m 0644 -D $assets/locals.list -t $persist/apt-sources.list.d/
-  install -p -m 0644 -D "$assets/${brave_browser_filename}" -t "$persist/packages/"
+  install -p -m 0644 -D "$assets/brave_browser/${brave_browser_filename}" -t "$persist/packages/"
   pushd $persist/packages/
   sha=$(sha512sum "${brave_browser_filename}")
   grep "${sha:0:128}" "$assets/brave_browser/Packages" | grep "SHA512"
