@@ -15,9 +15,10 @@ brave_browser_s1(){
 }
 
 brave_browser_s2(){
+  set -x
   install -p -m 0744 -D $assets/brave_browser.sh -t $persist/scripts/
-  install -p -m 0744 -D $assets/brave_browser.cron $persist/cron/localhost
-  source $assets/brave_browser.sh
+  install -p -m 0744 -D $assets/brave_browser.cron $persist/cron/brave_browser
+  $persist/scripts/brave_browser.sh
   
   # export msg="DBG: APT-GET INSTALL"; zenity --info --text="$msg" 1> /dev/null 2>&1
   $apt_update ; apt_update="true"
@@ -37,6 +38,7 @@ brave_browser_s2(){
   ln -sf $persist/apt-sources.list.d/locals.list /etc/apt/sources.list.d/locals.list
   apt-get update
   apt-get install -y brave_browser
+  set +x
 }
 
 brave_browser_s3(){ 
