@@ -23,6 +23,31 @@ Raw Notes
 * Save All; Wait to complete
 * Shutdown ; Startup ; encrypt pass; Admin Pass
 * Run Script
+
+----
+sudo apt-get python3-pyqt5 pyqt5-dev-tools
+download appimage
+use `--appimage-mount` and `--appimage-help` commands
+copy contents of appimage to `python3.6` dir
+Uninstall electrum from appimage
+modify AppRun to TestRun (enclosed)
+build icons for versions <= 3.3.3
+Set Trezor the the expected version
+Run for all version > 3.3.0
+
+----
+yarn
+
+https://dl.yarnpkg.com/debian/ stable main
+https://dl.yarnpkg.com/debian/dists/stable/Release
+https://dl.yarnpkg.com/debian/dists/stable/Release.gpg
+https://dl.yarnpkg.com/debian/dists/stable/main/binary-amd64/Packages
+https://dl.yarnpkg.com/debian/pool/main/y/yarn/yarn_1.16.0_all.deb
+sudo dpkg --install yarn_1.16.0_all.deb
+git clone --branch 1.6.8 https://github.com/MyCryptoHQ/MyCrypto.git
+sudo apt-get -t sid install nodejs
+
+# todo privoxy to allow http proxy config in node and npm
 ----
 
 Unsafe Browser preferences:
@@ -44,7 +69,8 @@ wget https://brave-browser-apt-release.s3.brave.com/dists/stretch/Release
 wget https://brave-browser-apt-release.s3.brave.com/dists/stretch/Release.gpg
 wget https://brave-browser-apt-release.s3.brave.com/dists/stretch/main/binary-amd64/Packages
 wget https://github.com/brave/brave-browser/releases/download/v0.65.118/brave-browser_0.65.118_amd64.deb
-
+https://brave-browser-apt-release.s3.brave.com/pool/main/b/brave-browser/brave-browser_0.65.118_amd64.deb
+https://brave-browser-apt-release.s3.brave.com/pool/main/b/brave-keyring/brave-keyring_1.2-1.deb
 /usr/bin/brave-browser --no-sandbox
 
 tunk brave-browser.desktop after dpkg.log says so.
