@@ -1,0 +1,586 @@
+Package: brave-browser
+Priority: optional
+Section: web
+Installed-Size: 244115
+Maintainer: Brave Software <support+laptop@brave.com>
+Architecture: amd64
+Version: 0.65.118
+Provides: www-browser
+Depends: ca-certificates, fonts-liberation, libappindicator3-1, libasound2 (>= 1.0.16), libatk-bridge2.0-0 (>= 2.5.3), libatk1.0-0 (>= 2.2.0), libatspi2.0-0 (>= 2.9.90), libc6 (>= 2.18), libcairo2 (>= 1.6.0), libcups2 (>= 1.4.0), libdbus-1-3 (>= 1.5.12), libexpat1 (>= 2.0.1), libgcc1 (>= 1:4.2), libgdk-pixbuf2.0-0 (>= 2.22.0), libglib2.0-0 (>= 2.31.8), libgtk-3-0 (>= 3.9.10), libnspr4 (>= 2:4.9-2~), libnss3 (>= 2:3.22), libpango-1.0-0 (>= 1.14.0), libuuid1 (>= 2.16), libx11-6 (>= 2:1.4.99.1), libx11-xcb1, libxcb1 (>= 1.6), libxcomposite1 (>= 1:0.3-1), libxcursor1 (>> 1.1.2), libxdamage1 (>= 1:1.1), libxext6, libxfixes3, libxi6 (>= 2:1.2.99.4), libxrandr2 (>= 2:1.2.99.3), libxrender1, libxss1, libxtst6, lsb-release, wget, xdg-utils (>= 1.0.2)
+Pre-Depends: dpkg (>= 1.14.0)
+Recommends: libu2f-udev
+Filename: pool/main/b/brave-browser/brave-browser_0.65.118_amd64.deb
+Size: 75773302
+MD5sum: 851aa106be283189f99546a14bf8e442
+SHA1: 617a300390a381a2c85f8973a832b537a20ef20d
+SHA256: 8f8fba6e80c14a02e2823462190e7e08365621d7001d9e6d00f6394fdc87718d
+SHA512: f3e4bf52a669bf451210d88211a8321d41abc43b4fa35b980573118f905e97abe6b6de1c2dcba15013bbb290755795e154e88e2be574e2e9cf927bd298123ee2
+Description: The web browser from Brave
+ Browse faster by blocking ads and trackers that violate your privacy and cost you time and money.
+
+Package: brave-browser
+Priority: optional
+Section: web
+Installed-Size: 240297
+Maintainer: Brave Software <support+laptop@brave.com>
+Architecture: amd64
+Version: 0.64.77
+Provides: www-browser
+Depends: ca-certificates, fonts-liberation, libappindicator3-1, libasound2 (>= 1.0.16), libatk-bridge2.0-0 (>= 2.5.3), libatk1.0-0 (>= 2.2.0), libatspi2.0-0 (>= 2.9.90), libc6 (>= 2.18), libcairo2 (>= 1.6.0), libcups2 (>= 1.4.0), libdbus-1-3 (>= 1.5.12), libexpat1 (>= 2.0.1), libgcc1 (>= 1:4.2), libgdk-pixbuf2.0-0 (>= 2.22.0), libglib2.0-0 (>= 2.31.8), libgtk-3-0 (>= 3.9.10), libnspr4 (>= 2:4.9-2~), libnss3 (>= 2:3.22), libpango-1.0-0 (>= 1.14.0), libpangocairo-1.0-0 (>= 1.14.0), libuuid1 (>= 2.16), libx11-6 (>= 2:1.4.99.1), libx11-xcb1, libxcb1 (>= 1.6), libxcomposite1 (>= 1:0.3-1), libxcursor1 (>> 1.1.2), libxdamage1 (>= 1:1.1), libxext6, libxfixes3, libxi6 (>= 2:1.2.99.4), libxrandr2 (>= 2:1.2.99.3), libxrender1, libxss1, libxtst6, lsb-release, wget, xdg-utils (>= 1.0.2)
+Pre-Depends: dpkg (>= 1.14.0)
+Recommends: libu2f-udev
+Filename: pool/main/b/brave-browser/brave-browser_0.64.77_amd64.deb
+Size: 74962096
+MD5sum: a73734596b812b24d7b8ea03283d292c
+SHA1: de486435a754f5ffe2eb07eda0fbeb9485d0cf33
+SHA256: a2a8a9453346399b8d7e2b38e732b98437019766bca9f8496b31d020c5a7469b
+SHA512: 52060acdb32e14549f692933abbf31654944f193bc6c2ea5809ba38e552d59017c845eed048daada2780ac086eacfb226c402c050c432126b88488c86ecc8cc4
+Description: The web browser from Brave
+ Browse faster by blocking ads and trackers that violate your privacy and cost you time and money.
+
+Package: brave-browser
+Priority: optional
+Section: web
+Installed-Size: 240300
+Maintainer: Brave Software <support+laptop@brave.com>
+Architecture: amd64
+Version: 0.64.76
+Provides: www-browser
+Depends: ca-certificates, fonts-liberation, libappindicator3-1, libasound2 (>= 1.0.16), libatk-bridge2.0-0 (>= 2.5.3), libatk1.0-0 (>= 2.2.0), libatspi2.0-0 (>= 2.9.90), libc6 (>= 2.18), libcairo2 (>= 1.6.0), libcups2 (>= 1.4.0), libdbus-1-3 (>= 1.5.12), libexpat1 (>= 2.0.1), libgcc1 (>= 1:4.2), libgdk-pixbuf2.0-0 (>= 2.22.0), libglib2.0-0 (>= 2.31.8), libgtk-3-0 (>= 3.9.10), libnspr4 (>= 2:4.9-2~), libnss3 (>= 2:3.22), libpango-1.0-0 (>= 1.14.0), libpangocairo-1.0-0 (>= 1.14.0), libuuid1 (>= 2.16), libx11-6 (>= 2:1.4.99.1), libx11-xcb1, libxcb1 (>= 1.6), libxcomposite1 (>= 1:0.3-1), libxcursor1 (>> 1.1.2), libxdamage1 (>= 1:1.1), libxext6, libxfixes3, libxi6 (>= 2:1.2.99.4), libxrandr2 (>= 2:1.2.99.3), libxrender1, libxss1, libxtst6, lsb-release, wget, xdg-utils (>= 1.0.2)
+Pre-Depends: dpkg (>= 1.14.0)
+Recommends: libu2f-udev
+Filename: pool/main/b/brave-browser/brave-browser_0.64.76_amd64.deb
+Size: 75198844
+MD5sum: 1c725ff382f6225ef21d95b7dd5927f8
+SHA1: 7852a6586f0df5e35fb29d4098a753b961d09db8
+SHA256: 7f356f4ee3c9cba9b0a38339e5a9004fca78d4de6e0e95b0bb1d1bcce84c976d
+SHA512: 2fc98854b07b242f7795f4991417d6ee4b036f49e9f348970c94816d0331b428c3784e8acd6b31b15829068c7b339ef55fe457cb99a125bc84ab1ff14d1628e9
+Description: The web browser from Brave
+ Browse faster by blocking ads and trackers that violate your privacy and cost you time and money.
+
+Package: brave-browser
+Priority: optional
+Section: web
+Installed-Size: 240295
+Maintainer: Brave Software <support+laptop@brave.com>
+Architecture: amd64
+Version: 0.64.75
+Provides: www-browser
+Depends: ca-certificates, fonts-liberation, libappindicator3-1, libasound2 (>= 1.0.16), libatk-bridge2.0-0 (>= 2.5.3), libatk1.0-0 (>= 2.2.0), libatspi2.0-0 (>= 2.9.90), libc6 (>= 2.18), libcairo2 (>= 1.6.0), libcups2 (>= 1.4.0), libdbus-1-3 (>= 1.5.12), libexpat1 (>= 2.0.1), libgcc1 (>= 1:4.2), libgdk-pixbuf2.0-0 (>= 2.22.0), libglib2.0-0 (>= 2.31.8), libgtk-3-0 (>= 3.9.10), libnspr4 (>= 2:4.9-2~), libnss3 (>= 2:3.22), libpango-1.0-0 (>= 1.14.0), libpangocairo-1.0-0 (>= 1.14.0), libuuid1 (>= 2.16), libx11-6 (>= 2:1.4.99.1), libx11-xcb1, libxcb1 (>= 1.6), libxcomposite1 (>= 1:0.3-1), libxcursor1 (>> 1.1.2), libxdamage1 (>= 1:1.1), libxext6, libxfixes3, libxi6 (>= 2:1.2.99.4), libxrandr2 (>= 2:1.2.99.3), libxrender1, libxss1, libxtst6, lsb-release, wget, xdg-utils (>= 1.0.2)
+Pre-Depends: dpkg (>= 1.14.0)
+Recommends: libu2f-udev
+Filename: pool/main/b/brave-browser/brave-browser_0.64.75_amd64.deb
+Size: 75211674
+MD5sum: d1399f2eb1fcfb015d8602e5f89af86f
+SHA1: 91b91ac0a174808fd20b37501bea67451c73f2a0
+SHA256: 58e65761cd3f10ba799231a9d610023cefaca66d4e7f7a082535ad4ebb2337e1
+SHA512: c1cb672571020172923c8ace8c29a7711a3922392e3c6b13dc8a5e50807474810d367fedd5eebe095c2592072dcf25592e20da11db958337b29ea4a1989aaec2
+Description: The web browser from Brave
+ Browse faster by blocking ads and trackers that violate your privacy and cost you time and money.
+
+Package: brave-browser
+Priority: optional
+Section: web
+Installed-Size: 239484
+Maintainer: Brave Software <support+laptop@brave.com>
+Architecture: amd64
+Version: 0.63.55
+Provides: www-browser
+Depends: ca-certificates, fonts-liberation, libappindicator3-1, libasound2 (>= 1.0.16), libatk-bridge2.0-0 (>= 2.5.3), libatk1.0-0 (>= 2.2.0), libatspi2.0-0 (>= 2.9.90), libc6 (>= 2.18), libcairo2 (>= 1.6.0), libcups2 (>= 1.4.0), libdbus-1-3 (>= 1.5.12), libexpat1 (>= 2.0.1), libgcc1 (>= 1:4.2), libgdk-pixbuf2.0-0 (>= 2.22.0), libglib2.0-0 (>= 2.31.8), libgtk-3-0 (>= 3.9.10), libnspr4 (>= 2:4.9-2~), libnss3 (>= 2:3.22), libpango-1.0-0 (>= 1.14.0), libpangocairo-1.0-0 (>= 1.14.0), libuuid1 (>= 2.16), libx11-6 (>= 2:1.4.99.1), libx11-xcb1, libxcb1 (>= 1.6), libxcomposite1 (>= 1:0.3-1), libxcursor1 (>> 1.1.2), libxdamage1 (>= 1:1.1), libxext6, libxfixes3, libxi6 (>= 2:1.2.99.4), libxrandr2 (>= 2:1.2.99.3), libxrender1, libxss1, libxtst6, lsb-release, wget, xdg-utils (>= 1.0.2)
+Pre-Depends: dpkg (>= 1.14.0)
+Recommends: libu2f-udev
+Filename: pool/main/b/brave-browser/brave-browser_0.63.55_amd64.deb
+Size: 74803564
+MD5sum: 42548fe1366c2702b8df2ca18f833bfe
+SHA1: b104971c7359bae1a84327b71a791ecf58aa7463
+SHA256: a1a18f055d58e14ce1599a4d3a02b433841dfc5b008f2ab3a91b8fcae1ace22a
+SHA512: a6c4c8059b4cd7081458fec2bbea25baefba4b7cd79b9511a3b982a99da5ec6aa3afe643d34a70118a0b8f6c50641554a30757fceb10fcbac7162ac47deac2c9
+Description: The web browser from Brave
+ Browse faster by blocking ads and trackers that violate your privacy and cost you time and money.
+
+Package: brave-browser
+Priority: optional
+Section: web
+Installed-Size: 239225
+Maintainer: Brave Software <support+laptop@brave.com>
+Architecture: amd64
+Version: 0.63.48
+Provides: www-browser
+Depends: ca-certificates, fonts-liberation, libappindicator3-1, libasound2 (>= 1.0.16), libatk-bridge2.0-0 (>= 2.5.3), libatk1.0-0 (>= 2.2.0), libatspi2.0-0 (>= 2.9.90), libc6 (>= 2.18), libcairo2 (>= 1.6.0), libcups2 (>= 1.4.0), libdbus-1-3 (>= 1.5.12), libexpat1 (>= 2.0.1), libgcc1 (>= 1:4.2), libgdk-pixbuf2.0-0 (>= 2.22.0), libglib2.0-0 (>= 2.31.8), libgtk-3-0 (>= 3.9.10), libnspr4 (>= 2:4.9-2~), libnss3 (>= 2:3.22), libpango-1.0-0 (>= 1.14.0), libpangocairo-1.0-0 (>= 1.14.0), libuuid1 (>= 2.16), libx11-6 (>= 2:1.4.99.1), libx11-xcb1, libxcb1 (>= 1.6), libxcomposite1 (>= 1:0.3-1), libxcursor1 (>> 1.1.2), libxdamage1 (>= 1:1.1), libxext6, libxfixes3, libxi6 (>= 2:1.2.99.4), libxrandr2 (>= 2:1.2.99.3), libxrender1, libxss1, libxtst6, lsb-release, wget, xdg-utils (>= 1.0.2)
+Pre-Depends: dpkg (>= 1.14.0)
+Recommends: libu2f-udev
+Filename: pool/main/b/brave-browser/brave-browser_0.63.48_amd64.deb
+Size: 74718054
+MD5sum: ebd5104626d1ba98ed9b029f5b77a1d3
+SHA1: 0eb806e02b2aacd6dda4b57e10a38edb6a2c4e4f
+SHA256: 08a18985285c436f51a938c1d360f56b1c088cd5b5b8f4d6f0f0c81657849ae1
+SHA512: fa5e389147508ce9217ee924757a92aa78616c26f0eef4fdbee66edc43c1537de315143d77a56e24165e30f1071861faad9556bd3595b8fd8a335d3c92c53d45
+Description: The web browser from Brave
+ Browse faster by blocking ads and trackers that violate your privacy and cost you time and money.
+
+Package: brave-browser
+Priority: optional
+Section: web
+Installed-Size: 234877
+Maintainer: Brave Software <support+laptop@brave.com>
+Architecture: amd64
+Version: 0.62.51
+Provides: www-browser
+Depends: ca-certificates, fonts-liberation, libappindicator3-1, libasound2 (>= 1.0.16), libatk-bridge2.0-0 (>= 2.5.3), libatk1.0-0 (>= 2.2.0), libatspi2.0-0 (>= 2.9.90), libc6 (>= 2.16), libcairo2 (>= 1.6.0), libcups2 (>= 1.4.0), libdbus-1-3 (>= 1.1.4), libexpat1 (>= 2.0.1), libgcc1 (>= 1:3.0), libgdk-pixbuf2.0-0 (>= 2.22.0), libglib2.0-0 (>= 2.31.8), libgtk-3-0 (>= 3.9.10), libnspr4 (>= 2:4.9-2~), libnss3 (>= 2:3.22), libpango-1.0-0 (>= 1.14.0), libpangocairo-1.0-0 (>= 1.14.0), libuuid1 (>= 2.16), libx11-6 (>= 2:1.4.99.1), libx11-xcb1, libxcb1 (>= 1.6), libxcomposite1 (>= 1:0.3-1), libxcursor1 (>> 1.1.2), libxdamage1 (>= 1:1.1), libxext6, libxfixes3, libxi6 (>= 2:1.2.99.4), libxrandr2 (>= 2:1.2.99.3), libxrender1, libxss1, libxtst6, lsb-release, wget, xdg-utils (>= 1.0.2)
+Pre-Depends: dpkg (>= 1.14.0)
+Recommends: libu2f-udev
+Filename: pool/main/b/brave-browser/brave-browser_0.62.51_amd64.deb
+Size: 72690742
+MD5sum: 3ad2cf0f36f28bc2b3ec35a72641af2e
+SHA1: 8bbde44c90f62def9e7a345b298f49d22c098595
+SHA256: 9cec78f33496d7a48a10c482d4838aed59adcc27a71720cb2ddc1dbe5f44fe79
+SHA512: a4445955fd1bdefdedb0ad27b66120de4f0c87f8c9f55120622380ce95597c3358b19df45838398aa555e3bff9aaa4566e989ab963396e9d169d931a67e88a26
+Description: The web browser from Brave
+ Browse faster by blocking ads and trackers that violate your privacy and cost you time and money.
+
+Package: brave-browser
+Priority: optional
+Section: web
+Installed-Size: 234865
+Maintainer: Brave Software <support+laptop@brave.com>
+Architecture: amd64
+Version: 0.62.50
+Provides: www-browser
+Depends: ca-certificates, fonts-liberation, libappindicator3-1, libasound2 (>= 1.0.16), libatk-bridge2.0-0 (>= 2.5.3), libatk1.0-0 (>= 2.2.0), libatspi2.0-0 (>= 2.9.90), libc6 (>= 2.16), libcairo2 (>= 1.6.0), libcups2 (>= 1.4.0), libdbus-1-3 (>= 1.1.4), libexpat1 (>= 2.0.1), libgcc1 (>= 1:3.0), libgdk-pixbuf2.0-0 (>= 2.22.0), libglib2.0-0 (>= 2.31.8), libgtk-3-0 (>= 3.9.10), libnspr4 (>= 2:4.9-2~), libnss3 (>= 2:3.22), libpango-1.0-0 (>= 1.14.0), libpangocairo-1.0-0 (>= 1.14.0), libuuid1 (>= 2.16), libx11-6 (>= 2:1.4.99.1), libx11-xcb1, libxcb1 (>= 1.6), libxcomposite1 (>= 1:0.3-1), libxcursor1 (>> 1.1.2), libxdamage1 (>= 1:1.1), libxext6, libxfixes3, libxi6 (>= 2:1.2.99.4), libxrandr2 (>= 2:1.2.99.3), libxrender1, libxss1, libxtst6, lsb-release, wget, xdg-utils (>= 1.0.2)
+Pre-Depends: dpkg (>= 1.14.0)
+Recommends: libu2f-udev
+Filename: pool/main/b/brave-browser/brave-browser_0.62.50_amd64.deb
+Size: 72693074
+MD5sum: 8fc137607c7d94381015be8b8907692d
+SHA1: a7a26f058d6c8505d91c50b388d8b0e6f3634628
+SHA256: edc9889185675f440db639008fd464dd59a3ff847ca5e20698d70564628b7fef
+SHA512: 83b6c106e0868fb72e96a2372a2f8486ec9895c77d2019b737782447a582b518aa9c9faffc7ecb595bad93fca5b3b2c844f163e7402dd64bb0e2f50ae90be4fa
+Description: The web browser from Brave
+ Browse faster by blocking ads and trackers that violate your privacy and cost you time and money.
+
+Package: brave-browser
+Priority: optional
+Section: web
+Installed-Size: 234820
+Maintainer: Brave Software <support+laptop@brave.com>
+Architecture: amd64
+Version: 0.61.52
+Provides: www-browser
+Depends: ca-certificates, fonts-liberation, libappindicator3-1, libasound2 (>= 1.0.16), libatk-bridge2.0-0 (>= 2.5.3), libatk1.0-0 (>= 2.2.0), libatspi2.0-0 (>= 2.9.90), libc6 (>= 2.16), libcairo2 (>= 1.6.0), libcups2 (>= 1.4.0), libdbus-1-3 (>= 1.1.4), libexpat1 (>= 2.0.1), libgcc1 (>= 1:3.0), libgdk-pixbuf2.0-0 (>= 2.22.0), libglib2.0-0 (>= 2.31.8), libgtk-3-0 (>= 3.9.10), libnspr4 (>= 2:4.9-2~), libnss3 (>= 2:3.22), libpango-1.0-0 (>= 1.14.0), libpangocairo-1.0-0 (>= 1.14.0), libuuid1 (>= 2.16), libx11-6 (>= 2:1.4.99.1), libx11-xcb1, libxcb1 (>= 1.6), libxcomposite1 (>= 1:0.3-1), libxcursor1 (>> 1.1.2), libxdamage1 (>= 1:1.1), libxext6, libxfixes3, libxi6 (>= 2:1.2.99.4), libxrandr2 (>= 2:1.2.99.3), libxrender1, libxss1, libxtst6, lsb-release, wget, xdg-utils (>= 1.0.2)
+Pre-Depends: dpkg (>= 1.14.0)
+Recommends: libu2f-udev
+Filename: pool/main/b/brave-browser/brave-browser_0.61.52_amd64.deb
+Size: 72758096
+MD5sum: 9f1ad32fd98aebdca4948b477fee4d7f
+SHA1: 2aa28a0c7aa44f54206ea4c9fdb5b2fd6284005a
+SHA256: 930e3bf7846d2590fa345f07fc5fb32bce89dadff04810214cae7a3c6e1cb0a8
+SHA512: 3f15afde15d085550bb31386e07d0311a9af18313afe31cff67b48fef17794fc32139176203a3df4503ce4fe5489d3e28fe22ab5be43ffa1d2a97078bd5bcd0d
+Description: The web browser from Brave
+ Browse faster by blocking ads and trackers that violate your privacy and cost you time and money.
+
+Package: brave-browser
+Priority: optional
+Section: web
+Installed-Size: 234800
+Maintainer: Brave Software <support+laptop@brave.com>
+Architecture: amd64
+Version: 0.61.51
+Provides: www-browser
+Depends: ca-certificates, fonts-liberation, libappindicator3-1, libasound2 (>= 1.0.16), libatk-bridge2.0-0 (>= 2.5.3), libatk1.0-0 (>= 2.2.0), libatspi2.0-0 (>= 2.9.90), libc6 (>= 2.16), libcairo2 (>= 1.6.0), libcups2 (>= 1.4.0), libdbus-1-3 (>= 1.1.4), libexpat1 (>= 2.0.1), libgcc1 (>= 1:3.0), libgdk-pixbuf2.0-0 (>= 2.22.0), libglib2.0-0 (>= 2.31.8), libgtk-3-0 (>= 3.9.10), libnspr4 (>= 2:4.9-2~), libnss3 (>= 2:3.22), libpango-1.0-0 (>= 1.14.0), libpangocairo-1.0-0 (>= 1.14.0), libuuid1 (>= 2.16), libx11-6 (>= 2:1.4.99.1), libx11-xcb1, libxcb1 (>= 1.6), libxcomposite1 (>= 1:0.3-1), libxcursor1 (>> 1.1.2), libxdamage1 (>= 1:1.1), libxext6, libxfixes3, libxi6 (>= 2:1.2.99.4), libxrandr2 (>= 2:1.2.99.3), libxrender1, libxss1, libxtst6, lsb-release, wget, xdg-utils (>= 1.0.2)
+Pre-Depends: dpkg (>= 1.14.0)
+Recommends: libu2f-udev
+Filename: pool/main/b/brave-browser/brave-browser_0.61.51_amd64.deb
+Size: 72733834
+MD5sum: 25cb51e1edad5526f9063cea522377c1
+SHA1: a2841d5ed997da5d3dbbb485453cd75ff3acb4b7
+SHA256: fb52f6e2b0bcc42fdbd2ff64a788a47f424b128104a45230c1cec7a5d576e920
+SHA512: b1b2437490fe6e887c23f834ca15314df5f2df1c1fa8ed4c4eefc4adf71f0dc0a42d2369fdabe3adc257c3bd9c340316f0852dea332960abe430395832dc4793
+Description: The web browser from Brave
+ Browse faster by blocking ads and trackers that violate your privacy and cost you time and money.
+
+Package: brave-browser
+Priority: optional
+Section: web
+Installed-Size: 234890
+Maintainer: Brave Software <support+laptop@brave.com>
+Architecture: amd64
+Version: 0.60.48
+Provides: www-browser
+Depends: ca-certificates, fonts-liberation, libappindicator3-1, libasound2 (>= 1.0.16), libatk-bridge2.0-0 (>= 2.5.3), libatk1.0-0 (>= 2.2.0), libatspi2.0-0 (>= 2.9.90), libc6 (>= 2.16), libcairo2 (>= 1.6.0), libcups2 (>= 1.4.0), libdbus-1-3 (>= 1.1.4), libexpat1 (>= 2.0.1), libgcc1 (>= 1:3.0), libgdk-pixbuf2.0-0 (>= 2.22.0), libglib2.0-0 (>= 2.31.8), libgtk-3-0 (>= 3.9.10), libnspr4 (>= 2:4.9-2~), libnss3 (>= 2:3.22), libpango-1.0-0 (>= 1.14.0), libpangocairo-1.0-0 (>= 1.14.0), libuuid1 (>= 2.16), libx11-6 (>= 2:1.4.99.1), libx11-xcb1, libxcb1 (>= 1.6), libxcomposite1 (>= 1:0.3-1), libxcursor1 (>> 1.1.2), libxdamage1 (>= 1:1.1), libxext6, libxfixes3, libxi6 (>= 2:1.2.99.4), libxrandr2 (>= 2:1.2.99.3), libxrender1, libxss1, libxtst6, lsb-release, wget, xdg-utils (>= 1.0.2)
+Pre-Depends: dpkg (>= 1.14.0)
+Recommends: libu2f-udev
+Filename: pool/main/b/brave-browser/brave-browser_0.60.48_amd64.deb
+Size: 72364840
+MD5sum: 94118586a038f00d555a7bdbbdcdf863
+SHA1: ab0a0509aa982e018c7d4d4137dd657c480e4116
+SHA256: ed7ddbb4ae89a3a1a76943100cf23e8a7feed34603375bdcbab8011386629757
+SHA512: 7e733b696470edaba1aeb9e29329c57512c5989f40c94f07fd1a2b8607e31b90ecffd6312debfc3d3407e21b3888fdfa5d3b2a32e741a0fe2621506b5b3d7e88
+Description: The web browser from Brave
+ Browse faster by blocking ads and trackers that violate your privacy and cost you time and money.
+
+Package: brave-browser
+Priority: optional
+Section: web
+Installed-Size: 234891
+Maintainer: Brave Software <support+laptop@brave.com>
+Architecture: amd64
+Version: 0.60.47
+Provides: www-browser
+Depends: ca-certificates, fonts-liberation, libappindicator3-1, libasound2 (>= 1.0.16), libatk-bridge2.0-0 (>= 2.5.3), libatk1.0-0 (>= 2.2.0), libatspi2.0-0 (>= 2.9.90), libc6 (>= 2.16), libcairo2 (>= 1.6.0), libcups2 (>= 1.4.0), libdbus-1-3 (>= 1.1.4), libexpat1 (>= 2.0.1), libgcc1 (>= 1:3.0), libgdk-pixbuf2.0-0 (>= 2.22.0), libglib2.0-0 (>= 2.31.8), libgtk-3-0 (>= 3.9.10), libnspr4 (>= 2:4.9-2~), libnss3 (>= 2:3.22), libpango-1.0-0 (>= 1.14.0), libpangocairo-1.0-0 (>= 1.14.0), libuuid1 (>= 2.16), libx11-6 (>= 2:1.4.99.1), libx11-xcb1, libxcb1 (>= 1.6), libxcomposite1 (>= 1:0.3-1), libxcursor1 (>> 1.1.2), libxdamage1 (>= 1:1.1), libxext6, libxfixes3, libxi6 (>= 2:1.2.99.4), libxrandr2 (>= 2:1.2.99.3), libxrender1, libxss1, libxtst6, lsb-release, wget, xdg-utils (>= 1.0.2)
+Pre-Depends: dpkg (>= 1.14.0)
+Recommends: libu2f-udev
+Filename: pool/main/b/brave-browser/brave-browser_0.60.47_amd64.deb
+Size: 72381724
+MD5sum: 95a343b17610656489ddad0d9a836fec
+SHA1: aafffdeadca986f417d7569cf2368c1a90eb1704
+SHA256: 3aff97e08ddf6172252741ce637a3fe0c268c836d3c50fd519d43b153de05728
+SHA512: cb7951a286770db873952fcbcdc5831040003fa2a097895f4cc9e9484a76aae22f2db4f25bab4768e5d423db7db3ba2d6d7c4cf74b210976b8dae518882df917
+Description: The web browser from Brave
+ Browse faster by blocking ads and trackers that violate your privacy and cost you time and money.
+
+Package: brave-browser
+Priority: optional
+Section: web
+Installed-Size: 234891
+Maintainer: Brave Software <support+laptop@brave.com>
+Architecture: amd64
+Version: 0.60.45
+Provides: www-browser
+Depends: ca-certificates, fonts-liberation, libappindicator3-1, libasound2 (>= 1.0.16), libatk-bridge2.0-0 (>= 2.5.3), libatk1.0-0 (>= 2.2.0), libatspi2.0-0 (>= 2.9.90), libc6 (>= 2.16), libcairo2 (>= 1.6.0), libcups2 (>= 1.4.0), libdbus-1-3 (>= 1.1.4), libexpat1 (>= 2.0.1), libgcc1 (>= 1:3.0), libgdk-pixbuf2.0-0 (>= 2.22.0), libglib2.0-0 (>= 2.31.8), libgtk-3-0 (>= 3.9.10), libnspr4 (>= 2:4.9-2~), libnss3 (>= 2:3.22), libpango-1.0-0 (>= 1.14.0), libpangocairo-1.0-0 (>= 1.14.0), libuuid1 (>= 2.16), libx11-6 (>= 2:1.4.99.1), libx11-xcb1, libxcb1 (>= 1.6), libxcomposite1 (>= 1:0.3-1), libxcursor1 (>> 1.1.2), libxdamage1 (>= 1:1.1), libxext6, libxfixes3, libxi6 (>= 2:1.2.99.4), libxrandr2 (>= 2:1.2.99.3), libxrender1, libxss1, libxtst6, lsb-release, wget, xdg-utils (>= 1.0.2)
+Pre-Depends: dpkg (>= 1.14.0)
+Recommends: libu2f-udev
+Filename: pool/main/b/brave-browser/brave-browser_0.60.45_amd64.deb
+Size: 72362404
+MD5sum: a06b9b6ec8000543c94976b54d1b1929
+SHA1: 1ca90f52e106bd4c4444ea05ea04be5a38099194
+SHA256: 9ecba967f0e99b4ceae569420c0f3e8dc2fd14cbb8d967271d45d5c575747230
+SHA512: 844133b6187e7d9e68cf0338de8d96ff54ed078e1eb3a85f50ac535e622c7112de6c72548fe37cd1692f34f314361852e035fe01c8119ed8e047a2e9b4a1edcc
+Description: The web browser from Brave
+ Browse faster by blocking ads and trackers that violate your privacy and cost you time and money.
+
+Package: brave-browser
+Priority: optional
+Section: web
+Installed-Size: 229930
+Maintainer: Brave Software <support+laptop@brave.com>
+Architecture: amd64
+Version: 0.59.35
+Provides: www-browser
+Depends: ca-certificates, fonts-liberation, libappindicator3-1, libasound2 (>= 1.0.16), libatk-bridge2.0-0 (>= 2.5.3), libatk1.0-0 (>= 2.2.0), libatspi2.0-0 (>= 2.9.90), libc6 (>= 2.16), libcairo2 (>= 1.6.0), libcups2 (>= 1.4.0), libdbus-1-3 (>= 1.1.4), libexpat1 (>= 2.0.1), libgcc1 (>= 1:3.0), libgdk-pixbuf2.0-0 (>= 2.22.0), libglib2.0-0 (>= 2.31.8), libgtk-3-0 (>= 3.9.10), libnspr4 (>= 2:4.9-2~), libnss3 (>= 2:3.22), libpango-1.0-0 (>= 1.14.0), libpangocairo-1.0-0 (>= 1.14.0), libuuid1 (>= 2.16), libx11-6 (>= 2:1.4.99.1), libx11-xcb1, libxcb1 (>= 1.6), libxcomposite1 (>= 1:0.3-1), libxcursor1 (>> 1.1.2), libxdamage1 (>= 1:1.1), libxext6, libxfixes3, libxi6 (>= 2:1.2.99.4), libxrandr2 (>= 2:1.2.99.3), libxrender1, libxss1, libxtst6, lsb-release, wget, xdg-utils (>= 1.0.2)
+Pre-Depends: dpkg (>= 1.14.0)
+Recommends: libu2f-udev
+Filename: pool/main/b/brave-browser/brave-browser_0.59.35_amd64.deb
+Size: 67117302
+MD5sum: 18b9763cb0490b2dfb8a1fdb24739206
+SHA1: 05f9751d421ddf1489cecc10cf6d2282697d8d59
+SHA256: 135da76f67f2094ce7b2fe6d4d0f4835b32ac83bdfe61e99bd5779e5eaab0e7c
+SHA512: 313c699d5e439774a09c2ebc74860d5618f8e8ed1127a6e32edc2239ba1d9619f13b3f8a97482954e89f94be4e9e9e741ac6ea484eee24f044f975bd40969573
+Description: The web browser from Brave
+ Browse faster by blocking ads and trackers that violate your privacy and cost you time and money.
+
+Package: brave-browser
+Priority: optional
+Section: web
+Installed-Size: 229930
+Maintainer: Brave Software <support+laptop@brave.com>
+Architecture: amd64
+Version: 0.59.34
+Provides: www-browser
+Depends: ca-certificates, fonts-liberation, libappindicator3-1, libasound2 (>= 1.0.16), libatk-bridge2.0-0 (>= 2.5.3), libatk1.0-0 (>= 2.2.0), libatspi2.0-0 (>= 2.9.90), libc6 (>= 2.16), libcairo2 (>= 1.6.0), libcups2 (>= 1.4.0), libdbus-1-3 (>= 1.1.4), libexpat1 (>= 2.0.1), libgcc1 (>= 1:3.0), libgdk-pixbuf2.0-0 (>= 2.22.0), libglib2.0-0 (>= 2.31.8), libgtk-3-0 (>= 3.9.10), libnspr4 (>= 2:4.9-2~), libnss3 (>= 2:3.22), libpango-1.0-0 (>= 1.14.0), libpangocairo-1.0-0 (>= 1.14.0), libuuid1 (>= 2.16), libx11-6 (>= 2:1.4.99.1), libx11-xcb1, libxcb1 (>= 1.6), libxcomposite1 (>= 1:0.3-1), libxcursor1 (>> 1.1.2), libxdamage1 (>= 1:1.1), libxext6, libxfixes3, libxi6 (>= 2:1.2.99.4), libxrandr2 (>= 2:1.2.99.3), libxrender1, libxss1, libxtst6, lsb-release, wget, xdg-utils (>= 1.0.2)
+Pre-Depends: dpkg (>= 1.14.0)
+Recommends: libu2f-udev
+Filename: pool/main/b/brave-browser/brave-browser_0.59.34_amd64.deb
+Size: 66960978
+MD5sum: ef32a771a1122f349eab21138c3af2eb
+SHA1: c05b5f39f91d1a96a4f800f999403583752fd65b
+SHA256: 532b6b8b54a9274efcf36b030e7a7d1ea3d4d206e840c34580001f3402f024c4
+SHA512: 123f1c5db25a120a69d3b76708439cd4011ac19e0686b3e22b56227536ddf9acbcb9a18b1fb7fad3a558524e3c55ff6c322a0a4eb0ec1411b411ee08ee7690e8
+Description: The web browser from Brave
+ Browse faster by blocking ads and trackers that violate your privacy and cost you time and money.
+
+Package: brave-browser
+Priority: optional
+Section: web
+Installed-Size: 218363
+Maintainer: Brave Software <support+laptop@brave.com>
+Architecture: amd64
+Version: 0.58.21
+Provides: www-browser
+Depends: ca-certificates, fonts-liberation, libappindicator3-1, libasound2 (>= 1.0.16), libatk-bridge2.0-0 (>= 2.5.3), libatk1.0-0 (>= 1.12.4), libatspi2.0-0 (>= 2.9.90), libc6 (>= 2.16), libcairo2 (>= 1.6.0), libcups2 (>= 1.4.0), libdbus-1-3 (>= 1.1.4), libexpat1 (>= 2.0.1), libgcc1 (>= 1:3.0), libgdk-pixbuf2.0-0 (>= 2.22.0), libglib2.0-0 (>= 2.31.8), libgtk-3-0 (>= 3.9.10), libnspr4 (>= 2:4.9-2~), libnss3 (>= 2:3.22), libpango-1.0-0 (>= 1.14.0), libpangocairo-1.0-0 (>= 1.14.0), libuuid1 (>= 2.16), libx11-6 (>= 2:1.4.99.1), libx11-xcb1, libxcb1 (>= 1.6), libxcomposite1 (>= 1:0.3-1), libxcursor1 (>> 1.1.2), libxdamage1 (>= 1:1.1), libxext6, libxfixes3, libxi6 (>= 2:1.2.99.4), libxrandr2 (>= 2:1.2.99.3), libxrender1, libxss1, libxtst6, lsb-release, wget, xdg-utils (>= 1.0.2)
+Pre-Depends: dpkg (>= 1.14.0)
+Recommends: libu2f-udev
+Filename: pool/main/b/brave-browser/brave-browser_0.58.21_amd64.deb
+Size: 64997446
+MD5sum: 199185618b355a39ac5bcae7e51e593b
+SHA1: 04264dc9c4aa5708914b2b18f714d8697541f68b
+SHA256: 215c2ce6a721f778baf79c68b0cb497e8270893f25df9be7e0f2a17ae547b456
+SHA512: 5c15e87130d4af3eccfe38b529fe8f6cbb0d14ba4fb0d5c002beee010317cd373e70bf95b83a92e776acffc0622534f6ec315f16f3df26a544083a65f6f7dda1
+Description: The web browser from Brave
+ Browse faster by blocking ads and trackers that violate your privacy and cost you time and money.
+
+Package: brave-browser
+Priority: optional
+Section: web
+Installed-Size: 218334
+Maintainer: Brave Software <support+laptop@brave.com>
+Architecture: amd64
+Version: 0.58.18
+Provides: www-browser
+Depends: ca-certificates, fonts-liberation, libappindicator3-1, libasound2 (>= 1.0.16), libatk-bridge2.0-0 (>= 2.5.3), libatk1.0-0 (>= 1.12.4), libatspi2.0-0 (>= 2.9.90), libc6 (>= 2.16), libcairo2 (>= 1.6.0), libcups2 (>= 1.4.0), libdbus-1-3 (>= 1.1.4), libexpat1 (>= 2.0.1), libgcc1 (>= 1:3.0), libgdk-pixbuf2.0-0 (>= 2.22.0), libglib2.0-0 (>= 2.31.8), libgtk-3-0 (>= 3.9.10), libnspr4 (>= 2:4.9-2~), libnss3 (>= 2:3.22), libpango-1.0-0 (>= 1.14.0), libpangocairo-1.0-0 (>= 1.14.0), libuuid1 (>= 2.16), libx11-6 (>= 2:1.4.99.1), libx11-xcb1, libxcb1 (>= 1.6), libxcomposite1 (>= 1:0.3-1), libxcursor1 (>> 1.1.2), libxdamage1 (>= 1:1.1), libxext6, libxfixes3, libxi6 (>= 2:1.2.99.4), libxrandr2 (>= 2:1.2.99.3), libxrender1, libxss1, libxtst6, lsb-release, wget, xdg-utils (>= 1.0.2)
+Pre-Depends: dpkg (>= 1.14.0)
+Recommends: libu2f-udev
+Filename: pool/main/b/brave-browser/brave-browser_0.58.18_amd64.deb
+Size: 65115232
+MD5sum: 6ae3fd1c028b41bd02b22b2d7ce677d7
+SHA1: 10af876bb301d0e876ff07fa70726780f13afbd7
+SHA256: 237fa877a370eaa67471f8eacb229243e870f86fb1924e625fa855d9f563cb77
+SHA512: 524082beb9a200c58c7aa1df2ad2ddfdf6db60fd9511e84e5a789a7a905c080cc4d2c802ce5af58e953e01b149db583ed3bbe050dcec1129cfe2eac0f1ffdc43
+Description: The web browser from Brave
+ Browse faster by blocking ads and trackers that violate your privacy and cost you time and money.
+
+Package: brave-browser
+Priority: optional
+Section: web
+Installed-Size: 218334
+Maintainer: Brave Software <support+laptop@brave.com>
+Architecture: amd64
+Version: 0.58.17
+Provides: www-browser
+Depends: ca-certificates, fonts-liberation, libappindicator3-1, libasound2 (>= 1.0.16), libatk-bridge2.0-0 (>= 2.5.3), libatk1.0-0 (>= 1.12.4), libatspi2.0-0 (>= 2.9.90), libc6 (>= 2.16), libcairo2 (>= 1.6.0), libcups2 (>= 1.4.0), libdbus-1-3 (>= 1.1.4), libexpat1 (>= 2.0.1), libgcc1 (>= 1:3.0), libgdk-pixbuf2.0-0 (>= 2.22.0), libglib2.0-0 (>= 2.31.8), libgtk-3-0 (>= 3.9.10), libnspr4 (>= 2:4.9-2~), libnss3 (>= 2:3.22), libpango-1.0-0 (>= 1.14.0), libpangocairo-1.0-0 (>= 1.14.0), libuuid1 (>= 2.16), libx11-6 (>= 2:1.4.99.1), libx11-xcb1, libxcb1 (>= 1.6), libxcomposite1 (>= 1:0.3-1), libxcursor1 (>> 1.1.2), libxdamage1 (>= 1:1.1), libxext6, libxfixes3, libxi6 (>= 2:1.2.99.4), libxrandr2 (>= 2:1.2.99.3), libxrender1, libxss1, libxtst6, lsb-release, wget, xdg-utils (>= 1.0.2)
+Pre-Depends: dpkg (>= 1.14.0)
+Recommends: libu2f-udev
+Filename: pool/main/b/brave-browser/brave-browser_0.58.17_amd64.deb
+Size: 64894812
+MD5sum: 039fe17460b0b3ead096200c57499f46
+SHA1: 599651947d3e65c2d174f40de8895b2e5068618d
+SHA256: a9876827a8cd3cb91499bd79214359b7f5ae2eb81b4d809ab4509bc58ace5414
+SHA512: c6a283a2814617e227caa39d4868f4e4932f3c0e9a3dad498ecf2f9601c88417d4ebb2f52d3a89078b9a0599083815247ed93daef272bef6477f0e882ddcc074
+Description: The web browser from Brave
+ Browse faster by blocking ads and trackers that violate your privacy and cost you time and money.
+
+Package: brave-browser
+Priority: optional
+Section: web
+Installed-Size: 218323
+Maintainer: Brave Software <support+laptop@brave.com>
+Architecture: amd64
+Version: 0.58.16
+Provides: www-browser
+Depends: ca-certificates, fonts-liberation, libappindicator3-1, libasound2 (>= 1.0.16), libatk-bridge2.0-0 (>= 2.5.3), libatk1.0-0 (>= 1.12.4), libatspi2.0-0 (>= 2.9.90), libc6 (>= 2.16), libcairo2 (>= 1.6.0), libcups2 (>= 1.4.0), libdbus-1-3 (>= 1.1.4), libexpat1 (>= 2.0.1), libgcc1 (>= 1:3.0), libgdk-pixbuf2.0-0 (>= 2.22.0), libglib2.0-0 (>= 2.31.8), libgtk-3-0 (>= 3.9.10), libnspr4 (>= 2:4.9-2~), libnss3 (>= 2:3.22), libpango-1.0-0 (>= 1.14.0), libpangocairo-1.0-0 (>= 1.14.0), libuuid1 (>= 2.16), libx11-6 (>= 2:1.4.99.1), libx11-xcb1, libxcb1 (>= 1.6), libxcomposite1 (>= 1:0.3-1), libxcursor1 (>> 1.1.2), libxdamage1 (>= 1:1.1), libxext6, libxfixes3, libxi6 (>= 2:1.2.99.4), libxrandr2 (>= 2:1.2.99.3), libxrender1, libxss1, libxtst6, lsb-release, wget, xdg-utils (>= 1.0.2)
+Pre-Depends: dpkg (>= 1.14.0)
+Recommends: libu2f-udev
+Filename: pool/main/b/brave-browser/brave-browser_0.58.16_amd64.deb
+Size: 64915248
+MD5sum: e7c6d980fbef84b8e18ea176a6fa23a0
+SHA1: cabfe6736eb6daee596628b5fa6f1458e827ef29
+SHA256: 1a2b9a677d182b17dddcdfc9cdb1b9548d361baff6f09230d881ddaefb6b2cea
+SHA512: 11cc407f06abffafd73ceaff47fb7f2fa6d7bb3ec8d2e8d9b94d7bd7ac180a40fabdc8fdd6a62d42c64d5548f3ce53ba7784076ca285c74d0a4f1c0a6d3fea00
+Description: The web browser from Brave
+ Browse faster by blocking ads and trackers that violate your privacy and cost you time and money.
+
+Package: brave-browser
+Priority: optional
+Section: web
+Installed-Size: 218316
+Maintainer: Brave Software <support+laptop@brave.com>
+Architecture: amd64
+Version: 0.57.18
+Provides: www-browser
+Depends: ca-certificates, fonts-liberation, libappindicator3-1, libasound2 (>= 1.0.16), libatk-bridge2.0-0 (>= 2.5.3), libatk1.0-0 (>= 1.12.4), libatspi2.0-0 (>= 2.9.90), libc6 (>= 2.16), libcairo2 (>= 1.6.0), libcups2 (>= 1.4.0), libdbus-1-3 (>= 1.1.4), libexpat1 (>= 2.0.1), libgcc1 (>= 1:3.0), libgdk-pixbuf2.0-0 (>= 2.22.0), libglib2.0-0 (>= 2.31.8), libgtk-3-0 (>= 3.9.10), libnspr4 (>= 2:4.9-2~), libnss3 (>= 2:3.22), libpango-1.0-0 (>= 1.14.0), libpangocairo-1.0-0 (>= 1.14.0), libuuid1 (>= 2.16), libx11-6 (>= 2:1.4.99.1), libx11-xcb1, libxcb1 (>= 1.6), libxcomposite1 (>= 1:0.3-1), libxcursor1 (>> 1.1.2), libxdamage1 (>= 1:1.1), libxext6, libxfixes3, libxi6 (>= 2:1.2.99.4), libxrandr2 (>= 2:1.2.99.3), libxrender1, libxss1, libxtst6, lsb-release, wget, xdg-utils (>= 1.0.2)
+Pre-Depends: dpkg (>= 1.14.0)
+Recommends: libu2f-udev
+Filename: pool/main/b/brave-browser/brave-browser_0.57.18_amd64.deb
+Size: 64607378
+MD5sum: f121e8f70b7fe1051975df919fea3e23
+SHA1: 9bed967e7d141d99e5107aa5eba589136d6d2920
+SHA256: e7fdcb63aa6b8b2ca582c3876b967800e838c8763bb5979789de5235e71cb25c
+SHA512: 1f2d00aeec89dc7bda418d5aea9e4962489bb0e1ad9af992dcac830f6efff804d9f94abb5694c54e871678f219d3af3ac37014834ece041d1e9c612e15f5dc88
+Description: The web browser from Brave
+ Browse faster by blocking ads and trackers that violate your privacy and cost you time and money.
+
+Package: brave-browser
+Priority: optional
+Section: web
+Installed-Size: 208279
+Maintainer: Brave Software <support+laptop@brave.com>
+Architecture: amd64
+Version: 0.56.15
+Provides: www-browser
+Depends: ca-certificates, fonts-liberation, libappindicator3-1, libasound2 (>= 1.0.16), libatk-bridge2.0-0 (>= 2.5.3), libatk1.0-0 (>= 1.12.4), libc6 (>= 2.16), libcairo2 (>= 1.6.0), libcups2 (>= 1.4.0), libdbus-1-3 (>= 1.1.4), libexpat1 (>= 2.0.1), libgcc1 (>= 1:3.0), libgdk-pixbuf2.0-0 (>= 2.22.0), libglib2.0-0 (>= 2.31.8), libgtk-3-0 (>= 3.9.10), libnspr4 (>= 2:4.9-2~), libnss3 (>= 2:3.22), libpango-1.0-0 (>= 1.14.0), libpangocairo-1.0-0 (>= 1.14.0), libuuid1 (>= 2.16), libx11-6 (>= 2:1.4.99.1), libx11-xcb1, libxcb1 (>= 1.6), libxcomposite1 (>= 1:0.3-1), libxcursor1 (>> 1.1.2), libxdamage1 (>= 1:1.1), libxext6, libxfixes3, libxi6 (>= 2:1.2.99.4), libxrandr2 (>= 2:1.2.99.3), libxrender1, libxss1, libxtst6, lsb-release, wget, xdg-utils (>= 1.0.2)
+Pre-Depends: dpkg (>= 1.14.0)
+Recommends: libu2f-udev
+Filename: pool/main/b/brave-browser/brave-browser_0.56.15_amd64.deb
+Size: 62811524
+MD5sum: f84005666b1284ac00cee87cf6a741ae
+SHA1: 0067bb2ee54ca9868faf39cdefe76965dac0651f
+SHA256: e66c17bc943440be89d6a3ad882373060774c9f612bb37e12a893ed6ed7328b4
+SHA512: 52af2c8e332e8fa192b8b35960c6968771a23d9a1185b56aadf2f398c6247e39019147ee2545aa9cb6aa75641c452d01078bb87d8c54393d43adc590eb979206
+Description: The web browser from Brave
+ Browse faster by blocking ads and trackers that violate your privacy and cost you time and money.
+
+Package: brave-browser
+Priority: optional
+Section: web
+Installed-Size: 208278
+Maintainer: Brave Software <support+laptop@brave.com>
+Architecture: amd64
+Version: 0.56.14
+Provides: www-browser
+Depends: ca-certificates, fonts-liberation, libappindicator3-1, libasound2 (>= 1.0.16), libatk-bridge2.0-0 (>= 2.5.3), libatk1.0-0 (>= 1.12.4), libc6 (>= 2.16), libcairo2 (>= 1.6.0), libcups2 (>= 1.4.0), libdbus-1-3 (>= 1.1.4), libexpat1 (>= 2.0.1), libgcc1 (>= 1:3.0), libgdk-pixbuf2.0-0 (>= 2.22.0), libglib2.0-0 (>= 2.31.8), libgtk-3-0 (>= 3.9.10), libnspr4 (>= 2:4.9-2~), libnss3 (>= 2:3.22), libpango-1.0-0 (>= 1.14.0), libpangocairo-1.0-0 (>= 1.14.0), libuuid1 (>= 2.16), libx11-6 (>= 2:1.4.99.1), libx11-xcb1, libxcb1 (>= 1.6), libxcomposite1 (>= 1:0.3-1), libxcursor1 (>> 1.1.2), libxdamage1 (>= 1:1.1), libxext6, libxfixes3, libxi6 (>= 2:1.2.99.4), libxrandr2 (>= 2:1.2.99.3), libxrender1, libxss1, libxtst6, lsb-release, wget, xdg-utils (>= 1.0.2)
+Pre-Depends: dpkg (>= 1.14.0)
+Recommends: libu2f-udev
+Filename: pool/main/b/brave-browser/brave-browser_0.56.14_amd64.deb
+Size: 63011684
+MD5sum: 2e2ad0ead63b89db2fe995bac0e1d663
+SHA1: bfc5a5f0a626609a65c4ce1caa2ce3161ff05e67
+SHA256: 3d055299f8a788006b1b447485e8a714d40344b9fc7e340a1cb2985499579693
+SHA512: 14127e606db142c34aaeb104a9df6741973dc43b34106210b944b31cda56a89d5ec2c9c5d87886f09ab6aae51b014e77a0ffbecf6a3687f7763e51da726c404e
+Description: The web browser from Brave
+ Browse faster by blocking ads and trackers that violate your privacy and cost you time and money.
+
+Package: brave-browser
+Priority: optional
+Section: web
+Installed-Size: 208287
+Maintainer: Brave Software <support+laptop@brave.com>
+Architecture: amd64
+Version: 0.56.12
+Provides: www-browser
+Depends: ca-certificates, fonts-liberation, libappindicator3-1, libasound2 (>= 1.0.16), libatk-bridge2.0-0 (>= 2.5.3), libatk1.0-0 (>= 1.12.4), libc6 (>= 2.16), libcairo2 (>= 1.6.0), libcups2 (>= 1.4.0), libdbus-1-3 (>= 1.1.4), libexpat1 (>= 2.0.1), libgcc1 (>= 1:3.0), libgdk-pixbuf2.0-0 (>= 2.22.0), libglib2.0-0 (>= 2.31.8), libgtk-3-0 (>= 3.9.10), libnspr4 (>= 2:4.9-2~), libnss3 (>= 2:3.22), libpango-1.0-0 (>= 1.14.0), libpangocairo-1.0-0 (>= 1.14.0), libuuid1 (>= 2.16), libx11-6 (>= 2:1.4.99.1), libx11-xcb1, libxcb1 (>= 1.6), libxcomposite1 (>= 1:0.3-1), libxcursor1 (>> 1.1.2), libxdamage1 (>= 1:1.1), libxext6, libxfixes3, libxi6 (>= 2:1.2.99.4), libxrandr2 (>= 2:1.2.99.3), libxrender1, libxss1, libxtst6, lsb-release, wget, xdg-utils (>= 1.0.2)
+Pre-Depends: dpkg (>= 1.14.0)
+Recommends: libu2f-udev
+Filename: pool/main/b/brave-browser/brave-browser_0.56.12_amd64.deb
+Size: 62721080
+MD5sum: 0d05edcb259eb56dcedc2b0a3fb3dcfd
+SHA1: b0e275d63c6ce1e44d3d25f8007ea499c5d2f9ed
+SHA256: 51f9dd3f7517a774ac2b3b5f944540647b1192c8335d079b0b555fc8385d6adf
+SHA512: b0355b0133b650878a5cd4bd20ba41c07b25c844cf46b7d718cbcfed0606f8886ac9757b876eb4445fab05a7b48033833a454bbaa3c1d2f49586857b2f50e319
+Description: The web browser from Brave
+ Browse faster by blocking ads and trackers that violate your privacy and cost you time and money.
+
+Package: brave-browser
+Priority: optional
+Section: web
+Installed-Size: 207786
+Maintainer: Brave Software <support+laptop@brave.com>
+Architecture: amd64
+Version: 0.55.22
+Provides: www-browser
+Depends: ca-certificates, fonts-liberation, libappindicator3-1, libasound2 (>= 1.0.16), libatk-bridge2.0-0 (>= 2.5.3), libatk1.0-0 (>= 1.12.4), libc6 (>= 2.16), libcairo2 (>= 1.6.0), libcups2 (>= 1.4.0), libdbus-1-3 (>= 1.1.4), libexpat1 (>= 2.0.1), libgcc1 (>= 1:3.0), libgdk-pixbuf2.0-0 (>= 2.22.0), libglib2.0-0 (>= 2.31.8), libgtk-3-0 (>= 3.9.10), libnspr4 (>= 2:4.9-2~), libnss3 (>= 2:3.22), libpango-1.0-0 (>= 1.14.0), libpangocairo-1.0-0 (>= 1.14.0), libuuid1 (>= 2.16), libx11-6 (>= 2:1.4.99.1), libx11-xcb1, libxcb1 (>= 1.6), libxcomposite1 (>= 1:0.3-1), libxcursor1 (>> 1.1.2), libxdamage1 (>= 1:1.1), libxext6, libxfixes3, libxi6 (>= 2:1.2.99.4), libxrandr2 (>= 2:1.2.99.3), libxrender1, libxss1, libxtst6, lsb-release, wget, xdg-utils (>= 1.0.2)
+Pre-Depends: dpkg (>= 1.14.0)
+Recommends: libu2f-udev
+Filename: pool/main/b/brave-browser/brave-browser_0.55.22_amd64.deb
+Size: 62839270
+MD5sum: 0d5d42a84ab69d63a5fd8cc74a413e41
+SHA1: ce8edc8449fb9a85a6fddfcedd5014e90e659b2d
+SHA256: 714e82407dca233904849fc98fbd35b4ec1bcfed07ffa93dd0c88aebffe22104
+SHA512: b0c6f1648728687d4ed27fd8ca5a9c8cc4afc8059f9c7423eb8c566428d4162a6fed152670ff59ca38c6483277edbc8a1db0d9a7fc9e2f26af47d91722b83f26
+Description: The web browser from Brave
+ Browse faster by blocking ads and trackers that violate your privacy and cost you time and money.
+
+Package: brave-browser
+Priority: optional
+Section: web
+Installed-Size: 207793
+Maintainer: Brave Software <support+laptop@brave.com>
+Architecture: amd64
+Version: 0.55.20
+Provides: www-browser
+Depends: ca-certificates, fonts-liberation, libappindicator3-1, libasound2 (>= 1.0.16), libatk-bridge2.0-0 (>= 2.5.3), libatk1.0-0 (>= 1.12.4), libc6 (>= 2.16), libcairo2 (>= 1.6.0), libcups2 (>= 1.4.0), libdbus-1-3 (>= 1.1.4), libexpat1 (>= 2.0.1), libgcc1 (>= 1:3.0), libgdk-pixbuf2.0-0 (>= 2.22.0), libglib2.0-0 (>= 2.31.8), libgtk-3-0 (>= 3.9.10), libnspr4 (>= 2:4.9-2~), libnss3 (>= 2:3.22), libpango-1.0-0 (>= 1.14.0), libpangocairo-1.0-0 (>= 1.14.0), libuuid1 (>= 2.16), libx11-6 (>= 2:1.4.99.1), libx11-xcb1, libxcb1 (>= 1.6), libxcomposite1 (>= 1:0.3-1), libxcursor1 (>> 1.1.2), libxdamage1 (>= 1:1.1), libxext6, libxfixes3, libxi6 (>= 2:1.2.99.4), libxrandr2 (>= 2:1.2.99.3), libxrender1, libxss1, libxtst6, lsb-release, wget, xdg-utils (>= 1.0.2)
+Pre-Depends: dpkg (>= 1.14.0)
+Recommends: libu2f-udev
+Filename: pool/main/b/brave-browser/brave-browser_0.55.20_amd64.deb
+Size: 62708526
+MD5sum: 35f7258c31db1cf68cc81a2d4bb743a8
+SHA1: 1bf389db448cba0d4abcfe65b096a60d6c3b881b
+SHA256: e0660eaa9a59f6140d1f38537d6594975b84f8ba4c2456cb0c3698028a701daa
+SHA512: b58029d2fe0b2918748e35a3f1b8d2c198267e5b8256dd3d891eecbab11ca252a9782cd9fd5c0b8b119221b67d5766cb7f44fbe83a924844e1fb63b97f715232
+Description: The web browser from Brave
+ Browse faster by blocking ads and trackers that violate your privacy and cost you time and money.
+
+Package: brave-browser
+Priority: optional
+Section: web
+Installed-Size: 207785
+Maintainer: Brave Software <support+laptop@brave.com>
+Architecture: amd64
+Version: 0.55.18
+Provides: www-browser
+Depends: ca-certificates, fonts-liberation, libappindicator3-1, libasound2 (>= 1.0.16), libatk-bridge2.0-0 (>= 2.5.3), libatk1.0-0 (>= 1.12.4), libc6 (>= 2.16), libcairo2 (>= 1.6.0), libcups2 (>= 1.4.0), libdbus-1-3 (>= 1.1.4), libexpat1 (>= 2.0.1), libgcc1 (>= 1:3.0), libgdk-pixbuf2.0-0 (>= 2.22.0), libglib2.0-0 (>= 2.31.8), libgtk-3-0 (>= 3.9.10), libnspr4 (>= 2:4.9-2~), libnss3 (>= 2:3.22), libpango-1.0-0 (>= 1.14.0), libpangocairo-1.0-0 (>= 1.14.0), libuuid1 (>= 2.16), libx11-6 (>= 2:1.4.99.1), libx11-xcb1, libxcb1 (>= 1.6), libxcomposite1 (>= 1:0.3-1), libxcursor1 (>> 1.1.2), libxdamage1 (>= 1:1.1), libxext6, libxfixes3, libxi6 (>= 2:1.2.99.4), libxrandr2 (>= 2:1.2.99.3), libxrender1, libxss1, libxtst6, lsb-release, wget, xdg-utils (>= 1.0.2)
+Pre-Depends: dpkg (>= 1.14.0)
+Recommends: libu2f-udev
+Filename: pool/main/b/brave-browser/brave-browser_0.55.18_amd64.deb
+Size: 62747806
+MD5sum: 1ccc1fd8cc4ca03faec9a476182c646b
+SHA1: aa56a3c43c411c24d105ee3850283ebe0d741ed2
+SHA256: ee268a8e0bbccb0b0af856b6d884f6c0d9ea6a290514e18b5ca3ab270376e6a6
+SHA512: ac1d49d9b440534ed948bc979e00cefb1473ffa68160a4c5ae40afba1fc14753e2adafe178368851e8253183e6644f6eaf339ab3dc73c6572d706f3180c8979d
+Description: The web browser from Brave
+ Browse faster by blocking ads and trackers that violate your privacy and cost you time and money.
+
+Package: brave-browser
+Priority: optional
+Section: web
+Installed-Size: 207774
+Maintainer: Brave Software <support+laptop@brave.com>
+Architecture: amd64
+Version: 0.55.17
+Provides: www-browser
+Depends: ca-certificates, fonts-liberation, libappindicator3-1, libasound2 (>= 1.0.16), libatk-bridge2.0-0 (>= 2.5.3), libatk1.0-0 (>= 1.12.4), libc6 (>= 2.16), libcairo2 (>= 1.6.0), libcups2 (>= 1.4.0), libdbus-1-3 (>= 1.1.4), libexpat1 (>= 2.0.1), libgcc1 (>= 1:3.0), libgdk-pixbuf2.0-0 (>= 2.22.0), libglib2.0-0 (>= 2.31.8), libgtk-3-0 (>= 3.9.10), libnspr4 (>= 2:4.9-2~), libnss3 (>= 2:3.22), libpango-1.0-0 (>= 1.14.0), libpangocairo-1.0-0 (>= 1.14.0), libuuid1 (>= 2.16), libx11-6 (>= 2:1.4.99.1), libx11-xcb1, libxcb1 (>= 1.6), libxcomposite1 (>= 1:0.3-1), libxcursor1 (>> 1.1.2), libxdamage1 (>= 1:1.1), libxext6, libxfixes3, libxi6 (>= 2:1.2.99.4), libxrandr2 (>= 2:1.2.99.3), libxrender1, libxss1, libxtst6, lsb-release, wget, xdg-utils (>= 1.0.2)
+Pre-Depends: dpkg (>= 1.14.0)
+Recommends: libu2f-udev
+Filename: pool/main/b/brave-browser/brave-browser_0.55.17_amd64.deb
+Size: 62918986
+MD5sum: 1fa9225cf950d1bd56ba680e4c4d37c8
+SHA1: b2edc2c1ce09db490686d3472631ed76324ca6f6
+SHA256: c9f4abf2fbb0a014b7169e16ec3788985b10c4b686ed3b1dfea32c908eafc593
+SHA512: 81b81e9effcb699e2d5823dbc198824d65715e84291c3e4cda7c704553374925dc4264cdf3484e7e8bd414a15b0ba5c5c3b0cc675f601ad52c851a30767a87fc
+Description: The web browser from Brave
+ Browse faster by blocking ads and trackers that violate your privacy and cost you time and money.
+
+Package: brave-browser
+Priority: optional
+Section: web
+Installed-Size: 207766
+Maintainer: Brave Software <support+laptop@brave.com>
+Architecture: amd64
+Version: 0.55.16
+Provides: www-browser
+Depends: ca-certificates, fonts-liberation, libappindicator3-1, libasound2 (>= 1.0.16), libatk-bridge2.0-0 (>= 2.5.3), libatk1.0-0 (>= 1.12.4), libc6 (>= 2.16), libcairo2 (>= 1.6.0), libcups2 (>= 1.4.0), libdbus-1-3 (>= 1.1.4), libexpat1 (>= 2.0.1), libgcc1 (>= 1:3.0), libgdk-pixbuf2.0-0 (>= 2.22.0), libglib2.0-0 (>= 2.31.8), libgtk-3-0 (>= 3.9.10), libnspr4 (>= 2:4.9-2~), libnss3 (>= 2:3.22), libpango-1.0-0 (>= 1.14.0), libpangocairo-1.0-0 (>= 1.14.0), libuuid1 (>= 2.16), libx11-6 (>= 2:1.4.99.1), libx11-xcb1, libxcb1 (>= 1.6), libxcomposite1 (>= 1:0.3-1), libxcursor1 (>> 1.1.2), libxdamage1 (>= 1:1.1), libxext6, libxfixes3, libxi6 (>= 2:1.2.99.4), libxrandr2 (>= 2:1.2.99.3), libxrender1, libxss1, libxtst6, lsb-release, wget, xdg-utils (>= 1.0.2)
+Pre-Depends: dpkg (>= 1.14.0)
+Recommends: libu2f-udev
+Filename: pool/main/b/brave-browser/brave-browser_0.55.16_amd64.deb
+Size: 62913392
+MD5sum: 69ecc6bf2b45454cc0e2e18c47126d14
+SHA1: 35156e782f53f5823404ea89b4108d14a4786aac
+SHA256: c6e6139d3d64dc57c80b31e36c81042fcf8e0a59ab7e2793d912af98e3f3756f
+SHA512: 4a193fee26dcc790b815dd2ba6d38076de5848bad7ad010e96bf32c9362892bd1a94bd8ea02e07a19fea462b36dd56090010e98f861ed65566994ee9fe22aa09
+Description: The web browser from Brave
+ Browse faster by blocking ads and trackers that violate your privacy and cost you time and money.
+
+Package: brave-keyring
+Priority: optional
+Maintainer: Ben Kero <bkero@brave.com>
+Architecture: all
+Version: 1.2
+Filename: pool/main/b/brave-keyring/brave-keyring_1.2-1.deb
+Size: 3336
+MD5sum: 7e613566f193c4ad811f4ee41e065313
+SHA1: 84193b4a794fe29b8e05bcf2ef3defc8f8857caf
+SHA256: caa6119ffd32e4c191f55c9f9e573a2c88db03f84c45a881937aeeb53a335597
+SHA512: c5ff250aea87a0657f029eaf8f5a9c15507d0620e4be00527823af2dc4e3c0501540178773f236fdb7b50617bfd01ab80e916191dcafd2f0015f7553b9427792
+Description: Brave Browser keyring and repository files
+
+Package: brave-keyring
+Priority: optional
+Maintainer: Ben Kero <bkero@brave.com>
+Architecture: all
+Version: 1.1
+Filename: pool/main/b/brave-keyring/brave-keyring_1.1-1.deb
+Size: 3384
+MD5sum: 88cc8d37c8ee9099a1115173a3930450
+SHA1: 64b4dbe8aa34f5599505ac3fd1dacba0f8d9bde5
+SHA256: d1ae64a12cbbc30891af23ee1b537df7d9f1ff817773f673788094d8f10b24fb
+SHA512: b8a02290fb74397eeada9a7a2e546eb07cd97a748622abe030a006b5cfe205f248fc3d2422847cc4b8f2410ce6f480863e315e1cc07524c0223d3ba8ef7e6421
+Description: Brave Browser keyring and repository files
+

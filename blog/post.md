@@ -46,6 +46,8 @@ wget https://brave-browser-apt-release.s3.brave.com/dists/stretch/main/binary-am
 wget https://github.com/brave/brave-browser/releases/download/v0.65.118/brave-browser_0.65.118_amd64.deb
 
 /usr/bin/brave-browser --no-sandbox
+
+tunk brave-browser.desktop after dpkg.log says so.
 ----
 
 Features

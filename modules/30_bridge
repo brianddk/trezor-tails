@@ -1,9 +1,10 @@
 bridge_version="2.0.27"
+bridge_filename="trezor-bridge_${bridge_version}_amd64.deb"
 
 bridge_s1(){
   # export msg="DBG: STAGING BRIDGE"; zenity --info --text="$msg" 1> /dev/null 2>&1
   wget -O $assets/rusnak.asc https://rusnak.io/public/pgp.txt
-  wget -P $assets "https://github.com/trezor/webwallet-data/raw/master/bridge/${bridge_version}/trezor-bridge_${bridge_version}_amd64.deb"
+  wget -P $assets "https://github.com/trezor/webwallet-data/raw/master/bridge/${bridge_version}/${bridge_filename}"
   gpg --import $assets/rusnak.asc
   printf "trust\n5\ny\nquit\n" | gpg --command-fd 0 --edit-key "0x86e6792fc27bfd478860c11091f3b339b9a02a3d"
 }
@@ -18,9 +19,9 @@ bridge_s2(){
   
   # export msg="DBG: FINALIZING BRIDGE"; zenity --info --text="$msg" 1> /dev/null 2>&1
   install -p -m 0644 -D $assets/locals.list -t $persist/apt-sources.list.d/
-  install -p -m 0644 -D $assets/trezor-bridge*.deb -t $persist/packages/
+  install -p -m 0644 -D "$assets/${bridge_filename}" -t "$persist/packages/"
   pushd $persist/packages/
-  runuser -c "gpg --verify trezor-bridge*.deb" amnesia
+  runuser -c "gpg --verify ${bridge_filename}" amnesia
   dpkg-scanpackages . /dev/null | gzip -9c > Packages.gz
   chmod 0644 Packages.gz
   popd
