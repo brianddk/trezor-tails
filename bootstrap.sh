@@ -102,7 +102,7 @@ main() {
   if [ -d /tmp/$repo ]; then rm -rf /tmp/$repo; fi
 
   git clone -b dev https://github.com/brianddk/$repo.git
-  [ -f "$0" ] && install -m 0700 $0 /tmp/$repo/bootstrap.sh
+  [ -f "$0" ] && install -m 0700 "$0" /tmp/$repo/bootstrap.sh
   cd $assets
   
   source_mods
