@@ -28,9 +28,9 @@ brave_browser_s2(){
   install -p -m 0644 -D "$assets/${brave_browser_filename}" -t "$persist/packages/"
   pushd $persist/packages/
   sha=$(sha512sum "${brave_browser_filename}")
-  grep "${sha:0:128)" "$assets/brave_browser/Packages" | grep "SHA512"
+  grep "${sha:0:128}" "$assets/brave_browser/Packages" | grep "SHA512"
   sha=$(sha512sum "$assets/brave_browser/Packages")
-  grep "${sha:0:128)" "$assets/brave_browser/Release" | grep "Packages"
+  grep "${sha:0:128}" "$assets/brave_browser/Release" | grep "Packages"
   dpkg-scanpackages . /dev/null | gzip -9c > Packages.gz
   chmod 0644 Packages.gz
   popd
