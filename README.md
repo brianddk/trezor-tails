@@ -43,6 +43,7 @@ Read the first 30 lines of [bootstrap.sh](https://github.com/brianddk/trezor-tai
 - [x] Test MEW in unsafe-browser - **Works, but not anon**
 - [x] Abstract version info for all modules - **Need some creative sed, but it works**
 - [ ] Allow `master` as a version that pulls from `git`
+- [ ] Add Wasabi Wallet deb module
 - [ ] See if the proc hack can be symlinked
 - [ ] Add profile support for brave
 - [ ] Add profile support for chromium
