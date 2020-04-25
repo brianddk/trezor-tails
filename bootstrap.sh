@@ -16,12 +16,13 @@
 # Add a `#` in column one to disable a feature
 #branch="master"
 #branch="dev"
-branch="v0.12.0"
+#branch="v0.12.0"
+branch="scratch"
 [ -z "$available" ] && export available="
-#05_swap
+05_swap
 10_udev
-#15_bash
-#20_gnome
+15_bash
+20_gnome
 25_python_trezor
 30_bridge
 #35_chromium
