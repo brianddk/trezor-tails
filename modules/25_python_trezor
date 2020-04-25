@@ -1,12 +1,17 @@
-python_trezor_version="0.11.3"
+python_trezor_version="0.12.0"
+udev_version=241-5~bpo9+1
+udev_version=241-7~deb10u3
 
 python_trezor_s1(){ 
   # Horrible hack to get past the buggy postinit script in udev, required by libudev-dev
   mkdir $assets/hidapi
   pushd $assets/hidapi
-  wget http://http.us.debian.org/debian/pool/main/s/systemd/libudev1_241-5~bpo9+1_amd64.deb
-  wget http://http.us.debian.org/debian/pool/main/s/systemd/udev_241-5~bpo9+1_amd64.deb
-  wget http://http.us.debian.org/debian/pool/main/s/systemd/libudev-dev_241-5~bpo9+1_amd64.deb  
+  # wget http://http.us.debian.org/debian/pool/main/s/systemd/libudev1_241-5~bpo9+1_amd64.deb
+  # wget http://http.us.debian.org/debian/pool/main/s/systemd/udev_241-5~bpo9+1_amd64.deb
+  # wget http://http.us.debian.org/debian/pool/main/s/systemd/libudev-dev_241-5~bpo9+1_amd64.deb  
+  wget http://http.us.debian.org/debian/pool/main/s/systemd/libudev1_${udev_version}_amd64.deb
+  wget http://http.us.debian.org/debian/pool/main/s/systemd/udev_${udev_version}_amd64.deb
+  wget http://http.us.debian.org/debian/pool/main/s/systemd/libudev-dev_${udev_version}_amd64.deb  
   popd
 }
 
