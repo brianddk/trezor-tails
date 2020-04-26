@@ -1,0 +1,52 @@
+brave_browser_version="1.7.98"
+brave_keyring_version="1.10-1"
+brave_browser_filename="brave-browser_${brave_browser_version}_amd64.deb"
+brave_keyring_filename="brave-keyring_${brave_keyring_version}.deb"
+
+brave_browser_s1(){
+  # export msg="DBG: STAGING BRIDGE"; zenity --info --text="$msg" 1> /dev/null 2>&1
+  [ -d "$assets/brave_browser" ] || mkdir "$assets/brave_browser"
+  echo "### DKB wget -P '$assets/brave_browser' 'https://brave-browser-apt-release.s3.brave.com/brave-core.asc'"
+  wget -P "$assets/brave_browser" "https://brave-browser-apt-release.s3.brave.com/brave-core.asc"
+  wget -P "$assets/brave_browser" "https://brave-browser-apt-release.s3.brave.com/dists/buster/Release"
+  wget -P "$assets/brave_browser" "https://brave-browser-apt-release.s3.brave.com/dists/buster/Release.gpg"
+  wget -P "$assets/brave_browser" "https://brave-browser-apt-release.s3.brave.com/dists/buster/main/binary-amd64/Packages"
+  wget -P "$assets/brave_browser" "https://brave-browser-apt-release.s3.brave.com/pool/main/b/brave-keyring/${brave_keyring_filename}"
+  wget -P "$assets/brave_browser" "https://github.com/brave/brave-browser/releases/download/v${brave_browser_version}/${brave_browser_filename}"
+  gpg --import "$assets/brave_browser/brave-core.asc"
+  printf "trust\n5\ny\nquit\n" | gpg --command-fd 0 --edit-key "0xd8bad4de7ee17af52a834b2d0bb75829c2d4e821"
+  gpg --verify "$assets/brave_browser/Release.gpg" "$assets/brave_browser/Release"
+}
+
+brave_browser_s2(){
+  set -x
+  install -p -m 0744 -D $assets/brave_browser.sh -t $persist/scripts/
+  install -p -m 0744 -D $assets/brave_browser.cron $persist/cron/brave_browser
+  $persist/scripts/brave_browser.sh
+  
+  # export msg="DBG: APT-GET INSTALL"; zenity --info --text="$msg" 1> /dev/null 2>&1
+  $apt_update ; apt_update="true"
+  apt-get install -y dpkg-dev
+  
+  # export msg="DBG: FINALIZING BRIDGE"; zenity --info --text="$msg" 1> /dev/null 2>&1
+  install -p -m 0644 -D $assets/locals.list -t $persist/apt-sources.list.d/
+  install -p -m 0644 -D "$assets/brave_browser/${brave_keyring_filename}" -t "$persist/packages/"
+  install -p -m 0644 -D "$assets/brave_browser/${brave_browser_filename}" -t "$persist/packages/"
+  pushd $persist/packages/
+  sha=$(sha512sum "${brave_browser_filename}")
+  grep "${sha:0:128}" "$assets/brave_browser/Packages" | grep "SHA512"
+  sha=$(sha512sum "$assets/brave_browser/Packages")
+  grep "${sha:0:128}" "$assets/brave_browser/Release" | grep "Packages"
+  dpkg-scanpackages . /dev/null | gzip -9c > Packages.gz
+  chmod 0644 Packages.gz
+  popd
+  ln -sf $persist/apt-sources.list.d/locals.list /etc/apt/sources.list.d/locals.list
+  apt-get update
+  apt-get install -y brave-browser
+  set +x
+}
+
+brave_browser_s3(){ 
+  true
+}
+

@@ -35,7 +35,8 @@ Read the first 30 lines of [bootstrap.sh](https://github.com/brianddk/trezor-tai
 ### To Do List
 
 - [x] Modularize bash, chromium, bridge, etc
-- [ ] Add dwblog entry on creating VM
+- [x] - Add brave support to transition off chromium - ***still WIP***
+- [ ] - Add dwblog entry on creating VM
 - [x] Add Electron Cash
 - [x] ~~Add MyCrypto AppImage module~~ - **Fails... unusable**
 - [x] Add browser support for `mycrypto.com` - **Works with chromium**

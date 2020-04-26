@@ -5,15 +5,19 @@
 # [tipjar]  LTC: LQjSwZLigtgqHA3rE14yeRNbNNY2r3tXcA or https://git.io/fh6b0
 
 ### A one-liner to run the script ###
-# bash <(wget -O- https://raw.githubusercontent.com/brianddk/trezor-tails/master/bootstrap.sh)
+# bash <(wget -O- https://raw.githubusercontent.com/brianddk/trezor-tails/dev/bootstrap.sh)
 
 ### To modify first ###
-# install -m 0700 <(wget -O- https://raw.githubusercontent.com/brianddk/trezor-tails/master/bootstrap.sh) /tmp/bootstrap.sh
+# install -m 0700 <(wget -O- https://raw.githubusercontent.com/brianddk/trezor-tails/dev/bootstrap.sh) /tmp/bootstrap.sh
 # gedit /tmp/bootstrap.sh
 # /tmp/bootstrap.sh
 
 # OPTIONS: Everything before /END can be modified to your preference.
 # Add a `#` in column one to disable a feature
+#branch="master"
+#branch="dev"
+#branch="v0.12.0"
+branch="scratch"
 [ -z "$available" ] && export available="
 05_swap
 10_udev
@@ -21,9 +25,10 @@
 20_gnome
 25_python_trezor
 30_bridge
-35_chromium
-40_electrum_btc
-45_electron_bch
+#35_chromium
+#37_brave_browser
+#40_electrum_btc
+#45_electron_bch
 "
 # /END
 
@@ -55,6 +60,8 @@ source_mods() {
 }
 user_first_stage() {
   # export msg="DBG: CLONING"; zenity --info --text="$msg" 1> /dev/null 2>&1
+  
+  mkdir "./dotfile-stage/"
 
   for i in $enabled
   do
@@ -100,8 +107,8 @@ main() {
   pushd /tmp
   if [ -d /tmp/$repo ]; then rm -rf /tmp/$repo; fi
 
-  git clone -b master https://github.com/brianddk/$repo.git
-  [ -f "$0" ] && install -m 0700 $0 /tmp/$repo/bootstrap.sh
+  git clone -b ${branch} https://github.com/brianddk/$repo.git
+  [ -f "$0" ] && install -m 0700 "$0" /tmp/$repo/bootstrap.sh
   cd $assets
   
   source_mods
@@ -113,6 +120,7 @@ main() {
   sudo -E bash /tmp/$repo/bootstrap.sh sudo_second_stage
 
   user_third_stage
+  popd
 }
 
 set -eE -o pipefail
