@@ -4,7 +4,7 @@ I would ***HIGHLY*** recommend that you backup your Tails instance before runnin
 
 To apply the Trezor libraries to a Tails (v4.5) instance, do the following:
 
-1. Create a Tails (v3.14) instance with persistence and Admin (root) enabled.
+1. Create a Tails (v4.5) instance with persistence and Admin (root) enabled.
 2. Boot into the Tails instance, unlocking the persistent volume and enabling Admin.
 3. Start a "normal" terminal session (not a root terminal) and issue the following command.
 4. `bash <(wget -O- https://raw.githubusercontent.com/brianddk/trezor-tails/master/bootstrap.sh)`
