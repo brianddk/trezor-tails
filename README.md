@@ -2,7 +2,7 @@
 
 I would ***HIGHLY*** recommend that you backup your Tails instance before running this script.  I've seen some of the portions of the script corrupt the persistent volume if the right thing goes wrong at the right time.  Be warned!!!
 
-To apply the Trezor libraries to a Tails (v3.14) instance, do the following:
+To apply the Trezor libraries to a Tails (v4.5) instance, do the following:
 
 1. Create a Tails (v3.14) instance with persistence and Admin (root) enabled.
 2. Boot into the Tails instance, unlocking the persistent volume and enabling Admin.
