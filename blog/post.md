@@ -61,7 +61,9 @@ Features
 user_pref("privacy.firstparty.isolate", false);
 user_pref("privacy.firstparty.isolate.restrict_opener_access", false);
 user_pref("security.fileuri.strict_origin_policy", false);
+
 user_pref("network.proxy.no_proxies_on", "127.0.0.1");
+user_pref("security.mixed_content.block_active_content", false);
 
 
 sudo apt-get install udev=240-4~bpo9+0tails1 libudev1=240-4~bpo9+0tails1 initramfs-tools=0.130.0tails1
@@ -77,6 +79,17 @@ dpkg --configure libudev1
 dpkg --configure udev
 dpkg --configure libudev-dev
 apt-get install -yf
+
+---
+choco upgrade -y virtualbox
+curl -LO https://download.virtualbox.org/virtualbox/6.1.6/VirtualBox-6.1.6-137129-Win.exe
+curl -LO https://download.virtualbox.org/virtualbox/6.1.6/Oracle_VM_VirtualBox_Extension_Pack-6.1.6.vbox-extpack
+curl -LO https://www.virtualbox.org/download/hashes/6.1.6/MD5SUMS
+dir /b | findstr /i /g:/ MD5SUMS | md5sum --check -
+
+VBoxManage convertdd input.img output.vdi
+---
+
 
 choco 0.10.14
 virtualbox 6.0.8
