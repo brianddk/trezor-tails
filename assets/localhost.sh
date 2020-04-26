@@ -3,7 +3,7 @@ export PATH="/usr/local/bin:/usr/local/sbin:/usr/sbin:/usr/bin:/sbin:/bin:/root/
 
 log="/tmp/iptables.log"
 grep "Bootstrap" "/var/log/tor/log" >> "$log"
-if grep "Bootstrapped 100%: Done" "/var/log/tor/log"
+if grep "Bootstrapped 100% (done): Done" "/var/log/tor/log"
 then
   iptables -I OUTPUT -p tcp --dport 21325 -j ACCEPT -s localhost -d localhost
   iptables -I INPUT -p tcp --dport 21325 -j ACCEPT -s localhost -d localhost
