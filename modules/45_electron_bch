@@ -38,10 +38,13 @@ electron_bch_s2(){
 
 electron_bch_s3(){
   wget -P $assets "https://raw.githubusercontent.com/Electron-Cash/keys-n-hashes/master/pubkeys/jonaldkey2.txt"
+  wget -P $assets "https://raw.githubusercontent.com/Electron-Cash/keys-n-hashes/master/pubkeys/calinkey.txt"
   wget -P $persist/local/bin/ "https://electroncash.org/downloads/${electron_bch_version}/win-linux/${electron_filename}"
   wget -P $assets "https://raw.githubusercontent.com/Electron-Cash/keys-n-hashes/master/sigs-and-sums/${electron_bch_version}/win-linux/${electron_filename}.asc"
   gpg --import "$assets/jonaldkey2.txt"
+  gpg --import "$assets/calinkey.txt"
   printf "trust\n5\ny\nquit\n" | gpg --command-fd 0 --edit-key "0xd56c110f4555f371aeefcb254fd06489eff1dde1"
+  printf "trust\n5\ny\nquit\n" | gpg --command-fd 0 --edit-key "0xd465135f97d0047e18e99dc321810a542031c02c"
 
   electron_heredoc
   target="$persist/local/share/applications/$(basename ${electron_desktop})"
