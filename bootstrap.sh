@@ -17,17 +17,16 @@
 #branch="master"
 #branch="dev"
 #branch="v0.12.0"
-branch="scratch"
 [ -z "$available" ] && export available="
-05_swap
-10_udev
-15_bash
-20_gnome
-25_python_trezor
-30_bridge
+#05_swap
+#10_udev
+#15_bash
+#20_gnome
+#25_python_trezor
+#30_bridge
 #35_chromium
 #37_brave_browser
-#40_electrum_btc
+40_electrum_btc
 #45_electron_bch
 "
 # /END
@@ -35,6 +34,7 @@ branch="scratch"
 enabled="$(grep -v "^#\|^$" <<< "$available" | sort)"
 persist="/live/persistence/TailsData_unlocked"
 repo="trezor-tails"
+branch="dev"
 assets="/tmp/$repo/assets"
 modules="/tmp/$repo/modules"
 
@@ -104,10 +104,19 @@ user_third_stage() {
 }
 
 main() {
+  selfdir="$PWD/$(dirname $0)"
   pushd /tmp
   if [ -d /tmp/$repo ]; then rm -rf /tmp/$repo; fi
 
-  git clone -b ${branch} https://github.com/brianddk/$repo.git
+  if git --git-dir "$selfdir/.git" branch 1>/dev/null 2>&1;
+  then
+    echo "in git copying to /tmp"
+    cp -a $selfdir /tmp/$repo
+  else
+    echo "not in git... cloning to /tmp"
+    git clone -b ${branch} https://github.com/brianddk/$repo.git
+  fi
+
   [ -f "$0" ] && install -m 0700 "$0" /tmp/$repo/bootstrap.sh
   cd $assets
   
