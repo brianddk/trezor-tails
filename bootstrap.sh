@@ -1,8 +1,8 @@
 #!/bin/bash
-# [rights]  Copyright brianddk 2019 https://github.com/brianddk
+# [rights]  Copyright brianddk 2020 https://github.com/brianddk
 # [license] Apache 2.0 License https://www.apache.org/licenses/LICENSE-2.0
 # [repo]    https://github.com/brianddk/trezor-tails/
-# [tipjar]  LTC: LQjSwZLigtgqHA3rE14yeRNbNNY2r3tXcA or https://git.io/fh6b0
+# [tipjar]  BTC: 3AAzK4Xbu8PTM8AD3fDnmjdNkXkmu6PS7R or https://git.io/fh6b0
 
 ### A one-liner to run the script ###
 # bash <(wget -O- https://raw.githubusercontent.com/brianddk/trezor-tails/dev/bootstrap.sh)

@@ -1,3 +1,8 @@
+# [rights]  Copyright brianddk 2020 https://github.com/brianddk
+# [license] Apache 2.0 License https://www.apache.org/licenses/LICENSE-2.0
+# [repo]    https://github.com/brianddk/trezor-tails/
+# [tipjar]  BCH: qqz77k4rqar3uppj8k28de06narwkqaamcf624p8zl or git.io/fh6b0
+
 electron_bch_version="4.0.14"
 electron_filename="Electron-Cash-${electron_bch_version}-x86_64.AppImage"
 electron_desktop="${HOME}/.local/share/applications/electron.desktop"

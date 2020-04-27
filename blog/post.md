@@ -1,4 +1,11 @@
 <!--
+TipJars:
+# [tipjar]  BTC: 3AAzK4Xbu8PTM8AD3fDnmjdNkXkmu6PS7R or https://git.io/fh6b0
+# [tipjar]  LTC: MKcAge42cX6WZnnPfFGJAxReUYZUbsi6t3 or https://git.io/fh6b0
+# [tipjar]  BCH: qqz77k4rqar3uppj8k28de06narwkqaamcf624p8zl or git.io/fh6b0
+# [tipjar]  ETH: 0xBc72A79357Ff7A59265725ECB1A9bFa59330DB4b or git.io/fh6b0
+
+
 
 Raw Notes
 
