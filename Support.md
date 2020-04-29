@@ -1,9 +1,8 @@
-<!-- footer -->
+If you need support or find an issue, simply [submit your issue](../issues/new/choose) and I'll see what I can do.  This project goes into long periods of hibernation, so I can't guarantee you'll see any quick turn around.
 
-This is the project [[Wiki|Home]].  To make changes, review [[wiki contributions|Contributing#Wiki Contributions]] section.  To use this product, review the [releases](../releases) and the main project [README](../#trezor-on-tails).  Please consider leaving a [[donation|Support#Donations]] if you find this project useful or interesting.
+## Donations
 
-<details>
-<summary>Expand for donation addresses</summary>
+This project and work is not sponsored, so other priorities take precedence.  If this is something you really enjoyed, or wish to place a bounty on a specific request, donations are welcome.  But if you just want to give a thumbs up without putting any money down, consider one of the donation addresses listed in the [[testnet / valueless|Support#Testnet--Valueless-Coins]] section below.
 
 ### Mainnet / Production Coins
 
@@ -32,6 +31,3 @@ These are all coins of no value that I simply collect as one may collect bottle 
     <tr><td>LTC testnet P2SH segwit </td><td><a href="https://testnet.litecore.io/address/QUxTX3549WNyGKPun1fXJhthfWbSSKWxaL">QUxTX3549WNyGKPun1fXJhthfWbSSKWxaL</a></td></tr>
     <tr><td>ETH Robsten </td><td><a href="https://ropsten.etherscan.io/address/0xF7A1009746850D1581AB8b4A87bf5810775925fe">0xF7A1009746850D1581AB8b4A87bf5810775925fe</a></td></tr>
   </table>
-</details>
-
-<!-- end_footer -->
