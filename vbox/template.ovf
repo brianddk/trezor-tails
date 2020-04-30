@@ -1,0 +1,171 @@
+<?xml version="1.0"?>
+<!--
+# [rights]  Copyright brianddk 2020 https://github.com/brianddk
+# [license] Apache 2.0 License https://www.apache.org/licenses/LICENSE-2.0
+# [repo]    https://github.com/brianddk/trezor-tails/
+# [tipjar]  BTC: 3AAzK4Xbu8PTM8AD3fDnmjdNkXkmu6PS7R or https://git.io/fh6b0
+# [notes]   See wiki/Contributing#Testing for usage of this template
+-->
+<Envelope ovf:version="1.0" xml:lang="en-US" 
+  xmlns="http://schemas.dmtf.org/ovf/envelope/1" 
+  xmlns:ovf="http://schemas.dmtf.org/ovf/envelope/1" 
+  xmlns:rasd="http://schemas.dmtf.org/wbem/wscim/1/cim-schema/2/CIM_ResourceAllocationSettingData" 
+  xmlns:vssd="http://schemas.dmtf.org/wbem/wscim/1/cim-schema/2/CIM_VirtualSystemSettingData" 
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+  xmlns:vbox="http://www.virtualbox.org/ovf/machine">
+  <References/>
+  <DiskSection>
+    <Info>List of the virtual disks used in the package</Info>
+  </DiskSection>
+  <NetworkSection>
+    <Info>Logical networks used in the package</Info>
+    <Network ovf:name="NAT">
+      <Description>Logical network used by this appliance.</Description>
+    </Network>
+  </NetworkSection>
+  <VirtualSystem ovf:id="delme">
+    <Info>A virtual machine</Info>
+    <OperatingSystemSection ovf:id="2">
+      <Info>The kind of installed guest operating system</Info>
+      <Description>MacOS</Description>
+      <vbox:OSType ovf:required="false">MacOS_64</vbox:OSType>
+    </OperatingSystemSection>
+    <VirtualHardwareSection>
+      <Info>Virtual hardware requirements for a virtual machine</Info>
+      <System>
+        <vssd:ElementName>Virtual Hardware Family</vssd:ElementName>
+        <vssd:InstanceID>0</vssd:InstanceID>
+        <vssd:VirtualSystemIdentifier>delme</vssd:VirtualSystemIdentifier>
+        <vssd:VirtualSystemType>virtualbox-2.2</vssd:VirtualSystemType>
+      </System>
+      <Item>
+        <rasd:Caption>2 virtual CPU</rasd:Caption>
+        <rasd:Description>Number of virtual CPUs</rasd:Description>
+        <rasd:ElementName>2 virtual CPU</rasd:ElementName>
+        <rasd:InstanceID>1</rasd:InstanceID>
+        <rasd:ResourceType>3</rasd:ResourceType>
+        <rasd:VirtualQuantity>2</rasd:VirtualQuantity>
+      </Item>
+      <Item>
+        <rasd:AllocationUnits>MegaBytes</rasd:AllocationUnits>
+        <rasd:Caption>4096 MB of memory</rasd:Caption>
+        <rasd:Description>Memory Size</rasd:Description>
+        <rasd:ElementName>4096 MB of memory</rasd:ElementName>
+        <rasd:InstanceID>2</rasd:InstanceID>
+        <rasd:ResourceType>4</rasd:ResourceType>
+        <rasd:VirtualQuantity>4096</rasd:VirtualQuantity>
+      </Item>
+      <Item>
+        <rasd:Address>0</rasd:Address>
+        <rasd:Caption>sataController0</rasd:Caption>
+        <rasd:Description>SATA Controller</rasd:Description>
+        <rasd:ElementName>sataController0</rasd:ElementName>
+        <rasd:InstanceID>3</rasd:InstanceID>
+        <rasd:ResourceSubType>AHCI</rasd:ResourceSubType>
+        <rasd:ResourceType>20</rasd:ResourceType>
+      </Item>
+      <Item>
+        <rasd:AddressOnParent>3</rasd:AddressOnParent>
+        <rasd:AutomaticAllocation>false</rasd:AutomaticAllocation>
+        <rasd:Caption>sound</rasd:Caption>
+        <rasd:Description>Sound Card</rasd:Description>
+        <rasd:ElementName>sound</rasd:ElementName>
+        <rasd:InstanceID>4</rasd:InstanceID>
+        <rasd:ResourceSubType>ensoniq1371</rasd:ResourceSubType>
+        <rasd:ResourceType>35</rasd:ResourceType>
+      </Item>
+      <Item>
+        <rasd:AutomaticAllocation>true</rasd:AutomaticAllocation>
+        <rasd:Caption>Ethernet adapter on 'NAT'</rasd:Caption>
+        <rasd:Connection>NAT</rasd:Connection>
+        <rasd:ElementName>Ethernet adapter on 'NAT'</rasd:ElementName>
+        <rasd:InstanceID>5</rasd:InstanceID>
+        <rasd:ResourceSubType>E1000</rasd:ResourceSubType>
+        <rasd:ResourceType>10</rasd:ResourceType>
+      </Item>
+    </VirtualHardwareSection>
+    <vbox:Machine ovf:required="false" version="1.15-windows" 
+      uuid="{f6c8e1ac-62a0-4440-ad66-f6b8aba1f7ac}" 
+      name="Trezor-Tails-Template" 
+      OSType="MacOS_64" snapshotFolder="Snapshots">
+      <ovf:Info>
+        Complete VirtualBox machine configuration in VirtualBox format
+      </ovf:Info>
+      <Hardware>
+        <CPU count="2">
+          <PAE enabled="true"/>
+          <LongMode enabled="true"/>
+          <HardwareVirtExLargePages enabled="true"/>
+        </CPU>
+        <Memory RAMSize="4096"/>
+        <Firmware type="EFI"/>
+        <HID Pointing="USBTablet" Keyboard="USBKeyboard"/>
+        <HPET enabled="true"/>
+        <Chipset type="ICH9"/>
+        <Paravirt provider="Default"/>
+        <Display VRAMSize="16"/>
+        <VideoCapture screens="1" file="." fps="25"/>
+        <RemoteDisplay enabled="false"/>
+        <BIOS>
+          <IOAPIC enabled="true"/>
+          <SmbiosUuidLittleEndian enabled="true"/>
+        </BIOS>
+        <USB>
+          <Controllers>
+            <Controller name="xHCI" type="XHCI"/>
+          </Controllers>
+        </USB>
+        <Network>
+          <Adapter slot="0" enabled="true" cable="true" type="82545EM">
+            <NAT/>
+          </Adapter>
+          <Adapter slot="8" type="Am79C973"/>
+          <Adapter slot="9" type="Am79C973"/>
+          <Adapter slot="10" type="Am79C973"/>
+          <Adapter slot="11" type="Am79C973"/>
+          <Adapter slot="12" type="Am79C973"/>
+          <Adapter slot="13" type="Am79C973"/>
+          <Adapter slot="14" type="Am79C973"/>
+          <Adapter slot="15" type="Am79C973"/>
+          <Adapter slot="16" type="Am79C973"/>
+          <Adapter slot="17" type="Am79C973"/>
+          <Adapter slot="18" type="Am79C973"/>
+          <Adapter slot="19" type="Am79C973"/>
+          <Adapter slot="20" type="Am79C973"/>
+          <Adapter slot="21" type="Am79C973"/>
+          <Adapter slot="22" type="Am79C973"/>
+          <Adapter slot="23" type="Am79C973"/>
+          <Adapter slot="24" type="Am79C973"/>
+          <Adapter slot="25" type="Am79C973"/>
+          <Adapter slot="26" type="Am79C973"/>
+          <Adapter slot="27" type="Am79C973"/>
+          <Adapter slot="28" type="Am79C973"/>
+          <Adapter slot="29" type="Am79C973"/>
+          <Adapter slot="30" type="Am79C973"/>
+          <Adapter slot="31" type="Am79C973"/>
+          <Adapter slot="32" type="Am79C973"/>
+          <Adapter slot="33" type="Am79C973"/>
+          <Adapter slot="34" type="Am79C973"/>
+          <Adapter slot="35" type="Am79C973"/>
+        </Network>
+        <AudioAdapter controller="HDA" driver="DirectSound" 
+          enabled="true" enabledIn="false"/>
+        <RTC localOrUTC="UTC"/>
+        <Clipboard mode="Bidirectional"/>
+        <DragAndDrop mode="Bidirectional"/>
+        <GuestProperties>
+          <GuestProperty name="/VirtualBox/HostInfo/GUI/LanguageID" 
+            value="en_US" flags=""/>
+        </GuestProperties>
+      </Hardware>
+      <StorageControllers>
+        <StorageController name="SATA" type="AHCI" PortCount="2" 
+          useHostIOCache="false" Bootable="true" IDE0MasterEmulationPort="0" 
+          IDE0SlaveEmulationPort="1" IDE1MasterEmulationPort="2" 
+          IDE1SlaveEmulationPort="3"/>
+        <StorageController name="USB" type="USB" PortCount="8" 
+          useHostIOCache="false" Bootable="true"/>
+      </StorageControllers>
+    </vbox:Machine>
+  </VirtualSystem>
+</Envelope>
