@@ -18,7 +18,7 @@ To apply the Trezor libraries to a Tails (v4.5) instance, do the following:
 
 Still very much WIP, but seems functional enough for now.
 
-Read the first 30 lines of [bootstrap.sh](https://github.com/brianddk/trezor-tails/blob/master/bootstrap.sh) to turn off optional components.  The python modues will take a ***long*** time to install
+Read the first 30 lines of [bootstrap.sh](blob/master/bootstrap.sh) to turn off optional components.  The python modues will take a ***long*** time to install
 
 ### Working Features
 
@@ -60,6 +60,6 @@ Read the first 30 lines of [bootstrap.sh](https://github.com/brianddk/trezor-tai
 - [ ] Add Tier 1 Coin support ( LTC, NMC, FTC ...)
 - [ ] Add Tier 2 Coin support ( ... KOTO )
 
-Please [log issues here](https://github.com/brianddk/trezor-tails/issues/new) if you find any.
+Please [log issues here](issues/new) if you find any.
 
-Please [issue feature requests here](https://github.com/brianddk/trezor-tails/issues/new) if you have any.
+Please [issue feature requests here](issues/new) if you have any.
