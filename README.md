@@ -66,7 +66,7 @@ Please [issue feature requests here](https://github.com/brianddk/trezor-tails/is
 
 <!-- footer -->
 
-This project and work is not sponsored, so other priorities take precedence.  If this is something you really enjoyed, or wish to place a bounty on a specific request, donations are welcome.  Or if you just want to give a thumbs up without putting any money down, consider one of the donation addresses listed in the [[testnet / valueless|Support#Testnet--Valueless-Coins]] section below.
+This project and work is not sponsored, so other priorities take precedence.  If this is something you really enjoyed, or wish to place a bounty on a specific request, donations are welcome.  Or if you just want to give a thumbs up without putting any money down, consider one of the donation addresses listed in the [testnet / valueless](https://github.com/brianddk/trezor-tails/wiki/Support#Testnet--Valueless-Coins) section below.
 
 <details>
 <summary>Expand for donation addresses</summary>
