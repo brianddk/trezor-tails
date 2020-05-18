@@ -74,7 +74,7 @@ This project and work is not sponsored, so other priorities take precedence.  If
 
 ### Mainnet / Production Coins
 
-If you don't see a coin you would like to contribute, simply [open an issue](../issues/new/choose) requesting I add it and I will
+If you don't see a coin you would like to contribute, simply [open an issue](../../issues/new/choose) requesting I add it and I will
 
   <table>
     <tr><td>BTC Lightning Network </td><td><a href="https://tippin.me/@dkbriand">https://tippin.me/@dkbriand</a></td></tr>
@@ -92,7 +92,7 @@ If your browsing with the [Brave browser](https://brave.com/bri541) you can tip 
 
 ### Testnet / Valueless Coins
 
-These are all coins of no value that I simply collect as one may collect bottle caps.  You can acquire them free from any faucet you like.  If you don't see a coin you would like to contribute, simply [open an issue](../issues/new/choose) requesting I add it and I will
+These are all coins of no value that I simply collect as one may collect bottle caps.  You can acquire them free from any faucet you like.  If you don't see a coin you would like to contribute, simply [open an issue](../../issues/new/choose) requesting I add it and I will
 
   <table>
     <tr><td>BTC testnet P2PKH </td><td><a href="https://tbtc1.trezor.io/address/mpaMBuoJ7ZiiJhmRZVvDT3JPncZV7XTeyy">mpaMBuoJ7ZiiJhmRZVvDT3JPncZV7XTeyy</a></td></tr>
