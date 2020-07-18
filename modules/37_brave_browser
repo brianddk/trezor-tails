@@ -3,7 +3,7 @@
 # [repo]    https://github.com/brianddk/trezor-tails/
 # [tipjar]  BTC: 3AAzK4Xbu8PTM8AD3fDnmjdNkXkmu6PS7R or https://git.io/fh6b0
 
-brave_browser_version="1.7.98"
+brave_browser_version="1.11.97"
 brave_keyring_version="1.10-1"
 brave_browser_filename="brave-browser_${brave_browser_version}_amd64.deb"
 brave_keyring_filename="brave-keyring_${brave_keyring_version}.deb"

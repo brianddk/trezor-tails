@@ -3,7 +3,7 @@
 # [repo]    https://github.com/brianddk/trezor-tails/
 # [tipjar]  BTC: 3AAzK4Xbu8PTM8AD3fDnmjdNkXkmu6PS7R or https://git.io/fh6b0
 
-electrum_btc_version="3.3.8"
+electrum_btc_version="4.0.2"
 electrum_filename="electrum-${electrum_btc_version}-x86_64.AppImage"
 electrum_desktop="${HOME}/.local/share/applications/electrumApp.desktop"
 
